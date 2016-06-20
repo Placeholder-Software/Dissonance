@@ -2,9 +2,9 @@
 
 This template is a guideline for how to create a good issue. However it's not obligatory, feel free to skip any sections you feel are not applicable or to include any additional information you think might be helpful :)
 
- - Add [bug], [feature] or [help] to the start of the title. Depending on if this is a big report, feature request or a call for help.
- - If this is a **bug report** make sure there is not already an open issue. If there is add a comment (following this template) to that issue instead.
- - If this is a **help request** you're welcome to open an issue, but you may get a better community response over on our [discussion forum](https://www.reddit.com/r/dissonance_voip)
+ - Add [bug], [feature] or [help] to the start of the title. Depending on if this is a bug report, feature request or a call for help.
+ - If this is a bug report make sure there is not already an open issue. If there is add a comment (following this template) to that issue instead.
+ - If this is a help request you're welcome to open an issue, but you may get a better community response over on our [discussion forum](https://www.reddit.com/r/dissonance_voip)
 
 ...Delete This Section */
 
