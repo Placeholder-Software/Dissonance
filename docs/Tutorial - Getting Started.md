@@ -9,7 +9,9 @@ In this tutorial we will get setup with the most basic configuration for voip - 
 For Dissonance to compile we first need to [enable the compilation of unsafe code](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html), to do this simply create a file named smcs.rsp (for .Net 2.0 Subset) or gmcs.rsp (for .Net 2.0) with a single line inside:
 
  > -unsafe
- 
+
+2. Run in background!
+
 2. Add dissonance asset
 3. Add a VoiceComm to the scene and configure it
 4. Add appropriate networking integration to same entity as VoiceComm
