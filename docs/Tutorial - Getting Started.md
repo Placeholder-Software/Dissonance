@@ -2,21 +2,20 @@
 
 There is a video version of this tutotial [here](TODO).
 
-In this tutorial we will get setup with the most basic configuration for voip - all players speak to each other in a single, with no positional audio.
+In this tutorial you will create a new project, import Dissonance and set up some settings required for Dissonance to work properly.
 
-1. Enable "unsafe" code
+1. Import Dissonance
 
-For Dissonance to compile we first need to [enable the compilation of unsafe code](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html), to do this simply create a file named smcs.rsp (for .Net 2.0 Subset) or gmcs.rsp (for .Net 2.0) with a single line inside:
+Import the Dissonance asset into the project. When you do this there will be several directories inside the "Integrations" directory, each integration provides support for other unity assets such as various different networking systems. Import whichever integrations you want to use for your game.
 
- > -unsafe
+2. Enable "unsafe" code
 
-2. Run in background!
+Dissonance uses a C# feature called "unsafe code" to achieve the best performance. To do this simply create a file called "smcs.rsp" in the Assets folder containing a single line of text:
 
-2. Add dissonance asset
-3. Add a VoiceComm to the scene and configure it
-4. Add appropriate networking integration to same entity as VoiceComm
-5. Add a channel transmitter for global voice
-6. Add echo cancellation effect to master bus
-7. Profit???
+> -unsafe
 
-For more information about configuring dissonance channels, continue with the [channels tutorial](Tutorial---Multiple-Channels).
+3. Run In Background
+
+Since this is a multiplayer game you're going to need the game to continue running (and processing network packets) even when the game window does not have focus. To do this navigate to Edit -> Project Settings -> Player, the inspector pane will now change to show the player settings, check the box labeled "Run In Background".
+
+That's all we need to get a project set up and ready for Dissonance. To create a simple demo game with voice communication continue with [Basic VoIP Tutorial](Tutorial---Basic-VoIP).
