@@ -14,9 +14,9 @@ Dissonance is a realtime Voice over IP (VoIP) system designed to be built direct
 
 The best place to get started with Dissonance is with the set of tutorials for various parts of the system:
 
- - [Getting Started](Tutorial---Getting-Started)
- - [Channels](Tutorial---Multiple-Channels)
- - [Positional Audio](Tutorial---Positional-Audio)
- - [User Interface](Tutorial---UI)
- - [Audio Mixing](Tutorial---Audio-Mixing)
- - [FAQ](/FAQ)
+ - [Getting Started](Tutorial - Getting Started)
+ - [Channels](Tutorial - Multiple Rooms)
+ - [Positional Audio](Tutorial - Positional Audio)
+ - [User Interface](Tutorial - UI)
+ - [Audio Mixing](Tutorial - Audio Mixing)
+ - [FAQ](FAQ)
