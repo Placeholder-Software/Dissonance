@@ -1,0 +1,4 @@
+pages:
+- Home: "index.md"
+- Getting Started:
+    - "Project Setup": "Tutorial - Getting Started.md"
