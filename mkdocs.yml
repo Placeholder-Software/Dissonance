@@ -5,5 +5,17 @@ site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 pages:
 - Home: "index.md"
-- Getting Started:
+- "Frequently Asked Questions": "FAQ.md"
+- "Glossary": "Glossary.md"
+- Basic:
     - "Project Setup": "Tutorial - Getting Started.md"
+    - "Basic VoIP Demo": "Tutorial - Basic VoIP.md"
+    - "Multiple Rooms": "Tutorial - Multiple Rooms.md"
+    - "Positional Audio": "Tutorial - Positional Audio.md"
+- Intermediate:
+    - "Audio Mixing For Voice": "Tutorial - Audio Mixing.md"
+- Advanced:
+    - "Writing A Network Integration": "Tutorial - Network Integration.md"
+- Reference:
+    - Networking:
+        - "Network Packet Format": "Reference/Packet Format.md"
