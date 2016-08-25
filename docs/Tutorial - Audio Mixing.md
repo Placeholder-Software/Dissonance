@@ -1,6 +1,6 @@
 ## Tutorial: Audio Mixing
 
-There is a video version of this tutotial [here](TODO).
+There is a video version of this tutorial [here](TODO).
 
 Dissonance does not have any special support built in for audio mixing, because unity already has a powerful mixing system built in which dissonance audio is routed through. You can find out more about the unity audio mixing system [here](http://blogs.unity3d.com/2014/07/24/mixing-sweet-beats-in-unity-5-0/). In this tutorial we're going to modify the project which we have built up in the previous tutorials ([getting started](Tutorial---Getting-Started), [channels](Tutorial---Multiple-Channels) and [positional audio](Tutorial---Positional-Audio)) to include volume ducking - whenever anyone speaks all the other sound effects in the game will become slightly quieter.
 

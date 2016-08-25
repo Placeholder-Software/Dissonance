@@ -18,4 +18,4 @@ pages:
     - "Writing A Network Integration": "Tutorial - Network Integration.md"
 - Reference:
     - Networking:
-        - "Network Packet Format": "Reference/Packet Format.md"
+        - "Network Packet Format": "Reference/Networking/Packet Format.md"

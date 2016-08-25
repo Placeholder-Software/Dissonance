@@ -1,6 +1,6 @@
 ## Tutorial: Basic VoIP
 
-There is a video version of this tutotial [here](TODO).
+There is a video version of this tutorial [here](TODO).
 
 In this tutorial you will create a very basic voice chat system with a single global room which all users talk in.
 
