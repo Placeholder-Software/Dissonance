@@ -1,7 +1,7 @@
-site_name: Dissonance: Unity Voice Chat
-repo_url: https://github.com/Placeholder-Software/Dissonance
-repo_name: Issue Tracker
-site_favicon: dissonance.png
+site_name: "Dissonance: Unity Voice Chat"
+repo_url: "https://github.com/Placeholder-Software/Dissonance"
+repo_name: "Issue Tracker"
+site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 pages:
 - Home: "index.md"
