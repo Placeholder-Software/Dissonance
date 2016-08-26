@@ -12,11 +12,8 @@ Dissonance is a realtime Voice over IP (VoIP) system designed to be built direct
  
 ## Getting Started
 
-The best place to get started with Dissonance is with the set of tutorials for various parts of the system:
+The best place to get started with Dissonance is to follow the tutorials in order. Start with [Project Setup](Tutorial - Getting Started.md) and keep clicking next. This will guide you through setting up a project for Dissonance, creating a very basic game with a single global chat room, augmenting this will additional chat rooms and positional audio and more.
 
- - [Getting Started](Tutorial - Getting Started)
- - [Channels](Tutorial - Multiple Rooms)
- - [Positional Audio](Tutorial - Positional Audio)
- - [User Interface](Tutorial - UI)
- - [Audio Mixing](Tutorial - Audio Mixing)
- - [FAQ](FAQ)
+## Advanced Topics
+
+If you want to do something a little unusual with Dissonance there are advanced tutorials available for some topics. If what you want to achieve isn't covered try [asking the community](https://www.reddit.com/r/dissonance_voip) or [repoting an issue](https://github.com/Placeholder-Software/Dissonance).
