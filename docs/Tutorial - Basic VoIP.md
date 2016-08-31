@@ -45,15 +45,3 @@ If you were to run the game now now you would still not hear any voice. This is 
 Add a "Voice Receipt Trigger" component to the Dissonance entity. Set the chat room to "Global" (this should be the same as your Voice Broadcast Trigger room setting).
 
 This means that as soon as the game starts all clients will transmit to the global room, and all clients will also listen to the global room.
-
-## 5. Complete!
-
-That's all you need to get voice chat going between two network clients. There are a number of tutorials you could move onto from here, covering various different topics to do with configuring Dissonance:
-
- - [Rooms](TODO)
- - [Quality](TODO)
- - [Audio Mixing](TODO)
- - [Network Integrations](TODO)
- - [Positional Audio](TODO)
- - [User Interface](TODO)
- - [Tips And Tricks](TODO)
