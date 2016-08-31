@@ -20,5 +20,6 @@ pages:
     - Components:
         - "Voice Broadcast Trigger": "Reference/Components/Voice Broadcast Trigger.md"
         - "Voice Receipt Trigger": "Reference/Components/Voice Receipt Trigger.md"
+        - "Dissonance Comms": "Reference/Components/Dissonance Comms.md"
     - Networking:
         - "Network Packet Format": "Reference/Networking/Packet Format.md"
