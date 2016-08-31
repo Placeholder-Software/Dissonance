@@ -63,4 +63,4 @@ When set to "Push To Talk" the broadcaster will broadcast voice while a certain 
 
 ## Trigger Activation
 
-This determines whether the broadcaster will only broadcast when the local player is within a trigger zone. See the Unity documentation on [Trigger Zones](https://unity3d.com/learn/tutorials/topics/physics/colliders-triggers). Using trigger activation requires the same basic setup as using [Positional Audio](Tutorial - Positional Audio.md). This setting can be configured from a script by modifying the `UseTrigger` field
+This determines whether the broadcaster will only broadcast when the local player is within a trigger zone. See the Unity documentation on [Trigger Zones](https://unity3d.com/learn/tutorials/topics/physics/colliders-triggers). Using trigger activation requires the same basic setup as using [Positional Audio](Tutorial - Positional Audio.md). This setting can be configured from a script by modifying the `UseTrigger` field.
