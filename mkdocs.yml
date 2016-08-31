@@ -17,7 +17,8 @@ pages:
 - Advanced:
     - "Writing A Network Integration": "Tutorial - Network Integration.md"
 - Reference:
-    - "Voice Broadcast Trigger": "Reference/Components/Voice Broadcast Trigger.md"
-    - "Voice Receipt Trigger": "Reference/Components/Voice Receipt Trigger.md"
+    - Components:
+        - "Voice Broadcast Trigger": "Reference/Components/Voice Broadcast Trigger.md"
+        - "Voice Receipt Trigger": "Reference/Components/Voice Receipt Trigger.md"
     - Networking:
         - "Network Packet Format": "Reference/Networking/Packet Format.md"
