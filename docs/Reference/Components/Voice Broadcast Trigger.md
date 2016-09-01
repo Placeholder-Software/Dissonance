@@ -34,16 +34,7 @@ This determines whether the playback of the data sent through this broadcaster s
 
 ## Activation Mode
 
-This option determines when voice data should be sent. This setting can be configured from a script by modifying the `Mode` field. Voice will only be broadcast when the component is "active", this can be controlled in two ways.
-
-There are two methods which can be called from scripts:
-
-```
-public void StartSpeaking();
-public void StopSpeaking();
-```
-
-These methods activate and deactivate the transmitter respectively. The other way to activate the component is with triggers, this is documented further below.
+This option determines when voice data should be sent. This setting can be configured from a script by modifying the `Mode` field.
 
 #### None
 
@@ -64,3 +55,24 @@ When set to "Push To Talk" the broadcaster will broadcast voice while a certain 
 ## Trigger Activation
 
 This determines whether the broadcaster will only broadcast when the local player is within a trigger zone. See the Unity documentation on [Trigger Zones](https://unity3d.com/learn/tutorials/topics/physics/colliders-triggers). Using trigger activation requires the same basic setup as using [Positional Audio](Tutorial - Positional Audio.md). This setting can be configured from a script by modifying the `UseTrigger` field.
+
+## Script Activation
+
+There are two methods available for scripts to control the activation of a broadcaster:
+
+```
+public void StartSpeaking();
+public void StopSpeaking();
+```
+
+These methods activate and deactivate the transmitter respectively. If `StopSpeaking()` is called then no voice will be transmitted until `StartSpeaking` is called.
+
+## Activation Of Voice Broadcast Triggers
+
+There are several forms of activation to take into account for a voice broadcast trigger. Unity allows individual components to be enabled and disabled - disabling a voice broadcast trigger will cut off any broadcast in progress and will not send any more voice until it is enabled.
+
+The Start/Stop Speaking methods do the same thing as enabling and disabling the component.
+
+The trigger volumes start and stop broadcasting when a player object enters and exits the trigger volume. This can be used to create areas of space in the game scene which a player must stand in to participate in a room.
+
+Finally the voice activation mode is an indicator of if a players *wants* to speak. Even if the broadcaster is enabled and `StartSpeaking` has been called or a trigger is activated no voice will be transmitted unless the voice activation mode is activated.

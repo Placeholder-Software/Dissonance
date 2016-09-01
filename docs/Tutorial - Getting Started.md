@@ -6,7 +6,9 @@ In this tutorial you will create a new project, import Dissonance and set up som
 
 ### 1. Import Dissonance
 
-Import the Dissonance asset into the project. When you do this there will be several directories inside the "Integrations" directory, each integration provides support for other unity assets such as various different networking systems. Import whichever integrations you want to use for your game.
+Import the Dissonance asset into the project. When you do this there will be several directories inside the "Integrations" directory. Each integration provides support for other Unity assets such as various different networking systems. There are a number of optional parts of Dissonance which you can import to integrate with various other assets (such as Playmaker or Forge Networking). Import whichever integrations you want to use for your game.
+
+The basic tutorials are written assuming you will use UNet networking, so if you want to follow along make sure you install the UNet_LLAPI integration.
 
 ### 2. Enable "unsafe" code
 
@@ -20,4 +22,4 @@ Since this is a multiplayer game you're going to need the game to continue runni
 
 ## 4. Complete!
 
-That's you we need to get a project set up and ready for Dissonance. To create a simple demo game with voice communication continue with **[Basic VoIP Tutorial](Tutorial---Basic-VoIP)**.
+That's all you need to get a project set up and ready for Dissonance.
