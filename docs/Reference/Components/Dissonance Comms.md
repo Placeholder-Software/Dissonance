@@ -16,9 +16,7 @@ If you wish to use your own prefab it must include at least the following three 
 
 ## Player Name
 
-todo ???
-
-See discussion in <https://github.com/TomGillen/Dissonance/issues/105>
+todo: See discussion in <https://github.com/TomGillen/Dissonance/issues/105>
 
 ## Quality
 
