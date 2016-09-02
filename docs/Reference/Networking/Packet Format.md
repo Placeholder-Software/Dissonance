@@ -8,7 +8,9 @@ Dissonance sends several types of packets:
  - Voice Data
  - Text Data
 
-All packets are prefixed with a single byte which indicates which of these types the packet contains. The definition for the header bytes can be found in `Dissonance.Networking.MessageTypes`.
+All packets are prefixed with a 2 byte "magic number" which is 0x8bc7 - if the header does not exactly match this it is immediately dropped (even if it is a control packet).
+
+Following the magic all packets are prefixed with a single byte which indicates which of these types the packet contains. The definition for the header bytes can be found in `Dissonance.Networking.MessageTypes`.
 
 Packets are built by encoding a sequence of primitive types, code for encoding/decoding the primitives can be found in `Dissonance.Networking.PacketWriter` and `Dissonance.Networking.PacketReader`.
 
@@ -19,6 +21,7 @@ The client state message contains the complete state of the client, it is sent w
 Packet layout:
 
 ```
+0x8bc7 (UInt16)
 Header (Byte)
 Player Name (String)
 Room Count (UInt16)
@@ -37,6 +40,7 @@ This should only ever be sent by the server, and only ever be received by client
 Packet Layout:
 
 ```
+0x8bc7 (UInt16)
 Header (Byte)
 ID Count (UInt16)
 for ID
@@ -60,6 +64,7 @@ RTT(A, B) = RTT(A, Server) + RTT(Server, B)
 Packet layout:
 
 ```
+0x8bc7 (UInt16)
 Header (Byte)
 Connection Count (UInt16)
 for each Connection
@@ -76,6 +81,7 @@ A voice data packet contains a frame of encoded audio. Clients send these to the
 Packet layout:
 
 ```
+0x8bc7 (UInt16)
 Header (Byte)
 Unused (Byte)
 Sender Id (UInt16)
@@ -97,6 +103,7 @@ todo: bitfield
 A text data packet contains a single text chat message. Clients send these to the server which then relays them on to the necessary clients.
 
 ```
+0x8bc7 (UInt16)
 Header (Byte)
 Bitfield (Byte) # see below for details
 Sender ID (UInt16)
