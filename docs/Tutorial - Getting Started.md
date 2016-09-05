@@ -22,4 +22,9 @@ Since this is a multiplayer game you're going to need the game to continue runni
 
 ## 4. Complete!
 
-That's all you need to get a project set up and ready for Dissonance.
+That's all you need to get a project set up and ready for Dissonance. If you are just creating a demo project to try out Dissonance click next to move on to a tutorial for setting up a simple voice communication setup. If you already have a game which you want integrate Dissonance into you should follow the appropriate tutorial for whichever network system your game currently uses:
+
+ - [Networking Setup - UNet LLAPI](Tutorial - Networking Setup - UNet LLAPI.md)
+ - [Networking Setup - UNet HLAPI](Tutorial - Networking Setup - UNet HLAPI.md)
+ - [Networking Setup - Forge Networking](Tutorial - Networking Setup - Forge Networking.md)
+ - [Networking Setup - Photon](Tutorial - Networking Setup - Photon Networking.md)

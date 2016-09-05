@@ -10,6 +10,11 @@ pages:
 - Basic:
     - "Project Setup": "Tutorial - Getting Started.md"
     - "Basic VoIP Demo": "Tutorial - Basic VoIP.md"
+    - "Networking Setup":
+        - "UNet LLAPI": "Tutorial - Networking Setup - UNet LLAPI.md"
+        - "UNet HLAPI": "Tutorial - Networking Setup - UNet HLAPI.md"
+        - "Forge Networking": "Tutorial - Networking Setup - Forge Networking.md"
+        - "Photon Networking": "Tutorial - Networking Setup - Photon Networking.md"
     - "Multiple Rooms": "Tutorial - Multiple Rooms.md"
     - "Positional Audio": "Tutorial - Positional Audio.md"
 - Intermediate:
