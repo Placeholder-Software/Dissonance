@@ -5,22 +5,25 @@ site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 pages:
 - Home: "index.md"
-- "Frequently Asked Questions": "FAQ.md"
-- "Glossary": "Glossary.md"
 - Basic:
-    - "Project Setup": "Tutorial - Getting Started.md"
-    - "Basic VoIP Demo": "Tutorial - Basic VoIP.md"
+    - "Project Setup": "Tutorials/Getting Started.md"
+    - "Basic VoIP Demo": "Tutorials/Basic VoIP.md"
     - "Networking Setup":
-        - "UNet LLAPI": "Tutorial - Networking Setup - UNet LLAPI.md"
-        - "UNet HLAPI": "Tutorial - Networking Setup - UNet HLAPI.md"
-        - "Forge Networking": "Tutorial - Networking Setup - Forge Networking.md"
-        - "Photon Networking": "Tutorial - Networking Setup - Photon Networking.md"
-    - "Multiple Rooms": "Tutorial - Multiple Rooms.md"
-    - "Positional Audio": "Tutorial - Positional Audio.md"
+        - "UNet LLAPI": "Tutorials/Networking Setup - UNet LLAPI.md"
+        - "UNet HLAPI": "Tutorials/Networking Setup - UNet HLAPI.md"
+        - "Forge Networking": "Tutorials/Networking Setup - Forge Networking.md"
+        - "Photon Networking": "Tutorials/Networking Setup - Photon Networking.md"
+    - "Positional Audio": "Tutorials/Positional Audio.md"
+    - "Rooms":
+        - "Global Chat": "Tutorials/Global Chat Room.md"
+        - "Team Chat": "Tutorials/Team Chat Rooms.md"
+        - "Area Chat": "Tutorials/Area Chat Room.md"
+        - "Proximity Chat": "Tutorials/Proximity Chat.md"
+    - "Text Chat": "Tutorials/Text Chat.md"
 - Intermediate:
-    - "Audio Mixing For Voice": "Tutorial - Audio Mixing.md"
+    - "Audio Mixing For Voice": "Tutorials/Audio Mixing.md"
 - Advanced:
-    - "Writing A Network Integration": "Tutorial - Network Integration.md"
+    - "Writing A Network Integration": "Tutorials/Network Integration.md"
 - Reference:
     - Components:
         - "Voice Broadcast Trigger": "Reference/Components/Voice Broadcast Trigger.md"
@@ -28,3 +31,5 @@ pages:
         - "Dissonance Comms": "Reference/Components/Dissonance Comms.md"
     - Networking:
         - "Network Packet Format": "Reference/Networking/Packet Format.md"
+- "Frequently Asked Questions": "FAQ.md"
+- "Glossary": "Glossary.md"
