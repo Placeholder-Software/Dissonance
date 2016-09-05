@@ -19,6 +19,7 @@ pages:
         - "Team Chat": "Tutorials/Team Chat Rooms.md"
         - "Area Chat": "Tutorials/Area Chat Room.md"
         - "Proximity Chat": "Tutorials/Proximity Chat.md"
+        - "Direct Chat": "Tutorials/Direct Chat.md"
     - "Text Chat": "Tutorials/Text Chat.md"
 - Intermediate:
     - "Audio Mixing For Voice": "Tutorials/Audio Mixing.md"
