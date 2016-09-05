@@ -4,7 +4,7 @@ There is a video version of this tutorial [here](TODO).
 
 Dissonance does not have any special support built in for audio mixing, because unity already has a powerful mixing system built in which dissonance audio is routed through. You can find out more about the unity audio mixing system [here](http://blogs.unity3d.com/2014/07/24/mixing-sweet-beats-in-unity-5-0/). This tutorial offers advice about the best way to use the unity audio pipeline for VoIP.
 
-## General Principles
+### General Principles
 
 It can be tempting to mix voice signals in the same way as any other audio signal in your game and to add various sound effects to the voice for realism/immersion. Things such as drowning out teammates with loud gunfire, deafening players when they're hit by a flashbang or adding extreme radio fuzz when the enemy team use jammers might all sound immersive but in reality will just force people not to use the in game VoIP. Any audio mixing done to the voice signal should be done to improve the voice the voice quality.
 
@@ -18,13 +18,16 @@ Above is an example audio mixer for a game. Highlighted in red are all the group
 
 The yellow arrows indicate "sends", a send sends audio from one signal processor to another. At the receiving end of the sends is a "Duck Volume" effect, this reduces the volume of the group relative to the volume of the signal it receives via a send. The setup shown above has *two* volume ducks and *three* sends. The human voice sends to "Non-Voice" and "NPC Voice", this means than when a human speaks both NPC voices and other sounds get quieter. The "NPC Voice" has a single send to the "Non-Voice" group, this means that when an NPC speaks other sounds get quieter.
 
-## Sound Effects (e.g. Radio Crackle)
+## Sound Effects
 
-As mentioned above you should be very cautious about applying any sound effects to the voice signal which are not for the purpose of enhancing the voice quality.
+As mentioned above you should be very cautious about applying any sound effects to the voice signal which are not for the purpose of enhancing the voice quality. However there are some situations where applying sound effects to voices could sound good, for example applying a very subtle radio distortion effect to allied communications and an extreme distortion to enemy communications. Applying an effect is very simple, simply click add on the group and select the effect you want.
 
+![Example of audio mixer with distortion](/images/AudioMixing_Distortion.png "Example of audio mixer with distortion")
 
-todo: voice sfc (radio crackle)
-todo: SALSA? http://forum.unity3d.com/threads/salsa-with-randomeyes-lip-sync-and-expression-system.242135/page-11#post-2772337
-todo: Pause NPC speech when VoIP is received
+Above is an example of an audio group with a [distortion](https://docs.unity3d.com/Manual/class-AudioDistortionEffect.html) effect applied.
 
-Because dissonance audio is processed through the unity audio pipeline just like any other sound effect a huge variety of effects can be applied. However, you should use these effects cautiously - players will not appreciate a voip system which distorts or muffles speech so much that it cannot be understood!
+## todo: Other Ideas
+
+ - Per team sfx
+ - SALSA Lip Sync
+ - Pause NPC speech when humans talk
