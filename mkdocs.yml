@@ -16,11 +16,11 @@ pages:
     - "Positional Audio": "Tutorials/Positional Audio.md"
     - "Rooms":
         - "Introduction": "Introduction To Chat Rooms.md"
-        - "Global Chat": "Tutorials/Global Chat Room.md"
-        - "Team Chat": "Tutorials/Team Chat Rooms.md"
-        - "Area Chat": "Tutorials/Area Chat Room.md"
-        - "Proximity Chat": "Tutorials/Proximity Chat.md"
-        - "Direct Chat": "Tutorials/Direct Chat.md"
+        - "Global Chat": "Tutorials/Chat Rooms - Global Chat Room.md"
+        - "Team Chat": "Tutorials/Chat Rooms - Team Chat Rooms.md"
+        - "Area Chat": "Tutorials/Chat Rooms - Area Chat Room.md"
+        - "Proximity Chat": "Tutorials/Chat Rooms - Proximity Chat.md"
+        - "Direct Chat": "Tutorials/Chat Rooms - Direct Chat.md"
     - "Text Chat": "Tutorials/Text Chat.md"
 - Intermediate:
     - "Audio Mixing For Voice": "Tutorials/Audio Mixing.md"
