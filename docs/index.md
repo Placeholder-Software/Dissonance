@@ -12,7 +12,7 @@
  
 ## Getting Started
 
-Start with [**Project Setup**](Tutorial - Getting Started.md) and keep clicking next, this will move through the tutorials in a sensible order.
+Start with [**Project Setup**](Tutorials/Getting Started.md) and keep clicking next, this will move through the tutorials in a sensible order.
 
 If you're looking for documentation on a specific topic look in the sidebar.
 
