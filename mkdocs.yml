@@ -15,6 +15,7 @@ pages:
         - "Photon Networking": "Tutorials/Networking Setup - Photon Networking.md"
     - "Positional Audio": "Tutorials/Positional Audio.md"
     - "Rooms":
+        - "Introduction": "Introduction To Chat Rooms.md"
         - "Global Chat": "Tutorials/Global Chat Room.md"
         - "Team Chat": "Tutorials/Team Chat Rooms.md"
         - "Area Chat": "Tutorials/Area Chat Room.md"
