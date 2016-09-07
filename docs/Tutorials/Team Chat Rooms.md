@@ -10,7 +10,7 @@ Open input settings via Edit->Project Settings->Input. Increase the `size` field
 
 ## Step 2: Setup Broadcast/Receive Triggers
 
-Create a new game object, and name it "Team Chat". Add `VoiceBroadcastTrigger` and `VoiceReceiveTrigger` scripts to the entity.
+Create a new game object, and name it "Team Chat". Add `VoiceBroadcastTrigger` and `VoiceReceiveTrigger` scripts to the object.
 
 Change the activation mode of the broadcast trigger to `Push To Talk`, and set the input axis name to `TeamChat`.
 
@@ -18,7 +18,7 @@ Disable both scripts. We will enable them once we know which team the player bel
 
 ## Step 3: Join the Team Chat Room
 
-We will create a new chat room for every team, named after the team name, and dynamically place the player into this room. Create a new script and place it on the same entity as the triggers:
+We will create a new chat room for every team, named after the team name, and dynamically place the player into this room. Create a new script and place it on the same object as the triggers:
 
 ```c#
 public void JoinTeamChatRoom(string teamName)

@@ -6,13 +6,11 @@ In this tutorial you will create a new project, import Dissonance and set up som
 
 ### 1. Import Dissonance
 
-Import the Dissonance asset into the project. When you do this there will be several directories inside the "Integrations" directory. Each integration provides support for other Unity assets such as various different networking systems. There are a number of optional parts of Dissonance which you can import to integrate with various other assets (such as Playmaker or Forge Networking). Import whichever integrations you want to use for your game.
-
-The basic tutorials are written assuming you will use UNet networking, so if you want to follow along make sure you install the UNet_LLAPI integration.
+Import the Dissonance asset into the project. When you do this there will be several directories inside the "Integrations" directory. Each integration provides support for other Unity assets such as various different networking systems. There are a number of optional parts of Dissonance which you can import to integrate with various other assets (such as Playmaker or Forge Networking). Import whichever integrations you want to use for your game. Ensure you include at least one network integration (unless you plan on writing your own).
 
 ### 2. Enable "unsafe" code
 
-Dissonance uses a C# feature called "unsafe code" to achieve the best performance. To do this simply create a file called "smcs.rsp" in the Assets folder containing a single line of text:
+Dissonance uses a C# feature called "unsafe code" to achieve the best performance. To enable this simply create a file called "smcs.rsp" in the Assets folder containing a single line of text:
 
 > -unsafe
 

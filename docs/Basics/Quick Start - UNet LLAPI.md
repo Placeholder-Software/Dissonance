@@ -2,19 +2,19 @@
 
 > This Quick Start guide is for those of you integrating Dissonance into a game without piggybacking onto your game's existing networking system.
 
-This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.
+This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room. There is a video version of this tutorial [here](TODO).
 
 Before beginning this tutorial, please refer to the [installation guide](/Basics/Getting Started.md) to learn how to install Dissonance into your project.
 
 A demo scene for this tutorial can be found in the `Dissonance/Integrations/UNet_LLAPI/Demo` folder.
 
-## Step 1: Dissonance Comms Entity
+## Step 1: Dissonance Comms Object
 
-> Dissonance runs mostly from a single entity, which should be placed somewhere near the root of your scene. This entity contains the main `DissonanceComms` behavior, together with the UNet LLAPI networking script. For this quick start guide, we will also attach transmission and receipt trigger scripts to this entity.
+> Dissonance runs mostly from a single game object, which should be placed somewhere near the root of your scene. This object contains the main "Dissonance Comms" behavior, together with the UNet LLAPI networking script. For this quick start guide, we will also attach transmission and receipt trigger scripts to this object.
 
-To place the default Dissonance entity into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/UNet_LLAPI` folder into your scene.
+To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/UNet_LLAPI` folder into your scene.
 
-Once you have instantiated the `DissonanceSetup` prefab, you should have an entity with two scripts attached: `DissonanceComms` and `UNetCommsNetwork`. We will explain and configure these next.
+Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `UNetCommsNetwork`.
 
 ## Step 2: Configure the Network
 
@@ -37,12 +37,12 @@ To connect to the server as a client, grab a reference to the `UNetCommsNetwork`
 
 ```c#
 var dissonanceNetwork = GetComponent<UNetCommsNetwork>();
-dissonanceNetwork.InitialzeAsClient(serverIpWithoutPort);
+dissonanceNetwork.InitializeAsClient(serverIpWithoutPort);
 ```
 
 ### Configuring the port
 
-By default, the Dissonance server will listen on (and the client will try to connect to) port `5589`. To change this port, set the `Config.Port` property on the `UNetCommsNetwork` *before* initializing the client or sever. This will need to be done on both clients and the server.
+By default, the Dissonance server will listen on (and the client will try to connect to) port `5589`. To change this port, set the `Config.Port` property on the `UNetCommsNetwork` *before* initializing the client or server. This will need to be done on both clients and the server.
 
 ```c#
 var dissonanceNetwork = GetComponent<UNetCommsNetwork>();
@@ -54,29 +54,29 @@ dissonanceNetwork.InitializeAsServer();
 
 ## Step 3: Add a Broadcast Trigger
 
-We now have a working Dissonance comms system, but we are not transmitting anything.
+You now have a functional Dissonance comms system, but you are not yet transmitting anything.
 
-Before we can speak to anyone, we need to add a `VoiceBroadcastTrigger` script to our scene. This script can be placed anywhere, but for this tutorial, we will add it to the DissonanceSetup entity we created earlier.
+Before you can speak to anyone, you need to add a "Voice Broadcast Trigger" script to our scene. This script can be placed anywhere, but for this tutorial, you should simply add it to the DissonanceSetup game object you created in step 1.
 
-The `VoiceBroadcastTrigger` controls when the user's microphone is being transmitted to other players, and to whom the user is talking. There are many configuration options on this script to provide more advanced control of under what situations we should be transmitting and who to, but for this tutorial we will leave these settings at default.
+The "Voice Broadcast Trigger" controls when the user's microphone is being transmitted to other players, and to whom the user is talking. There are many configuration options on this script to provide more advanced control of under what sitations we should be transmitting and who to, but for this tutorial simply leave the settings at default.
 
 ![Broadcast Trigger Configuration](/images/VoiceBroadcastTrigger_Default.png)
 
-The default broadcast trigger configuration includes two settings of note to us here:
+The default broadcast trigger configuration includes two settings of note:
 1. Transmit on *Voice Activation*. This means Dissonance will transmit whenever it detects that the user is speaking.
 2. Transmit to the 'Global' chat room.
 
 ## Step 4: Add a Receipt Trigger
 
-Now we are talking into the 'Global' room automatically whenever the user speaks. However, we can't hear anyone. This is because we are not listening to the 'Global' room ourselves, and so are not receiving any of these transmissions.
+Now you are talking into the 'Global' room automatically whenever you speak. However, you still can't hear anyone speaking. This is because you are not listening to the 'Global' room and so you are not receiving any of these transmissions.
 
-To listen to the 'Global' room, add a `VoiceReceiptTrigger` to the scene. Like the `VoiceBroadcastTrigger`, this script can be placed anywhere, but for this tutorial we will add it to the DissonanceSetup entity.
+To listen to the 'Global' room, add a "Voice Receipt Trigger" to the scene. Like the "Voice Broadcast Trigger", this script can be placed anywhere, but for this tutorial you should simply add it to the DissonanceSetup game object.
 
 ![Receipt Trigger Configuration](/images/VoiceReceiptTrigger_Default.png)
 
 Again, we will leave this on the default configuration, which should have trigger activation disabled and be listening to the 'Global' chat room.
 
-## And We're Done!
+## You're Done!
 
 Congratulations, you have now added voice comms to your game! What to do next?
 
