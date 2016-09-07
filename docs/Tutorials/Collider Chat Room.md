@@ -1,8 +1,10 @@
 # Collider Chat Rooms
 
-This tutorial will introduce volume triggers for transmission and receipt triggers, and how they can be used to implement localised chat rooms which allow users standing within the same area in your game world to chat with each other. This tutorial builds upon the setup we built in the [Positional Audio](Tutorials/Positional Audio) guide.
+[Video Tutorial](TODO)
 
-> [Positional Audio](Tutorials/Positional Audio) must be set up to allow Dissonance to track player positions for spacial chat rooms to function. 3D audio does not need to be enabled.
+This tutorial will introduce volume triggers for transmission and receipt triggers, and how they can be used to implement localised chat rooms which allow users standing within the same area in your game world to chat with each other. This tutorial builds upon the setup we built in the [Positional Audio](/Tutorials/Positional Audio) guide.
+
+> [Positional Audio](/Tutorials/Positional Audio) must be set up to allow Dissonance to track player positions for spacial chat rooms to function. 3D audio does not need to be enabled.
 
 A demo scene for this tutorial can be found in `Dissonance/Demos`.
 
@@ -14,7 +16,7 @@ The first thing we will need to do is define the volume which represents our lob
 
 Create a new game object called "LobbyChatRoom". Add a `BoxCollider` to the entity, set it's size as appropriate, and check "Is Trigger".
 
-![Box Collider](images/BoxCollider.png)
+![Box Collider](/images/BoxCollider.png)
 
 ## Step 2: Add a Receipt Trigger
 
@@ -28,11 +30,11 @@ Right now, our receipt trigger is listening to the "Global" chat room. We want t
 
 Click on "Configure Rooms" to go to Dissonance's static room configuration. By default, Dissonance creates three chat rooms; "Global", "Red Team" and "Blue Team". We want to add a new "Lobby" chat room. Click "Add Room", and rename the new room to "Lobby".
 
-![Room Configuration with Lobby](images/RoomConfiguration_Lobby.png)
+![Room Configuration with Lobby](/images/RoomConfiguration_Lobby.png)
 
 Now, go back to the receipt trigger, and change the selection in the "Chat Room" drop down to our new "Lobby" room.
 
-![ReceiptTrigger with Lobby room available](images/VoiceReceiptTrigger_LobbyRoom.png)
+![ReceiptTrigger with Lobby room available](/images/VoiceReceiptTrigger_LobbyRoom.png)
 
 > Chat rooms can be named dynamically when configuring the triggers programatically.
 
@@ -41,6 +43,8 @@ Now, go back to the receipt trigger, and change the selection in the "Chat Room"
 We can not hear other user's talking in the lobby room, but no one is talking! We need to add a broadcast trigger to our room.
 
 Add a `VoiceBroadcastTrigger` script to the entity. Use a Channel Type of "Room", and choose our "Lobby" room.
+
+![BroadcastTrigger with Lobby room available](/images/VoiceBroadcastTrigger_LobbyRoom.png)
 
 ## Finished
 
