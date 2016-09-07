@@ -5,6 +5,7 @@ site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 pages:
 - Home: "index.md"
+- RST: "rst.rst"
 - Basic:
     - "Project Setup": "Tutorials/Getting Started.md"
     - "Basic VoIP Demo": "Tutorials/Basic VoIP.md"
