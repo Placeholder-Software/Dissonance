@@ -4,7 +4,7 @@ Dissonance allows text chat messages to be routed through the comms network to t
 
 ## Send a text message to a Chat Room
 
-```c#
+```csharp
 // get the DissonanceComms script from the Dissonance game object
 var dissonance = GetComponent<DissonanceComms>();
 
@@ -14,7 +14,7 @@ dissonance.Text.Send("Party", "Who just pulled the boss?")
 
 ## Send a text message to a player
 
-```c#
+```csharp
 // get the DissonanceComms script from the Dissonance game object
 var dissonance = GetComponent<DissonanceComms>();
 
@@ -24,7 +24,7 @@ dissonance.Text.Whisper("hunter", "Did you just pull the boss?")
 
 ## Receive a text message
 
-```c#
+```csharp
 // get the DissonanceComms script from the Dissonance game object
 var dissonance = GetComponent<DissonanceComms>();
 
