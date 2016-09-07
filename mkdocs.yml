@@ -11,9 +11,10 @@ pages:
     - "Photon Unity Networking": "Basics/Quick Start - Photon.md"
     - "Unity Networking HLAPI": "Basics/Quick Start - UNet HLAPI.md"
     - "Self Contained": "Basics/Quick Start - UNet LLAPI.md"
-- "Basic Concepts": "Tutorials/Introduction To Chat Rooms.md"
+- "Basic Concepts": "Basics/Introduction To Chat Rooms.md"
 - "Introductory Tutorials":
     - "Push-To-Talk": "Tutorials/Push-to-Talk.md"
+    - "Global Chat Room": "Tutorials/Global Chat Room.md"
     - "Team Chat Rooms": "Tutorials/Team Chat Rooms.md"
     - "Text Chat": "Tutorials/Text Chat.md"
     - "Transmit to Player": "Tutorials/Direct Player Transmit.md"

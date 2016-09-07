@@ -1,40 +1,36 @@
-# Team Chat Rooms
+## Team Chat Rooms
 
-In this tutorial, we will build team chat channels allowing each user to hold V to talk to their team, with dynamic team channels.
+A team chat room is a set of rooms where all users *on the same team* talk to and listen to the same room. To create a setup like this requires a small amount of scripting as it depends on how your game defines what a "team" actually is!
 
-## Step 1: Create Our Team Chat Key Binding
+![Example of team chat configuration](/images/TeamChat_Inspector.png "Example of team chat configuration")
 
-We will use the default Unity input axis API to define a new input axis for our team chat button.
+1. Create multiple sets of broadcaster and receiver components (one pair for each team).
+2. Set all of them to have exactly the same activation mode.
+3. Disable *all* of the components
+4. Add a small piece of code to activate the appropriate components when a player is assigned to a team. This depends a lot on exactly how your game defines what a team is, feel free to [ask for help](https://www.reddit.com/r/dissonance_voip/). Here is some example code:
 
-Open input settings via Edit->Project Settings->Input. Increase the `size` field to create a new axis, then expand the axis and rename it to "TeamChat", and the description to "Push-to-Talk Team Chat". Set the `Positive Button` to `v`.
-
-## Step 2: Setup Broadcast/Receive Triggers
-
-Create a new game object, and name it "Team Chat". Add `VoiceBroadcastTrigger` and `VoiceReceiveTrigger` scripts to the object.
-
-Change the activation mode of the broadcast trigger to `Push To Talk`, and set the input axis name to `TeamChat`.
-
-Disable both scripts. We will enable them once we know which team the player belongs to.
-
-## Step 3: Join the Team Chat Room
-
-We will create a new chat room for every team, named after the team name, and dynamically place the player into this room. Create a new script and place it on the same object as the triggers:
-
-```c#
-public void JoinTeamChatRoom(string teamName)
+```
+void OnAssignPlayerToTeam(string teamName)
 {
-    // find the broadcaster and receiver triggers
-    var broadcaster = GetComponent<VoiceBroadcastTrigger>();
-    var receiver = GetComponent<VoiceReceiptTrigger>();
-
-    // set the room name to the team chat room
-    broadcaster.RoomName = teamName + " Chat";
-    receiver.RoomName = teamName + " Chat";
+    //Find the broadcaster and receiver in the scene which correspond to the correct team
+    var broadcaster = FindObjectsOfType<VoiceBroadcastTrigger>().SingleOrDefault(b => b.RoomName == teamName);
+    var receiver = FindObjectsOfType<VoiceReceiptTrigger>().SingleOrDefault(r => r.RoomName == teamName);
     
-    // enable the triggers to join the team chat room
+    //Sanity check that we found what we're looking for
+    if (broadcaster == null || receiver == null)
+    {
+        Debug.Log("Cannot find voice components for team '{0}'", teamName);
+        return;
+    }
+
+    //enable the components for this team
     broadcaster.enabled = true;
-    receiver.enabled = true;    
+    receiver.enabled = true;
 }
 ```
 
-Once you know which team the player belongs to, call `JoinTeamChatRoom` to enable their push to talk team chat.
+## Additional Global Chat Room
+
+If you want to still have a global voice chat room *and* have per team chat rooms this can be achieved by simply having the normal [global chat room](/Tutorials/Chat Rooms - Global Chat Room.md) configuration with a different push-to-talk input axis (e.g. 'v' to team chat and 'b' to global chat).
+
+![Example of two different PTT axes](/images/TeamChat_Inspector.png "Example of two different PTT axes")
