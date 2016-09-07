@@ -10,7 +10,7 @@ It can be tempting to mix voice signals in the same way as any other audio signa
 
 ## Volume Ducking
 
-Games frequently have very loud sound effects such as explosions or gunfire which can drown out other sounds in the game. However it would interrupt conversations if these noises also drowned out the voice signal. A naieve solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping (and sound bad). An alternative solution would be to reduce the volume of the game audio far below the voice signal but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
+Games frequently have very loud sound effects such as explosions or gunfire which can drown out other sounds in the game. However it would interrupt conversations if these noises also drowned out the voice signal. A naive solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping (and sound bad). An alternative solution would be to reduce the volume of the game audio far below the voice signal but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
 
 ![Example of audio mixer with ducking](/images/AudioMixing_Ducking.png "Example of audio mixer with ducking")
 
