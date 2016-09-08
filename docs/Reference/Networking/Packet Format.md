@@ -7,6 +7,8 @@ Dissonance sends several types of packets:
  - Network Stats
  - Voice Data
  - Text Data
+ - Ping
+ - Pong
 
 All packets are prefixed with a 2 byte "magic number" which is 0x8bc7 - if the header does not exactly match this it is immediately dropped (even if it is a control packet).
 
@@ -53,7 +55,7 @@ for ID
 
 ## Network Stats
 
-The network stats message contains statistics on the quality of network connections. This should only ever be sent by the server and received by a client.
+The network stats message contains statistics on the quality of network connections. This should only ever be sent by the server and received by a client. When the client receives a network stats packet it should send back a pong packet containing the same timestamp as soon as possible using the *unreliable* channel.
 
 The packet contains the server round trip time (RTT) from itself to every client. Each individual client can use this to calculate it's approximate RTT to another client by simply adding together the RTT:
 
@@ -66,6 +68,7 @@ Packet layout:
 ```
 0x8bc7 (UInt16)
 Header (Byte)
+Server Timestamp (UInt16)
 Connection Count (UInt16)
 for each Connection
 {
@@ -123,6 +126,16 @@ Target = (ChannelType)(Options & 1);
 The other bits of the bitfield are currently unused.
 
 The Target ID field indicates who should receive this message, it's meaning is dependent upon the target type. If the target type is "Player" then the Target ID is a player ID. If the target type is "Room" then the Target ID is a room ID.
+
+## Pong
+
+A pong packet contains a timestamp. A client sends one of these to the server in response to a network stats packet as an *unreliable* packet.
+
+```
+0x8bc7 (UInt16)
+Header (Byte)
+Timestamp (UInt16)
+```
 
 ## Primitives (Numbers)
 
