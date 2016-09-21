@@ -30,7 +30,7 @@ When this is set the broadcaster will look for a sibling component which impleme
 
 ## Use Positional Data
 
-This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Positional Audio](Tutorial - Positional Audio.md) tutorials for information about how to set up your project for positional audio playback. This option can be configured from a script by modifying the `BroadcastPosition` field.
+This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Position Tracking](Tutorials/Position Tracking.md) tutorial for information about how to set up your project for positional audio playback. This option can be configured from a script by modifying the `BroadcastPosition` field.
 
 ## Activation Mode
 

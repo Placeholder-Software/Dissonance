@@ -41,7 +41,7 @@ void AssignPlayerToTeam(string teamName)
 
 ### Location Chat
 
-To create a chat room which requires you to be standing in a certain place in the game to join the room you should use trigger volumes. Using trigger volumes requires that you have properly set up Dissonance for [positional audio](Tutorial - Positional Audio.md) as this is used to track when the player enters and exits the trigger volumes.
+To create a chat room which requires you to be standing in a certain place in the game to join the room you should use trigger volumes. Using trigger volumes requires that you have properly set up Dissonance for [position tracking](Tutorials/Position Tracking.md) as this is used to track when the player enters and exits the trigger volumes.
 
 To create a Unity trigger volume you need to attach 2 new components to the same game object as the broadcaster/receiver you want to trigger - A RigidBody component and a collider component. On the collider component check the "Is Trigger" checkbox and on the relevant Voice Broadcaster Trigger/Voice Receipt Trigger components check the "Proximity Activation" Checkbox.
 

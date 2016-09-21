@@ -2,9 +2,9 @@
 
 There is a video version of this tutorial [here](TODO).
 
-This tutorial will introduce volume triggers for transmission and receipt triggers, and how they can be used to implement localised chat rooms which allow users standing within the same area in your game world to chat with each other. This tutorial builds upon the setup in the [Positional Audio](/Tutorials/Positional Audio) guide.
+This tutorial will introduce volume triggers for transmission and receipt triggers, and how they can be used to implement localised chat rooms which allow users standing within the same area in your game world to chat with each other. This tutorial builds upon the setup in the [Position tracking](Tutorials/Position Tracking.md) guide.
 
-> [Positional Audio](/Tutorials/Positional Audio) must be set up to allow Dissonance to track player positions for spatial chat rooms to function. 3D audio does not need to be enabled.
+> [Position Tracking](Tutorials/Position Tracking.md) must be set up to allow Dissonance to track player positions for collider chat rooms to function.
 
 A demo scene for this tutorial can be found in `Dissonance/Demos`.
 

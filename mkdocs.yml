@@ -18,7 +18,7 @@ pages:
     - "Team Chat Rooms": "Tutorials/Team Chat Rooms.md"
     - "Text Chat": "Tutorials/Text Chat.md"
     - "Transmit to Player": "Tutorials/Direct Player Transmit.md"
-    - "Positional Audio": "Tutorials/Positional Audio.md"
+    - "Position Tracking": "Tutorials/Position Tracking.md"
     - "Collider Chat Rooms": "Tutorials/Collider Chat Room.md"
     - "Audio Mixing For Voice": "Tutorials/Audio Mixing.md"
 - "Advanced Tutorials":
