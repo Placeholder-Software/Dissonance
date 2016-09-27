@@ -1,7 +1,5 @@
 # Quick Start: Dissonance with UNet High Level API (HLAPI)
 
-> *HLAPI support is currently in development. This integration is not available yet and this documentation should be considered a preview!*
-
 > This Quick Start guide is for those of you integrating Dissonance into a game with the **Unity Networking High Level API**.
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room. There is a video version of this tutorial [here](TODO).
@@ -16,7 +14,7 @@ A demo scene for this tutorial can be found in the `Dissonance/Integrations/UNet
 
 To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/UNet_HLAPI` folder into your scene.
 
-Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `UNetCommsNetwork`.
+Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `HlapiCommsNetwork`.
 
 ## Step 2: Add a Broadcast Trigger
 
