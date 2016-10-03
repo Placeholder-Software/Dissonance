@@ -84,6 +84,6 @@ Congratulations, you have now added voice comms to your game! What to do next?
 * [Set up per-team chat channels](/Tutorials/Team-Chat-Rooms)
 * [Direct message another player](/Tutorials/Direct-Player-Transmit)
 * [Send text chat messages](/Tutorials/Text-Chat)
-* [3D Positional Audio](/Tutorials/Positional-Audio)
+* [3D Positional Audio](/Tutorials/Position-Tracking)
 * [3D Area Chat Rooms](/Tutorials/Collider-Chat-Room)
-* [Proximity Chat: Talk to players near each other](/Tutorials/Proximity Chat)
+* [Proximity Chat: Talk to players near each other](/Tutorials/Proximity-Chat)

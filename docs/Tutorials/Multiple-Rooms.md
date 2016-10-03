@@ -2,9 +2,9 @@
 
 There is a video version of this tutorial [here](TODO).
 
-Dissonance supports multiple "rooms" for voice. Which rooms a player sends and receives from are configured by two components - a "Voice Broadcast Trigger" component controls which rooms a player sends voice to and a "Voice Receipt Trigger" component controls which rooms a player hears voice from. This system is very flexible and allows many different types of setup. For details on these components see the reference documentation for [Voice Broadcast Trigger](Reference/Components/Voice Broadcast Trigger) and [Voice Receipt Trigger](Reference/Components/Voice-Receipt-Trigger).
+Dissonance supports multiple "rooms" for voice. Which rooms a player sends and receives from are configured by two components - a "Voice Broadcast Trigger" component controls which rooms a player sends voice to and a "Voice Receipt Trigger" component controls which rooms a player hears voice from. This system is very flexible and allows many different types of setup. For details on these components see the reference documentation for [Voice Broadcast Trigger](/Reference/Components/Voice Broadcast Trigger) and [Voice Receipt Trigger](/Reference/Components/Voice-Receipt-Trigger).
 
-This tutorial will describe several different systems you may want, and how to create them. All these examples assume you already have a DissonanceVoiceComms component setup with a playback prefab and a network integration - see [Basic VoIP](Tutorial - Basic VoIP) (step 2) for details on how to set this up.
+This tutorial will describe several different systems you may want, and how to create them. All these examples assume you already have a DissonanceVoiceComms component setup with a playback prefab and a network integration - see [Basic VoIP](/Tutorials/Basic-VoIP) (step 2) for details on how to set this up.
 
 ### Global chat Room
 
@@ -41,7 +41,7 @@ void AssignPlayerToTeam(string teamName)
 
 ### Location Chat
 
-To create a chat room which requires you to be standing in a certain place in the game to join the room you should use trigger volumes. Using trigger volumes requires that you have properly set up Dissonance for [position tracking](Tutorials/Position-Tracking) as this is used to track when the player enters and exits the trigger volumes.
+To create a chat room which requires you to be standing in a certain place in the game to join the room you should use trigger volumes. Using trigger volumes requires that you have properly set up Dissonance for [position tracking](/Tutorials/Position-Tracking) as this is used to track when the player enters and exits the trigger volumes.
 
 To create a Unity trigger volume you need to attach 2 new components to the same game object as the broadcaster/receiver you want to trigger - A RigidBody component and a collider component. On the collider component check the "Is Trigger" checkbox and on the relevant Voice Broadcaster Trigger/Voice Receipt Trigger components check the "Proximity Activation" Checkbox.
 

@@ -30,7 +30,7 @@ When this is set the broadcaster will look for a sibling component which impleme
 
 ## Use Positional Data
 
-This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Position Tracking](Tutorials/Position-Tracking) tutorial for information about how to set up your project for positional audio playback. This option can be configured from a script by modifying the `BroadcastPosition` field.
+This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Position Tracking](/Tutorials/Position-Tracking) tutorial for information about how to set up your project for position tracking of player objects. This option can be configured from a script by modifying the `BroadcastPosition` field.
 
 ## Activation Mode
 
@@ -46,7 +46,7 @@ When set to "OpenMic" the broadcaster will constantly broadcast voice.
 
 #### Voice Activation
 
-When set to "Voice Activation" the broadcaster will monitor the microphone recording and will only broadcast sound when it detects someone speaking. See [Voice Detector](Reference/Audio/VAD) for more details.
+When set to "Voice Activation" the broadcaster will monitor the microphone recording and will only broadcast sound when it detects someone speaking. See [Voice Detector](/Reference/Audio/VAD) for more details.
 
 #### Push To Talk
 
@@ -54,7 +54,7 @@ When set to "Push To Talk" the broadcaster will broadcast voice while a certain 
 
 ## Trigger Activation
 
-This determines whether the broadcaster will only broadcast when the local player is within a trigger zone. See the Unity documentation on [Trigger Zones](https://unity3d.com/learn/tutorials/topics/physics/colliders-triggers). Using trigger activation requires the same basic setup as using [Positional Audio](Tutorial - Positional Audio.md). This setting can be configured from a script by modifying the `UseTrigger` field.
+This determines whether the broadcaster will only broadcast when the local player is within a trigger zone. See the Unity documentation on [Trigger Zones](https://unity3d.com/learn/tutorials/topics/physics/colliders-triggers). Using trigger activation requires the same basic setup as using [Positional Audio](/Tutorials/Position-Tracking). This setting can be configured from a script by modifying the `UseTrigger` field.
 
 ## Script Activation
 

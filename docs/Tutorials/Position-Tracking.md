@@ -26,9 +26,9 @@ When positional audio is enabled the voice from remote players will sound like i
 
 ### Collider Chat Room
 
-Voice broadcaster triggers and voice receipt triggers can be configured to only send/receive audio when the local player is inside a certain volume. See [this](Tutorials/Collider-Chat-Room) tutorial for how to achieve this.
+Voice broadcaster triggers and voice receipt triggers can be configured to only send/receive audio when the local player is inside a certain volume. See [this](/Tutorials/Collider-Chat-Room) tutorial for how to achieve this.
 
 ### Direct Transmit To Player
 
-When position tracking is enable transmitting to a specific player is simplified. If a `Voice Broadcast Trigger` is attached to a player entity it can be configured to transmit to the player represented by the game object. See [this](Tutorials/Direct-Player-Transmit) tutorial for details.
+When position tracking is enable transmitting to a specific player is simplified. If a `Voice Broadcast Trigger` is attached to a player entity it can be configured to transmit to the player represented by the game object. See [this](/Tutorials/Direct-Player-Transmit) tutorial for details.
 

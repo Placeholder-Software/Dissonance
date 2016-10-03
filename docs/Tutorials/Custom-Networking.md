@@ -6,7 +6,7 @@ Dissonance is built to be completely decoupled from the underlying networking sy
 
 Fundamentally writing a new network integration requires that you implement the `Dissonance.ICommsNetwork` interface. This interface should be implemented on a MonoBehaviour and then an instance of that behaviour should be attached to the same game object as your `DissonanceComms` behaviour. Dissonance will automatically find the behaviour and use it as needed.
 
-When you are implementing this interface you will have to encode and decode packets containing the necessary data (which may be in format you wish to design). If you want to use the same format as other Dissonance implementations the format is documented [here](Reference/Networking/Packet-Format). There are helper structs for reading and writing network packets in the default format avilable: `Dissonance.Networking.PacketWriter` and `Dissonance.Networking.PacketReader`.
+When you are implementing this interface you will have to encode and decode packets containing the necessary data (which may be in format you wish to design). If you want to use the same format as other Dissonance implementations the format is documented [here](/Reference/Networking/Packet-Format). There are helper structs for reading and writing network packets in the default format avilable: `Dissonance.Networking.PacketWriter` and `Dissonance.Networking.PacketReader`.
 
 ### BaseCommsNetwork
 
