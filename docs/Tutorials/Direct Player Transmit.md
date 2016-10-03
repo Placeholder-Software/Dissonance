@@ -16,7 +16,7 @@ GetComponent<VoiceBroadcastTrigger>().PlayerId = "TheNewRemotePlayerName";
 
 ## Target A Player Behaviour
 
-If you have set up Dissonance [position tracking](Tutorials/Position Tracking.md) in your game then the game objects which represent your players will all have a behaviour on them which implements the `IDissonancePlayer` interface. For example if you are using the Forge Networking integration this is the `ForgePlayer` component.
+If you have set up Dissonance [position tracking](Tutorials/Position-Tracking) in your game then the game objects which represent your players will all have a behaviour on them which implements the `IDissonancePlayer` interface. For example if you are using the Forge Networking integration this is the `ForgePlayer` component.
 
 To transmit to this player change the Channel Type option on a `VoiceBroadcastTrigger` attached to the same game object to "Self".
 

@@ -5,22 +5,22 @@ site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 pages:
 - Home: "index.md"
-- "Project Setup": "Basics/Getting Started.md"
+- "Project Setup": "Basics/Getting-Started.md"
 - "Quick Start Guides":
-    - "Forge Networking": "Basics/Quick Start - Forge.md"
-    - "Photon Unity Networking": "Basics/Quick Start - Photon.md"
-    - "Unity Networking HLAPI": "Basics/Quick Start - UNet HLAPI.md"
-    - "Self Contained": "Basics/Quick Start - UNet LLAPI.md"
+    - "Forge Networking": "Basics/Quick-Start-Forge.md"
+    - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
+    - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
+    - "Self Contained": "Basics/Quick-Start-UNet-LLAPI.md"
 - "Basic Concepts": "Basics/Introduction To Chat Rooms.md"
 - "Introductory Tutorials":
     - "Push-To-Talk": "Tutorials/Push-to-Talk.md"
-    - "Global Chat Room": "Tutorials/Global Chat Room.md"
-    - "Team Chat Rooms": "Tutorials/Team Chat Rooms.md"
-    - "Text Chat": "Tutorials/Text Chat.md"
-    - "Transmit to Player": "Tutorials/Direct Player Transmit.md"
-    - "Position Tracking": "Tutorials/Position Tracking.md"
-    - "Collider Chat Rooms": "Tutorials/Collider Chat Room.md"
-    - "Audio Mixing For Voice": "Tutorials/Audio Mixing.md"
+    - "Global Chat Room": "Tutorials/Global-Chat-Room.md"
+    - "Team Chat Rooms": "Tutorials/Team-Chat-Rooms.md"
+    - "Text Chat": "Tutorials/Text-Chat.md"
+    - "Transmit to Player": "Tutorials/Direct-Player-Transmit.md"
+    - "Position Tracking": "Tutorials/Position-Tracking.md"
+    - "Collider Chat Rooms": "Tutorials/Collider-Chat-Room.md"
+    - "Audio Mixing For Voice": "Tutorials/Audio-Mixing.md"
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom Networking.md"
 - Reference:
@@ -30,5 +30,3 @@ pages:
         - "Dissonance Comms": "Reference/Components/Dissonance Comms.md"
     - Networking:
         - "Network Packet Format": "Reference/Networking/Packet Format.md"
-- "Frequently Asked Questions": "FAQ.md"
-- "Glossary": "Glossary.md"
