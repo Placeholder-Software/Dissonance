@@ -31,6 +31,6 @@ void OnAssignPlayerToTeam(string teamName)
 
 ## Additional Global Chat Room
 
-If you want to still have a global voice chat room *and* have per team chat rooms this can be achieved by simply having the normal [global chat room](/Tutorials/Global-Chat-Room.md) configuration with a different push-to-talk input axis (e.g. 'v' to team chat and 'b' to global chat).
+If you want to still have a global voice chat room *and* have per team chat rooms this can be achieved by simply having the normal [global chat room](/Tutorials/Global-Chat-Room) configuration with a different push-to-talk input axis (e.g. 'v' to team chat and 'b' to global chat).
 
 ![Example of two different PTT axes](/images/VoiceBroadcastTrigger_DifferentPTT.png "Example of two different PTT axes")

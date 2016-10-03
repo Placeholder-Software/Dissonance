@@ -46,7 +46,7 @@ When set to "OpenMic" the broadcaster will constantly broadcast voice.
 
 #### Voice Activation
 
-When set to "Voice Activation" the broadcaster will monitor the microphone recording and will only broadcast sound when it detects someone speaking. See [Voice Detector](Reference/Audio/VAD.md) for more details.
+When set to "Voice Activation" the broadcaster will monitor the microphone recording and will only broadcast sound when it detects someone speaking. See [Voice Detector](Reference/Audio/VAD) for more details.
 
 #### Push To Talk
 

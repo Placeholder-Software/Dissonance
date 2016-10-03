@@ -12,7 +12,7 @@
  
 ## Getting Started
 
-Start with [**Project Setup**](/Basics/Getting-Started.md) and keep clicking next, this will move through the tutorials in a sensible order.
+Start with [**Project Setup**](/Basics/Getting-Started) this will guide you through importing Dissonance into your project and then present you with links to tutorials.
 
 If you're looking for documentation on a specific topic look in the sidebar.
 

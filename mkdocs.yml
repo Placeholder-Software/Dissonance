@@ -22,11 +22,11 @@ pages:
     - "Collider Chat Rooms": "Tutorials/Collider-Chat-Room.md"
     - "Audio Mixing For Voice": "Tutorials/Audio-Mixing.md"
 - "Advanced Tutorials":
-    - "Writing A Custom Network Integration": "Tutorials/Custom Networking.md"
+    - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
 - Reference:
     - Components:
-        - "Voice Broadcast Trigger": "Reference/Components/Voice Broadcast Trigger.md"
-        - "Voice Receipt Trigger": "Reference/Components/Voice Receipt Trigger.md"
-        - "Dissonance Comms": "Reference/Components/Dissonance Comms.md"
+        - "Voice Broadcast Trigger": "Reference/Components/Voice-Broadcast-Trigger.md"
+        - "Voice Receipt Trigger": "Reference/Components/Voice-Receipt-Trigger.md"
+        - "Dissonance Comms": "Reference/Components/Dissonance-Comms.md"
     - Networking:
-        - "Network Packet Format": "Reference/Networking/Packet Format.md"
+        - "Network Packet Format": "Reference/Networking/Packet-Format.md"

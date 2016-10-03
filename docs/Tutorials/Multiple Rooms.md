@@ -2,13 +2,13 @@
 
 There is a video version of this tutorial [here](TODO).
 
-Dissonance supports multiple "rooms" for voice. Which rooms a player sends and receives from are configured by two components - a "Voice Broadcast Trigger" component controls which rooms a player sends voice to and a "Voice Receipt Trigger" component controls which rooms a player hears voice from. This system is very flexible and allows many different types of setup. For details on these components see the reference documentation for [Voice Broadcast Trigger](Reference/Components/Voice Broadcast Trigger.md) and [Voice Receipt Trigger](Reference/Components/Voice Receipt Trigger.md).
+Dissonance supports multiple "rooms" for voice. Which rooms a player sends and receives from are configured by two components - a "Voice Broadcast Trigger" component controls which rooms a player sends voice to and a "Voice Receipt Trigger" component controls which rooms a player hears voice from. This system is very flexible and allows many different types of setup. For details on these components see the reference documentation for [Voice Broadcast Trigger](Reference/Components/Voice Broadcast Trigger) and [Voice Receipt Trigger](Reference/Components/Voice-Receipt-Trigger).
 
-This tutorial will describe several different systems you may want, and how to create them. All these examples assume you already have a DissonanceVoiceComms component setup with a playback prefab and a network integration - see [Basic VoIP](Tutorial - Basic VoIP.md) (step 2) for details on how to set this up.
+This tutorial will describe several different systems you may want, and how to create them. All these examples assume you already have a DissonanceVoiceComms component setup with a playback prefab and a network integration - see [Basic VoIP](Tutorial - Basic VoIP) (step 2) for details on how to set this up.
 
 ### Global chat Room
 
-A global chat room which everyone speaks in and everyone hears is very simple and was demonstrated in the [Basic VoIP](Tutorial - Basic VoIP.md) tutorial. To achieve this simply create a Voice Broadcast Trigger and a Voice Receipt Trigger on the root Dissonance game object, set the room for both of them to "Global". Both components will activate when the scene loads and all players will speak/listen to the same room.
+A global chat room which everyone speaks in and everyone hears is the simplest possible VoIP setup. To achieve this simply create a Voice Broadcast Trigger and a Voice Receipt Trigger on the root Dissonance game object, set the room for both of them to "Global". Both components will activate when the scene loads and all players will speak/listen to the same room.
 
 If you bind the global chat broadcast trigger to a new input axis such as "GlobalChat" you can add this setup to all your games while still keeping more advanced chat such as per team chat rooms.
 
