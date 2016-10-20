@@ -46,7 +46,8 @@ private void SetPlayerName(string playerName)
     CmdSetPlayerName(playerName);
 }
 
-// This is a "Command" which means that it is run on *all* peers when invoked. This is what does the actual synchronisation of the name
+// This is a "Command" which means that it is run on *all* peers when invoked.
+// This is what does the actual synchronisation of the name across the network
 [Command]
 private void CmdSetPlayerName(string playerName)
 {

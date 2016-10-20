@@ -12,7 +12,7 @@ To setup position tracking you simply need to attach a single behaviour to all y
  - Integrations/ForgeNetworking/ForgePlayer
  - Integrations/PhotonUnityNetworking/PhotonPlayer
  
-Ensure that this component is attached to *all* entities in the scene which represent a player (both the local player and all remote players). If you have a prefab which is used to construct your players you can simply attach the behaviour to this prefab. For slightly more advanced setups you may need to write your own player script for position tracking, you can find documentation for this [here](Tutorials/Custom-Position-Tracking.md).
+Ensure that this component is attached to *all* entities in the scene which represent a player (both the local player and all remote players). If you have a prefab which is used to construct your players you can simply attach the behaviour to this prefab. For slightly more advanced setups you may need to write your own player script for position tracking, you can find documentation for this [here](/Tutorials/Custom-Position-Tracking.md).
  
 ![A Player Prefab with position tracking behaviour added](/images/PlayerPrefab_PositionalAudio.png)
 
