@@ -25,6 +25,7 @@ pages:
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
     - "Writing A Custom IDissonancePlayer": "Tutorials/Custom-Position-Tracking.md"
+    - "Using Channels": "Tutorials/Directly-Using-Channels.md"
 - Reference:
     - Components:
         - "Voice Broadcast Trigger": "Reference/Components/Voice-Broadcast-Trigger.md"
