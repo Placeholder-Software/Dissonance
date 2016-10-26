@@ -22,6 +22,7 @@ pages:
     - "Proximity Chat": "Tutorials/Proximity-Chat.md"
     - "Collider Chat Rooms": "Tutorials/Collider-Chat-Room.md"
     - "Audio Mixing For Voice": "Tutorials/Audio-Mixing.md"
+    - "Access Tokens": "Tutoruals/Access-Control-Tokens.md"
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
     - "Writing A Custom IDissonancePlayer": "Tutorials/Custom-Position-Tracking.md"
