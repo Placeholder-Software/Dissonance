@@ -6,6 +6,6 @@ This tutorial will explain how to build a proximity chat system where players ca
 
 Proximity chat rooms work by combining [direct player transmission](/Tutorials/Direct-Player-Transmit) and [collider chat rooms](/Tutorials/Collider-Chat-Room). Each player in your game should have a voice broadcast trigger attached to it (set to broadcast directly to that player) and configured as a collider chat room with a suitable collision volume (e.g. a large sphere). When two players stand close to one another they will enter each others transmission trigger volumes and begin talking to one another.
 
-![Player Proximity Chat](/images/PlayerProximityChat_Inspector.png.png)
+![Player Proximity Chat](/images/PlayerProximityChat_Inspector.png)
 
 In this example channel type is set to "Self", this means the broadcast trigger searches for one of the Dissonance [position tracking](/Tutorials/Position-Tracking) behaviours and transmits directly to the player which that represents.
