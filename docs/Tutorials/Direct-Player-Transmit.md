@@ -1,5 +1,7 @@
 # Direct Player Messaging
 
+There is a video version of this tutorial [here](TODO).
+
 This tutorial will explain how to broadcast a voice message directly to a specific player, rather than to all players in a room. There are two ways to achieve this.
 
 ## Set The Player Name
