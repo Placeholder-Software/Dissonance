@@ -23,6 +23,7 @@ pages:
     - "Collider Chat Rooms": "Tutorials/Collider-Chat-Room.md"
     - "Audio Mixing For Voice": "Tutorials/Audio-Mixing.md"
     - "Access Tokens": "Tutorials/Access-Control-Tokens.md"
+    - "Channel Priority": "Tutorials/Channel-Priority.md"
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
     - "Writing A Custom IDissonancePlayer": "Tutorials/Custom-Position-Tracking.md"
