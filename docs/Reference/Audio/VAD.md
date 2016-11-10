@@ -2,6 +2,65 @@
 
 The Voice Activation Detector (VAD) processes a a frame of audio into a single boolean which indicates if the frame is voice or silence. This can be used to automatically transmit audio when the player is speaking. VAD is an internal part of Dissonance and you are extremely unlikely to directly use the classes associated with the VAD.
 
+## Debugging the VAD
+
+When working with the voice detector you may want to get additional information about it's state and tweak it's configuration. Dissonance includes a behaviour which displays a debugging UI for the VAD called `Vad Debug UI`. Add this behaviour to any component and it will display a UI over the game.
+
+![Vad Debug UI](/images/VadDebugUI.png)
+
+## Configuring the VAD
+
+The VAD can be configured using the `VoiceDetectionConfiguration` on the `DissonanceComms` behaviour. For example:
+
+```
+var comms = GetComponent<DissonanceComms>();
+
+//Get the config. This may be null while Dissonance is being initialised
+var config = comms.VoiceDetectionConfiguration;
+
+//Set the config. This will always be applied (even if Dissonance is still being initialised)
+comms.VoiceDetectionConfiguration = config;
+```
+
+The `VoiceDetectionConfiguration` property has the type `VoiceDetection.Configuration` which contains several properties to configure different aspects of how the detector works. If you're not worried about the details of how to configure the system there is a helper method which does most of the work for you:
+
+```
+var comms = GetComponent<DissonanceComms>();
+
+//Sensitivity may be any value between 0 and 1
+var sensitivity = 0.5;
+
+//Automatically configure the VAD with the sensitivity number
+comms.VoiceDetectionConfiguration = VoiceDetection.Configuration(sensitivity);
+```
+
+This sensitivity value could be exposed to the end user by a simple slider.
+
+### Advanced Configuration
+
+Instead of using the helper method to create the configuration automatically it is possible to set the values to whatever you wish. Doing this is very fiddly and you should have a good understanding of how the VAD algorithm works before attempting this. There are four parameters to configure (all have sensible default values, so you don't have to configure all four).
+
+```
+comms.VoiceDetectionConfiguration = new VoiceDetection.Configuration(
+
+    // Once the signal has been classified as speech there must be this many consecutive frames of silence before it is classified as not speech.
+    //This prevents the VAD "flapping" on and off during short pauses in speech.
+    deactivationHoldTimeInFrames = 17,
+    
+    // Sounds which are shorter than this many frames will *not* have the hold time applied.
+    // They will instantly classify as not speech if the signal becomes silent. This prevents short
+    // sharp sounds (keyboard noise, mouse click) turning on the VAD for a long period.
+    transientDurationInFrames = 3,
+    
+    // How many standard deviations above the mean background noise volume must a frame be to be classified as speech.
+    energyDeviationWeight = 2.6,
+    
+    // delta energy mean if the average difference between speech frames and non speech frames. 
+    // How much of this difference must a frame be over the mean background noise to classify as speech.
+    deltaEnergyMeanWeight = 0.36,
+);
+```
+
 ## Analysis Algorithm
 
 The current VAD implementation works by analysing the [power](https://en.wikipedia.org/wiki/Audio_power) of the audio signal (approximated as the RMS of the signal) - when the RMS exceeds a threshold value the VAD classifies the frame as voice.
