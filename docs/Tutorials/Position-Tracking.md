@@ -8,7 +8,7 @@ This tutorial will explain how to configure your project to track the position o
 
 To setup position tracking you simply need to attach a single behaviour to all your player entities. This behaviour depends upon which network integration you are using, it will be located in the folder for your integration:
 
- - Integrations/UNet_LLAPI/UNetPlayer
+ - Integrations/UNet_HLAPI/HlapiPlayer
  - Integrations/ForgeNetworking/ForgePlayer
  - Integrations/PhotonUnityNetworking/PhotonPlayer
  
