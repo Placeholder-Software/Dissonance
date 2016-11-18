@@ -35,5 +35,6 @@ pages:
         - "Dissonance Comms": "Reference/Components/Dissonance-Comms.md"
     - Audio:
         - "Voice Activation Detection": "Reference/Audio/VAD.md"
+        - "Voice Settings": "Reference/Audio/VoiceSettings.md"
     - Networking:
         - "Network Packet Format": "Reference/Networking/Packet-Format.md"
