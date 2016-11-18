@@ -4,7 +4,7 @@ Voice settings is a central place to control various audio settings Dissonance u
 
 ![Voice Settings Editor](/images/VoiceSettings_Editor.png)
 
-### Frame Size
+## Frame Size
 
 This determines how much voice data is sent in a single network packet. There is a small amount of overhead to each packet so setting this to a higher value will reduce the overall network traffic as well as slightly reduce the amount of CPU time used by the encoder. However larger values introduce more latency (more delay between speaking and hearing) and so a lower value will significantly improve the perceived quality of the voice by players.
 
