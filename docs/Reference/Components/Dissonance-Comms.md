@@ -6,16 +6,7 @@ The Dissonance Comms component is the central place to configure Dissonance. The
 
 ## Playback Prefab
 
-This is a prefab for the audio playback system. For every remote player who is in the voice session Dissonance will instantiate this prefab, and use it to play the voice from that player. If left blank the default playback prefab included with Dissonance will be used.
-
-If you wish to use your own prefab it *must* include a "VoicePlayback" component (part of Dissonance). It may also include an *AudioSource* component (part of unity), you can adjust some of the settings on this AudioSource to suit your needs. Dissonance will overwrite the following settings:
-
- - Loop
- - Bypass Reverb Zones
- - Pitch
- - Doppler Level
- - Clip
- - Play On Awake
+This is a prefab for the audio playback system. For every remote player who is in the voice session Dissonance will instantiate this prefab, and use it to play the voice from that player. If left blank the default playback prefab included with Dissonance will be used. Read more about the playback prefab and how you can customise it [here](Tutorials/Playback-Prefab.md).
  
 ## Mute
 
