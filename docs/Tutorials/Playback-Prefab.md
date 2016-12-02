@@ -9,7 +9,6 @@ If no prefab is set Dissonance will automatically use a default prefab.
 The playback prefab *must* include a `VoicePlayback` component (part of Dissonance).
 
 You may also attach an AudioSource (part of Unity) to the prefab, in which case you can adjust some of the settings to change how voice will be played back. However, the following settings will be ignored (overwritten by Dissonance):
-
  - Loop
  - Pitch
  - Clip
@@ -21,19 +20,19 @@ When writing your own scripts to attach to the playback prefab it is important t
 
 When there are no instances available to use, a new one is created:
 
- - Prefab instantiated
- - Default components added
- - Activated
+ 1. Prefab instantiated
+ 1. Default components added
+ 1. Activated
 
 When the player for an instance leaves the prefab is recycled:
 
- - Deactivated
- - Stored in a pool of inactive instances
+ 1. Deactivated
+ 1. Stored in a pool of inactive instances
 
 When another player joins an instance is retrieved and re-used:
 
- - Retrieved from pool
- - Activated
+ 1. Retrieved from pool
+ 1. Activated
 
 To handle this in your custom script is actually quite simple because Unity provides all the necessary methods:
 
