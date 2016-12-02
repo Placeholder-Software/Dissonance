@@ -39,3 +39,9 @@ pages:
         - "Voice Settings": "Reference/Audio/VoiceSettings.md"
     - Networking:
         - "Network Packet Format": "Reference/Networking/Packet-Format.md"
+    - Other:
+        - "Rooms": "Reference/Other/Rooms.md"
+        - "RoomChannels": "Reference/Other/RoomChannels.md"
+        - "PlayerChannels": "Reference/Other/PlayerChannels.md"
+        - "TextChat": "Reference/Other/TextChat.md"
+        - "VoicePlayerState": "Reference/Other/VoicePlayerState.md"

@@ -9,6 +9,7 @@ If no prefab is set Dissonance will automatically use a default prefab.
 The playback prefab *must* include a `VoicePlayback` component (part of Dissonance).
 
 You may also attach an AudioSource (part of Unity) to the prefab, in which case you can adjust some of the settings to change how voice will be played back. However, the following settings will be ignored (overwritten by Dissonance):
+
  - Loop
  - Pitch
  - Clip
