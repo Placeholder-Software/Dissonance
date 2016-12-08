@@ -1,7 +1,5 @@
 # Channel Priority
 
-There is a video version of this tutorial [here](TODO).
-
 Channel priority can be used to automatically mute low priority channels while high priority channels are speaking. For example muting the global voice chat room whilst someone in the team chat room is talking.
 
 ## Priority Levels

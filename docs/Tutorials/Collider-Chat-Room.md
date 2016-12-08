@@ -1,6 +1,6 @@
 # Collider Chat Rooms
 
-There is a video version of this tutorial [here](TODO).
+Also see [this video](https://youtu.be/HXMYDbuLwVI?t=323) about collider chat rooms.
 
 This tutorial will introduce volume triggers for transmission and receipt triggers, and how they can be used to implement localised chat rooms which allow users standing within the same area in your game world to chat with each other. This tutorial builds upon the setup in the [Position tracking](/Tutorials/Position-Tracking) guide.
 

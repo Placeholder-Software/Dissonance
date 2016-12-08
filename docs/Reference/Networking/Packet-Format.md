@@ -75,8 +75,6 @@ Frame Bytes Count (UInt16)
 Audio Frame (Byte[])
 ```
 
-todo: bitfield
-
 ## Text Data
 
 A text data packet contains a single text chat message. Clients send these to the server which then relays them on to the necessary clients.

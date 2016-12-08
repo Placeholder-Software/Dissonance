@@ -1,6 +1,6 @@
 # Access Control Tokens
 
-There is a video version of this tutorial [here](TODO).
+Also see [this video](https://youtu.be/HXMYDbuLwVI?t=250) about access tokens.
 
 Access control tokens can be added to both [Broadcast Triggers](/Reference/Components/Voice-Broadcast-Trigger.md) and [Receipt Triggers](/Reference/Components/Voice-Receipt-Trigger.md). The trigger will not function unless the local player has *one of* the required tokens.
 
