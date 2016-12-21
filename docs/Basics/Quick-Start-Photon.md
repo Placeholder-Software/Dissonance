@@ -1,7 +1,5 @@
 # Quick Start: Dissonance with Photon Unity Networking (PUN)
 
-> *Photon Unity Networking is currently in development. This integration is available but may not be fully functional or stable yet!*
-
 > This Quick Start guide is for those of you integrating Dissonance into a game with **Photon Unity Networking**.
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room. There is a video version of this tutorial [here](TODO).
