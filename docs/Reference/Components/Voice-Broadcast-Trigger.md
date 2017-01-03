@@ -20,14 +20,6 @@ When set to "Player" the broadcaster sends voice to the specified player. The in
 
 When set the "Self" the broadcaster will look for a sibling component which implements the `IDissonancePlayer` interface and will transmit to that player.
 
-## Disable On Local Player
-
-When this is set the broadcaster will look for a sibling component which implements the `IDissonancePlayer` interface - if that player is the local player then this broadcaster will never transmit any voice. This setting can be configured from a script by modifying the `DisableForLocalPlayer` field.
-
-## Disable On Remote Player
-
-When this is set the broadcaster will look for a sibling component which implements the `IDissonancePlayer` interface - if that player is a remote player then this broadcaster will never transmit any voice. This setting can be configured from a script by modifying the `DisableForRemotePlayer` field.
-
 ## Use Positional Data
 
 This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Position Tracking](/Tutorials/Position-Tracking) tutorial for information about how to set up your project for position tracking of player objects. This option can be configured from a script by modifying the `BroadcastPosition` field.
