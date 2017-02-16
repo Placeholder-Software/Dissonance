@@ -14,7 +14,7 @@ A demo scene for this tutorial can be found in the `Dissonance/Integrations/UNet
 
 To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/UNet_LLAPI` folder into your scene.
 
-Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `UNetCommsNetwork`.
+Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: `Dissonance Comms` and `UNetCommsNetwork`.
 
 ## Step 2: Configure the Network
 
@@ -42,11 +42,11 @@ dissonanceNetwork.InitializeAsClient(serverIpWithoutPort);
 
 ### Configuring the port
 
-By default, the Dissonance server will listen on (and the client will try to connect to) port `5589`. To change this port, set the `Config.Port` property on the `UNetCommsNetwork` *before* initializing the client or server. This will need to be done on both clients and the server.
+By default, the Dissonance server will listen on (and the client will try to connect to) port `5589`. To change this port, set the `Port` property on the `UNetCommsNetwork` *before* initializing the client or server. This will need to be done on both clients and the server.
 
 ```
 var dissonanceNetwork = GetComponent<UNetCommsNetwork>();
-dissonanceNetwork.Config.Port = 1234;
+dissonanceNetwork.Port = 1234;
 dissonanceNetwork.InitializeAsServer();
 ```
 
