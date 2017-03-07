@@ -16,6 +16,14 @@ To place the default Dissonance object into your scene, drag and drop the `Disso
 
 Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `HlapiCommsNetwork`.
 
+### Step 1a: Setup Network Manager
+
+In this configuration Dissonance sends it's network packets through the UNet High Level API - this means you need a high level network session setup for Dissonance to use.
+
+To create a high level network session add a `Network Manager` to your scene, this is a Unity component which will handle setting up your network. If you need a basic UI for test purposes also add a `Network Manager HUD` to your scene, this is another Unity component which shows a simple UI for creating and joining sessions.
+
+Once you have a NetworkManager you need to add a prefab to the "Spawnable Prefabs" list - this is the list of prefabs which Unity can spawn over the network. On the `Network Manager` inspector open the `Spawn Info` section and add the `HlapiPlayerTracker` prefab from the `Dissonance/Integrations/UNet_HLAPI/Resources` directory to the `Registered Spawnable Prefabs` list.
+
 ## Step 2: Add a Broadcast Trigger
 
 You now have a functional Dissonance comms system, but you are not yet transmitting anything.
