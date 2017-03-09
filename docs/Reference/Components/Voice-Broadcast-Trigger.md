@@ -32,10 +32,6 @@ This option determines when voice data should be sent. This setting can be confi
 
 When set to "None" the broadcaster will never broadcast any voice.
 
-#### OpenMic
-
-When set to "OpenMic" the broadcaster will constantly broadcast voice.
-
 #### Voice Activation
 
 When set to "Voice Activation" the broadcaster will monitor the microphone recording and will only broadcast sound when it detects someone speaking. See [Voice Detector](/Reference/Audio/VAD) for more details.
