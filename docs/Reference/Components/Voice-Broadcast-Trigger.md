@@ -44,22 +44,9 @@ When set to "Push To Talk" the broadcaster will broadcast voice while a certain 
 
 This determines whether the broadcaster will only broadcast when the local player is within a trigger zone. See the Unity documentation on [Trigger Zones](https://unity3d.com/learn/tutorials/topics/physics/colliders-triggers). Using trigger activation requires the same basic setup as using [Positional Audio](/Tutorials/Position-Tracking). This setting can be configured from a script by modifying the `UseTrigger` field.
 
-## Script Activation
-
-There are two methods available for scripts to control the activation of a broadcaster:
-
-```
-public void StartSpeaking();
-public void StopSpeaking();
-```
-
-These methods activate and deactivate the transmitter respectively. If `StopSpeaking()` is called then no voice will be transmitted until `StartSpeaking` is called.
-
 ## Activation Of Voice Broadcast Triggers
 
 There are several forms of activation to take into account for a voice broadcast trigger. Unity allows individual components to be enabled and disabled - disabling a voice broadcast trigger will cut off any broadcast in progress and will not send any more voice until it is enabled.
-
-The Start/Stop Speaking methods do the same thing as enabling and disabling the component.
 
 The trigger volumes start and stop broadcasting when a player object enters and exits the trigger volume. This can be used to create areas of space in the game scene which a player must stand in to participate in a room.
 

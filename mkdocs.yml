@@ -25,6 +25,7 @@ pages:
     - "Access Tokens": "Tutorials/Access-Control-Tokens.md"
     - "Channel Priority": "Tutorials/Channel-Priority.md"
     - "Custom Playback Prefab": "Tutorials/Playback-Prefab.md"
+    - "Script Controlled Speech": "Tutorials/Script-Controlled-Speech.md"
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
     - "Writing A Custom IDissonancePlayer": "Tutorials/Custom-Position-Tracking.md"
