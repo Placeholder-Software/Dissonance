@@ -42,7 +42,7 @@ dissonanceNetwork.InitializeAsClient(serverIpWithoutPort);
 
 ### Configuring the port
 
-By default, the Dissonance server will listen on (and the client will try to connect to) port `5589`. To change this port, set the `Port` property on the `UNetCommsNetwork` *before* initializing the client or server. This will need to be done on both clients and the server.
+By default, the Dissonance server will listen on (and the client will try to connect to) port `5889`. To change this port, set the `Port` property on the `UNetCommsNetwork` *before* initializing the client or server. This will need to be done on both clients and the server.
 
 ```
 var dissonanceNetwork = GetComponent<UNetCommsNetwork>();
