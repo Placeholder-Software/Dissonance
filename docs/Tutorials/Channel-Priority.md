@@ -13,7 +13,7 @@ There are 4 priority levels which can be set on a channel:
 
 If a player is receiving voice from multiple sources then the sources with the highest priority will play and all others will be muted.
 
-There is a fifth channel priority option: `None`. If this used then it falls back to the default value for this player, which is set in `DissonanceComms.PlayerPriority`. If `None` is specified for both then `Default` is used.
+There is another priority option: `None`. If this used then the priority falls back to the default value for this player, which is set in `DissonanceComms.PlayerPriority`. If `None` is specified as the default player priority then `Default` is used instead.
 
 ## Defining Priority
 

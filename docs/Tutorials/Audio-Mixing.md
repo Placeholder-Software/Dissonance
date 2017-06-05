@@ -10,7 +10,7 @@ It can be tempting to mix voice signals in the same way as any other audio signa
 
 ## Volume Ducking
 
-Games frequently have very loud sound effects such as explosions or gunfire which can drown out other sounds in the game. However it would interrupt conversations if these noises also drowned out the voice signal. A naive solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping (and sound bad). An alternative solution would be to reduce the volume of the game audio far below the voice signal but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
+Games frequently have very loud sound effects such as explosions and gunfire which can drown out other sounds in the game. However, it would interrupt conversations if these noises also drowned out the voice signal. A naive solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping and sound terrible. An alternative solution would be to reduce the volume of the game audio far below the voice signal, but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
 
 ![Example of audio mixer with ducking](/images/AudioMixing_Ducking.png "Example of audio mixer with ducking")
 
@@ -20,14 +20,8 @@ The yellow arrows indicate "sends", a send sends audio from one signal processor
 
 ## Sound Effects
 
-As mentioned above you should be very cautious about applying any sound effects to the voice signal which are not for the purpose of enhancing the voice quality. However there are some situations where applying sound effects to voices could sound good, for example applying a very subtle radio distortion effect to allied communications and an extreme distortion to enemy communications. Applying an effect is very simple, simply click add on the group and select the effect you want.
+As mentioned above you should be very cautious about applying any sound effects to the voice signal which are not for the purpose of enhancing the voice quality. However there are some situations where applying sound effects to voices could sound good, for example keeping allied communications clean, but adding a subtle radio distortion effect to enemy communications. Applying an effect is very simple, simply click add on the audio group and select the effect you want.
 
 ![Example of audio mixer with distortion](/images/AudioMixing_Distortion.png "Example of audio mixer with distortion")
 
 Above is an example of an audio group with a [distortion](https://docs.unity3d.com/Manual/class-AudioDistortionEffect.html) effect applied.
-
-## todo: Other Ideas
-
- - Per team sfx
- - SALSA Lip Sync
- - Pause NPC speech when humans talk
