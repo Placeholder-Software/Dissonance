@@ -16,7 +16,11 @@ Ensure that this component is attached to *all* entities in the scene which repr
  
 ![A Player Prefab with position tracking behaviour added](/images/PlayerPrefab_PositionalAudio.png)
 
-## Using Position Tracking
+### What Does Position Tracking Cost?
+
+Some people have avoided using the position tracking because they're worried that it's wasting network bandwidth - after all your player positions are already synchronised across the network so it would be a waste for Dissonance to send the positions to. However **Dissonance does not send any extra data** across the network when position tracking is enabled - instead it relies on your game objects already being in the right place on every client and simply plays the audio from wherever they are in space.
+
+## Using Position Tracking 
 
 ### Positional Audio
 

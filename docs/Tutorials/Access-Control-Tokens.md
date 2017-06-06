@@ -22,14 +22,16 @@ if (receiver.ContainsToken("correcthorsebatterystaple"))    // Query
 
 ## Defining Available Tokens
 
-Once triggers have been configured to require tokens before they will work you must add some tokens to the local player. This can be done in the inspector in the same way as for triggers. However, tokens added in the inspector will apply to *all* players so they can only be used as the default tokens everyone starts with.
+Once triggers have been configured to require tokens you will need to add some tokens to the local player. This can be done in the inspector in the same way as for triggers. Tokens added in the inspector will apply to *all* players so they can only be used as the default tokens everyone starts with.
 
 ![Receipt Trigger](/images/DissonanceComms_Tokens.png)
 
-You are more likely to want to manage tokens through scripts. When you create a player and do something which requires restricting it's access to channels (e.g. add it to a team) you should add the appropriate tokens to the local player:
+You are more likely to want to manage tokens through scripts. When you create a player and do something which requires restricting their access to channels (e.g. joining a team) you should add the appropriate tokens to the local player:
 
 ```
 var local = FindComponent<DissonanceComms>();
 
 local.AddToken("Green Team");
 ```
+
+Assuming you have transmitters and receivers set up for every team, each one with a different token, this gives you a simple way to ensure that the player is speaking and listening to the right team channels.
