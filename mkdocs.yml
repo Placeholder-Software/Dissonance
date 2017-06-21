@@ -12,6 +12,7 @@ pages:
 - "Quick Start Guides":
     - "Forge Networking": "Basics/Quick-Start-Forge.md"
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
+    - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
     - "Self Contained": "Basics/Quick-Start-UNet-LLAPI.md"
 - "Basic Concepts": "Basics/Introduction-To-Chat-Rooms.md"

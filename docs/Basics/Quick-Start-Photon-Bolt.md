@@ -1,22 +1,22 @@
-# Quick Start: Dissonance with Photon Unity Networking (PUN)
+# Quick Start: Dissonance with Photon BOLT
 
-> This Quick Start guide is for those of you integrating Dissonance into a game with **Photon Unity Networking**.
+> This Quick Start guide is for those of you integrating Dissonance into a game with the **[Photon BOLT networking asset](https://www.assetstore.unity3d.com/en/#!/content/83233)**
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.
 
 Before beginning this tutorial, please refer to the [installation guide](/Basics/Getting-Started) to learn how to install Dissonance into your project.
 
-A demo scene for this tutorial can be found in the `Dissonance/Integrations/Photon/Demo` folder.
+A demo scene for this tutorial can be found in the `Dissonance/Integrations/PhotonBolt/Demo` folder. Be sure to read the README in the demo folder, as the demo will not initially compile until you have configured BOLT.
 
 ## Step 1: Dissonance Comms Object
 
 > Dissonance runs mostly from a single game object, which should be placed somewhere near the root of your scene. This object contains the main "Dissonance Comms" behavior, together with the Photon networking script.
 
-To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/Photon` folder into your scene.
+To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/PhotonBolt` folder into your scene.
 
-Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `PhotonCommsNetwork`.
+Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: "Dissonance Comms" and `Bolt Comms Network`.
 
-> The Photon integration will automatically route Dissonance traffic through the Photon cloud network.
+> The Photon BOLT integration will automatically route Dissonance traffic through an established BOLT session.
 
 ## Step 2: Add a Broadcast Trigger
 
@@ -50,6 +50,9 @@ Congratulations, you have now added voice comms to your game! What to do next?
 * [Set up per-team chat channels](/Tutorials/Team-Chat-Rooms)
 * [Direct message another player](/Tutorials/Direct-Player-Transmit)
 * [Send text chat messages](/Tutorials/Text-Chat)
-* [3D Positional Audio](/Tutorials/Position-Tracking)
 * [3D Area Chat Rooms](/Tutorials/Collider-Chat-Room)
 * [Proximity Chat: Talk to players near each other](/Tutorials/Proximity-Chat)
+
+Note that setting up positional audio for bolt requires some extra steps, see this article for more detail:
+
+* [3D Positional Audio For BOLT](/Tutorials/Position-Tracking-For-Bolt)
