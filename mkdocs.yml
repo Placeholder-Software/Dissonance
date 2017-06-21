@@ -23,6 +23,7 @@ pages:
     - "Text Chat": "Tutorials/Text-Chat.md"
     - "Transmit to Player": "Tutorials/Direct-Player-Transmit.md"
     - "Position Tracking": "Tutorials/Position-Tracking.md"
+    - "Position Tracking For BOLT": "Tutorials/Position-Tracking-For-Bolt.md"
     - "Proximity Chat": "Tutorials/Proximity-Chat.md"
     - "Collider Chat Rooms": "Tutorials/Collider-Chat-Room.md"
     - "Finding Players": "Tutorials/Player-State.md"
