@@ -6,7 +6,7 @@ In this tutorial you will create a new project, import Dissonance and set up som
 
 ### 1. Import Dissonance
 
-Import the Dissonance asset into the project. Once Dissonance has install and the project has compiled a window will pop up offering to take you to the integrations list - visit this page to see the latest changelog and to download the optional integrations for Dissonance. Each integration provides support for other Unity assets such as various different networking systems. There are a number of optional parts of Dissonance which you can import to integrate with various other assets (such as Playmaker or Forge Networking). Import whichever integrations you want to use for your game. Ensure you include at least one network integration (unless you plan on writing your own).
+Import the Dissonance asset into the project. Once Dissonance has installed and the project has compiled a window will pop up offering to take you to the integrations list - visit this page to see the latest changelog and to download the optional integrations for Dissonance. Each integration provides support for other Unity assets such as various different networking systems - Import whichever integrations you want to use for your game. Ensure you include at least one network integration (unless you plan on writing your own).
 
 ### 2. Run In Background
 

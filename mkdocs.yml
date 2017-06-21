@@ -24,6 +24,7 @@ pages:
     - "Position Tracking": "Tutorials/Position-Tracking.md"
     - "Proximity Chat": "Tutorials/Proximity-Chat.md"
     - "Collider Chat Rooms": "Tutorials/Collider-Chat-Room.md"
+    - "Finding Players": "Tutorials/Player-State.md"
     - "Audio Mixing For Voice": "Tutorials/Audio-Mixing.md"
     - "Access Tokens": "Tutorials/Access-Control-Tokens.md"
     - "Channel Priority": "Tutorials/Channel-Priority.md"
