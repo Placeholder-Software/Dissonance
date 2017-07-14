@@ -1,6 +1,6 @@
 # RoomChannels
 
-This object exposes properties and method to do with rooms that the local player is *speaking* to. For rooms the player is listening to see [this documentation](Reference/Other/Rooms.md) intead.
+This object exposes properties and method to do with rooms that the local player is *speaking* to. For rooms the player is listening to see [this documentation](/Reference/Other/Rooms.md) intead.
 
 ### Count : int
 
