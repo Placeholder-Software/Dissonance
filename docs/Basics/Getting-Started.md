@@ -6,7 +6,7 @@ In this tutorial you will create a new project, import Dissonance and set up som
 
 ### 1. Import Dissonance
 
-Import the Dissonance asset into the project. Every time you import a new version of Dissonance a window will pop up offering to take you to the chagelog, you can launch this window again by navigating to `Windows > Dissonance > Welcome Screen`.
+Import the Dissonance asset into the project. Every time you import a new version of Dissonance a window will pop up offering to take you to the latest changelog, you can launch this window again by navigating to `Windows > Dissonance > Welcome Screen`.
 
 ### 2. Download Integrations
 
