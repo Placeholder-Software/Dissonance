@@ -114,7 +114,7 @@ Removes a [token](/Tutorials/Access-Control-Tokens.md) from the local player and
 
 ### ContainsToken(string) : bool
 
-Returns a boolean value indicating if the local player has the [token](Tutorials/Access-Control-Tokens.md) with the given name.
+Returns a boolean value indicating if the local player has the [token](/Tutorials/Access-Control-Tokens.md) with the given name.
 
 ### HasAnyToken(TokenSet) : bool
 
