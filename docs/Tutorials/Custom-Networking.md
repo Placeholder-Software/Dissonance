@@ -12,7 +12,7 @@ When you are implementing this interface you will have to encode and decode pack
 
 `BaseCommsNetwork` is a convenience class which implements a lot of the complexity of `ICommsNetwork` for you (including all packet reading and writing). This is how all of the built-in networking integrations are built. To start with you should create a new class e.g. `MyCustomCommsNetwork` which inherits the `BaseCommsNetwork` class. This requires five generic parameters:
 
-    BaseCommsNetwork<TServer, TClient, TPeer>
+    BaseCommsNetwork<TServer, TClient, TPeer, TClientParam, TServerParam>
     
 `TServer` is the class which represents server side logic. You should create a new class e.g. `MyCustomServer` and inherit `BaseServer` (base server requires the same generic parameters as the BaseCommsNetwork).
 
