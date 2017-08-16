@@ -31,6 +31,7 @@ pages:
     - "Audio Mixing For Voice": "Tutorials/Audio-Mixing.md"
     - "Access Tokens": "Tutorials/Access-Control-Tokens.md"
     - "Channel Priority": "Tutorials/Channel-Priority.md"
+    - "Channel Volume": "Tutorials/Channel-Volume.md"
     - "Custom Playback Prefab": "Tutorials/Playback-Prefab.md"
     - "Script Controlled Speech": "Tutorials/Script-Controlled-Speech.md"
     - "Spatialization Plugins": "Tutorials/Spatializer-Plugin.md"
