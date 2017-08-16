@@ -10,7 +10,8 @@ pages:
 - Home: "index.md"
 - "Project Setup": "Basics/Getting-Started.md"
 - "Quick Start Guides":
-    - "Forge Networking": "Basics/Quick-Start-Forge.md"
+    - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
+    - "Forge Networking Classic": "Basics/Quick-Start-Forge.md"
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
     - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
