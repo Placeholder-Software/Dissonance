@@ -10,53 +10,93 @@ When you are implementing this interface you will have to encode and decode pack
 
 ### BaseCommsNetwork
 
-`BaseCommsNetwork` is a convenience class which implements a lot of the complexity of `ICommsNetwork` for you (including all packet reading and writing). This is how all of the built-in networking integrations are built. To start with you should create a new class e.g. `MyCustomCommsNetwork` which inherits the `BaseCommsNetwork` class. This requires three generic parameters:
+`BaseCommsNetwork` is a convenience class which implements a lot of the complexity of `ICommsNetwork` for you (including all packet reading and writing). This is how all of the built-in networking integrations are built. To start with you should create a new class e.g. `MyCustomCommsNetwork` which inherits the `BaseCommsNetwork` class. This requires five generic parameters:
 
-    BaseCommsNetwork<TServer, TClient, TPeer>
+    BaseCommsNetwork<TServer, TClient, TPeer, TClientParam, TServerParam>
     
-`TServer` is the class which represents server side logic. You should create a new class e.g. `MyCustomServer` and inherit `BaseServer` (base server requires the same three generic parameters as the BaseCommsNetwork).
+`TServer` is the class which represents server side logic. You should create a new class e.g. `MyCustomServer` and inherit `BaseServer` (base server requires the same generic parameters as the BaseCommsNetwork).
 
-`TClient` is the class which represents client side logic. You should create a new class e.g. `MyCustomClient` and inherit `BaseClient` (base client requires the same three generic parameters as the BaseCommsNetwork).
+`TClient` is the class which represents client side logic. You should create a new class e.g. `MyCustomClient` and inherit `BaseClient` (base client requires the same generic parameters as the BaseCommsNetwork).
 
-`TPeer` is a type of your choice which you will use to represent a connection to another player. This could be a unique ID number (e.g. the UNet LLAPI integration uses an `int` to represent players) or it could be a more complex class (e.g. the Forge integration uses a `ForgePeer` class to represent players). This depends a lot upon what your network system uses to represent players, if you're unsure what to use try looking at how your network system sends packets to specific players - what type does it use to specify which player to send to?
+`TPeer` is a type of your choice which you will use to represent a connection to another player. Dissonance will use this when it wants to tell you to send a packet to a player, so you should look at your network system and use whatever type it uses to represent a destination when sending a packet.
+
+`TClientParam` is the data which will be passed to the network system when joining. For example you may want to pass an IP address and port to the client. If you don't want to pass any data use the `Unit` type.
+
+`TServerParam` is the data which will be passed to the network system when hosting. For example you may want to pass a port to host on. If you don't want to pass any data use the `Unit` type.
 
 Once you have created all these classes you will have compile errors complaining about "abstract member [...] not implemented". Fix these starting with `MyCustomCommsNetwork`:
 
-`CreateServer` simply requires that you create an instance of your server class. `CreateClient` simply requires that you create an instance of your client class. `Initialize` should begin the process of connecting to the network; first you should do any setup work required before you connect (e.g. register packet handlers) and *then* call either `InitializeAsServer()` or `InitializeAsClient()`. You should call `InitializeAsServer()` on only one peer (e.g. your server) and `InitializeAsClient()` on all other peers. For example here is the initialisation of the Photon integration:
+`CreateServer` simply requires that you create an instance of your server class. `CreateClient` simply requires that you create an instance of your client class (which you pass in as `TServer` above). Finally you need to write an update method which checks the network state and initializes things when ready.
+
+Here are some example code snippets from the HLAPI integration:
 
 ```
-protected override void Initialize()
-{
-    //Register packet handlers
-    PhotonPeer.RegisterType(stuff)
-    PhotonNetwork.OnEventCall += OnEvent;
+public class HlapiCommsNetwork
+  : BaseCommsNetwork<
+      HlapiServer,      // A class which implements BaseServer
+      HlapiClient,      // A class which implements BaseClient
+      HlapiConn,        // A struct which contains a HLAPI NetworkConnection
+      Unit,             // Nothing
+      Unit              // Nothing
+  >
+```
 
-    //Set a flag to indicate that we're connecting
-    _connecting = true;
+```
+protected override HlapiServer CreateServer(Unit details)   // You get given whatever parameter type you specified, we specified Unit, so we get that
+{
+    // Simply create an instance of the class
+    return new HlapiServer(this);
 }
 
-public override void Update()
+protected override HlapiClient CreateClient(Unit details)   // You get given whatever parameter type you specified, we specified Unit, so we get that
 {
-    base.Update();
+    // Simply create an instance of the class
+    return new HlapiClient(this);
+}
+```
 
-    //Check the flag set in initialize
-    if (_connecting)
+```
+protected override void Update()
+{
+    // Check is Dissonance is ready
+    if (IsInitialized)
     {
-        //We need to wait until photon is completely done setting up before we try to setup dissonance
-        if (PhotonNetwork.connectionStateDetailed != ClientState.Joined)
-            return;
+        // Check if the HLAPI is ready
+        var networkActive = NetworkManager.singleton.isNetworkActive && (NetworkServer.active || NetworkClient.active);
+        if (networkActive)
+        {
+            // Check what mode the HLAPI is in (is if it a server, is it a client?)
+            var server = NetworkServer.active;
+            var client = NetworkClient.active;
 
-        //Choose which initialization to call
-        if (PhotonNetwork.isMasterClient)
-            InitializeAsServer();
-        else
-            InitializeAsClient();
-            
-        //We're done, unset the flag
-        _connecting = false;
+            // Check what mode Dissonance is in, if they're different then call the correct method
+            if (Mode.IsServerEnabled() != server || Mode.IsClientEnabled() != client)
+            {
+                // HLAPI is server and client, so run as a non dedicated host (passing in the correct parameters, in this case nothing)
+                if (server && client)
+                    RunAsHost(Unit.None, Unit.None);
+                    
+                // HLAPI is just a server, so run as a dedicated host
+                else if (server)
+                    RunAsDedicatedServer(Unit.None);
+                    
+                // HLAPI is just a client, so run as a client
+                else if (client)
+                    RunAsClient(Unit.None);
+            }
+        }
+        else if (Mode != NetworkMode.None)
+        {
+            //Network is not active, so make sure Dissonance is not active too
+            Stop();
+        }
     }
+
+    base.Update();
 }
 ```
+
+As you can see the Update method is fairly simple - you simply need to make sure that the Dissonance `Mode` and the state of your networking system are the same, if they ever differ you should simply call the correct method to transition to the correct mode.
 
 ### BaseClient
 
@@ -131,22 +171,4 @@ This method sends a packet to the the specified destination. There will be a hig
 
 ### A Note On Loopback
 
-The Dissonance networking system creates both a client *and* a server on the peer which is the server. The server must be able to send a receive messages to this client in the same way as any other client even though it is effectively sending messages to itself! If your network system cannot handle this you should detect when the server and client are the same peer (query the `ServerEnabled` flag) and directly pass the data across without touching the network at all. For example this is done in the `PreprocessPacketToClient` method in the `ForgeCommsNetwork`.
-
-If your networking system can handle loopback you still need to be careful to ensure that packets sent to the server and packets sent to the client do not get mixed up (e.g. use different channels for the two different messages).
-
-```
-//This is called before any packet is sent from server to client through forge networking.
-//If it returns true the packet is not sent to forge at all.
-public bool PreprocessPacketToClient(ArraySegment<byte> packet, ForgePeer destination, uint channel, bool reliable)
-{
-    //Is this loopback?
-    if (ServerEnabled && destination.Peer.NetworkId != BNetworking.PrimarySocket.Me.NetworkId)
-        return false;
-
-    //Directly pass this data to the client (forge doesn't ever see this packet)
-    Client.NetworkReceivedPacket(source: destination, data: packet);
-
-    return true;
-}
-```
+The Dissonance networking system creates both a client *and* a server on the peer which is the server. The server must be able to send a receive messages to this client in the same way as any other client even though it is effectively sending messages to itself! If your network system cannot handle this you should detect when the server and client are the same peer (query the `ServerEnabled` flag) and directly pass the data across without touching the network at all. For example this is done in the `PreprocessPacketToClient` and `PreprocessPacketToServer` methods in the `HlapiCommsNetwork`, these methods check if the destination is the local peer, and if so directly pass the packet across and it never touches the network. If your networking system can handle loopback you still need to be careful to ensure that packets sent to the server and packets sent to the client do not get mixed up (e.g. use different channels for the two different messages).
