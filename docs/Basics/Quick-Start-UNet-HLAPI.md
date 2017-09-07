@@ -22,13 +22,11 @@ In this configuration Dissonance sends it's network packets through the UNet Hig
 
 To create a high level network session add a `Network Manager` to your scene, this is a Unity component which will handle setting up your network. If you need a basic UI for test purposes also add a `Network Manager HUD` to your scene, this is another Unity component which shows a simple UI for creating and joining sessions.
 
-Once you have a NetworkManager you need to add a prefab to the "Spawnable Prefabs" list - this is the list of prefabs which Unity can spawn over the network. On the `Network Manager` inspector open the `Spawn Info` section and add the `HlapiPlayerTracker` prefab from the `Dissonance/Integrations/UNet_HLAPI/Resources` directory to the `Registered Spawnable Prefabs` list.
-
-Finally check that the channels have been created properly. In the Dissonance `Hlapi Comms Network` inspector check the `Reliable Channel` and `Unreliable Channel` fields, ensure that the `Network Manager` inspector (under `Advanced Configuration`) has corresponding channels.
+Now check that the channels have been created properly. In the Dissonance `Hlapi Comms Network` inspector check the `Reliable Channel` and `Unreliable Channel` fields, ensure that the `Network Manager` inspector (under `Advanced Configuration`) has corresponding channels.
 
 ![HLAPI QoS Channels](/images/HLAPI_QoS_Channels.png)
 
-You can slightly improve voice quality by creating two new QoS channels for only Dissonance to use, but this is not required.
+You can slightly improve voice quality by creating two new channels for only Dissonance to use (this is not required).
 
 ## Step 2: Add a Broadcast Trigger
 
