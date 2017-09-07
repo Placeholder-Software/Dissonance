@@ -22,7 +22,7 @@ In this configuration Dissonance sends it's network packets through the UNet Hig
 
 To create a high level network session add a `Network Manager` to your scene, this is a Unity component which will handle setting up your network. If you need a basic UI for test purposes also add a `Network Manager HUD` to your scene, this is another Unity component which shows a simple UI for creating and joining sessions.
 
-Now check that the channels have been created properly. In the Dissonance `Hlapi Comms Network` inspector check the `Reliable Channel` and `Unreliable Channel` fields, ensure that the `Network Manager` inspector (under `Advanced Configuration`) has corresponding channels.
+Now check that the channels have been created properly. In the Dissonance `Hlapi Comms Network` inspector check the `Reliable Channel` and `Unreliable Channel` fields, ensure that the `Network Manager` inspector has corresponding channels.
 
 ![HLAPI QoS Channels](/images/HLAPI_QoS_Channels.png)
 
