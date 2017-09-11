@@ -1,6 +1,6 @@
-# RoomChannels
+# PlayerChannels
 
-This object exposes properties and method to do with players that the local player is *speaking* to.
+This object exposes properties and methods to do with players that the local player is *speaking* to.
 
 ### Count : int
 
@@ -12,7 +12,7 @@ Returns a boolean value indicating if the local player is speaking to the given 
 
 ### Open(string, [bool], [ChannelPriority]) : PlayerChannel
 
-Opens a channel to begin speaking to the given player and returns an object which represents this open channel (and can be used to close it).
+Opens a channel to begin speaking to the given player and returns a [PlayerChannel](/Reference/Other/PlayerChannel.md) object which represents this open channel (and can be used to close it).
 
 Takes two optional parameters. A boolean value indicating if this channel should use positional playback and a ChannelPriority which indicates the priority of this channel.
 
