@@ -52,6 +52,8 @@ pages:
     - Other:
         - "Rooms": "Reference/Other/Rooms.md"
         - "RoomChannels": "Reference/Other/RoomChannels.md"
+        - "RoomChannel": "Reference/Other/RoomChannel.md"
         - "PlayerChannels": "Reference/Other/PlayerChannels.md"
+        - "PlayerChannel": "Reference/Other/PlayerChannel.md"
         - "TextChat": "Reference/Other/TextChat.md"
         - "VoicePlayerState": "Reference/Other/VoicePlayerState.md"
