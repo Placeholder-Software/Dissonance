@@ -53,6 +53,14 @@ VoicePlayerState.OnLeftSession += player => {
 
 The name of this player. This is the value in the `DissonanceComms:LocalPlayerName` property for that player.
 
+```
+DissonanceComms comms;
+VoicePlayerState aPlayer;
+if (aPlayer.Name == comms.LocalPlayerName) {
+    Debug.Log(aPlayer.Name + " is the local player");
+}
+```
+
 ### IsConnected : bool
 
 Get a value indicating if this player is currently in the session.
@@ -71,7 +79,7 @@ Get the `VoicePlayback` component associated with this player. May be null if Di
 
 ### Tracker : IDissonancePlayer
 
-Get the `IDissonancePlayer` components associated with this player. May be null if Dissonance is still setting up tracking for this player, this player does not have a `IDissonancePlayer` component, or the player has left the session.
+Get the `IDissonancePlayer` component associated with this player. May be null if Dissonance is still setting up tracking for this player, this player does not have a `IDissonancePlayer` component, or the player has left the session.
 
 ## Properties
 
