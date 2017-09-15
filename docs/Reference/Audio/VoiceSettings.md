@@ -1,45 +1,43 @@
 # Voice Settings
 
-Voice settings is a central place to control various audio settings Dissonance uses. Voice settings can be accessed by clicking the "Voice Settings" button on a Dissonance Comms script.
+Voice settings is a central place to control various audio settings Dissonance uses. Voice settings can be accessed through `Window > Dissonance > Quality Settings`.
 
 ![Voice Settings Editor](/images/VoiceSettings_Editor.png)
 
+## Persistence
+
+These settings are serialized into an asset file at `Assets/Plugins/Dissonance/Resources/VoiceSettings.asset` and are also saved into [PlayerPrefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html). `PlayerPrefs` override the values saved in the asset.
+
+Because the settings are saved into an asset the values you choose will be built into your game and will be the default values used by all players.
+
+Because settings are saved into `PlayerPrefs` you can expose the settings to end users in your UI and the values will be saved on a per user basis.
+
+> If you change these settings all users in a session __must__ have the same `Frame Size` and `Audio Quality` values.
+
 ## Frame Size
 
-This determines how much voice data is sent in a single network packet. There is a small amount of overhead to each packet so setting this to a higher value will reduce the overall network traffic as well as slightly reduce the amount of CPU time used by the encoder. However larger values introduce more latency (more delay between speaking and hearing) and so a lower value will significantly improve the perceived quality of the voice by players.
+- Small (20ms)
+- Medium (40ms)
+- Large (60ms)
 
-This setting cannot be changed at runtime.
+This setting determines how much voice data is sent in a single network packet. There is some overhead associated with each individual packet so using larger values will send less packets and thus reduce CPU load and network usage. However, larger values introduce more latency (more delay between speaking and hearing). Latency is a very important aspect of perceived voice quality and lowering this will improve the flow of conversations.
+
+> This setting __must not__ be changed at runtime. It __must__ be the same for all users in a voice session.
 
 ## Audio Quality
 
-This determines the quality level used by the encoder. Lower levels will consume less bandwidth but will sound bad, higher levels will consume more bandwidth but sound significantly better. The medium setting should sound very good in the majority of situations and it's not recommended to change the quality settings unless you are trying to tackle a specific problem.
+- Low (~10KB/s)
+- Medium (~17KB/s)
+- High (~24KB/s)
 
-This setting cannot be changed at runtime.
+This setting determines the bitrate the encoder will target - higher values result in higher audio quality but slightly more CPU load and network usage.
 
-## De-Noise
+> This setting __must not__ be changed at runtime. It __must__ be the same for all users in a voice session.
 
-This controls the de-noise filter which is applied to the microphone signal before transmission. The de-noise filter attenuates background noise, whilst attempting to leave the voice unchanged. Higher levels will reduce background noise more but, because the filter is not perfect, will also lose more voice.
+## Noise Suppression
 
-This setting can be changed at runtime.
+This setting determines how much noise suppression will be applied to the microphone signal before transmission. Noise in this sense is any sound which is not speech such as computer fans or microphone hiss. Noise suppression will not remove echoes other other voices playing through your speakers.
 
-## Automatic Gain Control
+Noise suppression is not perfect and may sometimes distort speech, higher levels will remove more background noise but also risk more distortion of speech. However, the risk is fairly low - the distortion is quite minor and the noise suppressor is adaptive so it will only apply really high noise suppression when there is a lot of background noise.
 
-Automatic Gain Control attempts to control the volume of a signal so it doesn't change too much. If all players use the same AGC settings all voices will be approximately the same volume even though the recording environments may be very different. This is very important for a pleasant conversation between a group of players.
-
-### Target
-
-This is the target volume of the AGC, specified as a value between 0 and 100. If you are finding that *all* players are too quiet, adjust this value up.
-
-### Max Gain (dB)
-
-This is the maximum amplification which can be applied to a signal by the AGC. If you have adjusted the target upwards and are finding that players are still too quiet even after a long period of continuous speech try adjusting this value up.
-
-It is important not to set this value too high because the AGC is *always* running when the player is indicating speech (e.g. by holding Push-To-Talk), if you set the gain too high the AGC will amplify the background noise up to huge levels, and the next thing the player says will be extremely loud!
-
-## Gain Increment (dB/s)
-
-This is how quickly the gain is adjusted upwards. If you have significantly adjusted the max gain you will need adjust this value too. A good rule of thumb is that it should take roughly 3 seconds to increment to max gain.
-
-## Gain Decrement (dB/s)
-
-This is how quickly the gain is adjusted downwards. If you have significantly adjusted the max gain you will need adjust this value too. A good rule of thumb is that it should take just under 1 second to go from max gain to nothing.
+> This setting may be changed at runtime. It may differ between users.
