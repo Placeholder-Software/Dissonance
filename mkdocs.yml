@@ -38,6 +38,7 @@ pages:
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
     - "Writing A Custom IDissonancePlayer": "Tutorials/Custom-Position-Tracking.md"
+    - "Writing A Custom Microphone Capture System": "Tutorials/Custom-Microphone-Capture.md"
     - "Using Channels": "Tutorials/Directly-Using-Channels.md"
 - Reference:
     - Components:

@@ -32,21 +32,7 @@ Clicking this button opens an inspector where Dissonance diagnostic settings may
 
 Dissonance Comms is also the central place to access Dissonance from scripts.
 
-### IsMuted : bool
-
-If set to true the local player will not send any voice signal.
-
-### PlayerPriority : ChannelPriority
-
-The [priority](/Tutorials/Channel-Priority.md) of the local player, if a channel is opened with no priority set this priority will be used as a default.
-
-### LocalPlayerNameChanged : event Action<string>
-
-This event runs whenever the local player name is changed.
-
-### LocalPlayerName : String
-
-The name of the local player, this will be initialised to a unique ID per player when Dissonance starts.
+## Readonly Properties
 
 ### IsNetworkInitialised : bool
 
@@ -68,7 +54,7 @@ An object which exposes various properties and methods to do with room the local
 
 An object which exposes various properties and methods to do with text chat. See further documentation [here](/Reference/Other/TextChat.md).
 
-### Players : ReadOnlyCollection<VoicePlayerState>
+### Players : ReadOnlyCollection&lt;VoicePlayerState&gt;
 
 A list of `VoicePlayerState` objects, one for each remote player currently in the session. See further documentation on `VoicePlayerState` [here](/Reference/Other/VoicePlayerState.md).
 
@@ -76,17 +62,88 @@ A list of `VoicePlayerState` objects, one for each remote player currently in th
 
 The highest [priority](/Tutorials/Channel-Priority.md) of all remote players currently speaking in the session.
 
-### Tokens : IEnumerable<string>
+### Tokens : IEnumerable&lt;string&gt;
 
 The set of [tokens](/Tutorials/Access-Control-Tokens.md) which the local player possesses.
 
-### TokenAdded : event Action<string>
+### MicrophoneCapture : IMicrophoneCapture
+
+The microphone capture object which Dissonance is currently using. This may be null if Dissonance has not initialised yet or if the local instance is a dedicated server.
+
+---
+## Properties
+
+### LocalPlayerName : String
+
+The name of the local player, this will be initialised to a unique ID per player when Dissonance starts. This may not be changed once Dissonance has started.
+
+### PlayerPriority : ChannelPriority
+
+The [priority](/Tutorials/Channel-Priority.md) of the local player, if a channel is opened with no priority set this priority will be used as a default.
+
+### MicrophoneName : string
+
+Get or set the name of the microphone to use to capture voice. This may be changed at any time, if the microphone has already begun recording with a different name it will be reset to use the new name.
+
+### PlaybackPrefab : VoicePlayback
+
+Get or set the playback prefab which Dissonance will use to play back remote voices. This may not be changed once Dissonance has started.
+
+### IsMuted : bool
+
+Get or set if the local player is muted (i.e. prevented from sending any voice transmissions).
+
+### IsDeafened : bool
+
+Get or set if the local player is deafened (i.e. prevented from hearing any remote voice transmissions).
+
+---
+## Events
+
+### OnPlayerJoinedSession : event Action&lt;VoicePlayerState&gt;
+
+This event runs whenever a new player joins the Dissonance voice chat session. It is passed the object which represents the new player.
+
+### OnPlayerLeftSession : event Action&lt;VoicePlayerState&gt;
+
+This event runs whenever a player leaves the Dissonance voice chat session. It is passed the object which represents the player. The object will never be touched by Dissonance again - if the player rejoins a new object will be created for them.
+
+### OnPlayerStartedSpeaking : event Action&lt;VoicePlayerState&gt;
+
+This event runs whenever a remote player begins speaking in a channel which the local player can hear.
+
+### OnPlayerStoppedSpeaking : event Action&lt;VoicePlayerState&gt;
+
+This event runs whenever a remote player stops speaking in all channels which the local player can hear. 
+
+This may not indicate that the remote player has actually stopped talking completely, it is possible that the local player simply stopped listening. For example if you are listening to _Room A_ and they are talking to _Room A_ and _Room B_, then when you stop listening to _Room A_ you will receive this event (even though they are still talking to _Room B_) because they have stopped speaking _from your point of view_.
+
+### OnPlayerEnteredRoom : event Action&lt;VoicePlayerState, string&gt;
+
+This event runs whenever a remote player begins listening to a new room. It is passed the object which represents the player and the name of the room.
+
+### OnPlayerExitedRoom : event Action&lt;VoicePlayerState, string&gt;
+
+This event runs whenever a remote player stops listening to a room. It is passed the object which represents the player and the name of the room.
+
+### LocalPlayerNameChanged : event Action&lt;string&gt;
+
+This event runs whenever the local player name is changed. Local player name may only be changed before the DissonanceComms component has been started.
+
+### TokenAdded : event Action&lt;string&gt;
 
 An event which runs whenever a token is added to the local player.
 
-### TokenRemoved : event Action<string>
+### TokenRemoved : event Action&lt;string&gt;
 
 An event which runs whenever a token is removed from the local player.
+
+---
+## Methods
+
+### FindPlayer(string name) : VoicePlayerState
+
+Attempt to find the player with the given Dissonance ID. Will return null if no such player can be found.
 
 ### SubcribeToVoiceActivation(IVoiceActivationListener)
 

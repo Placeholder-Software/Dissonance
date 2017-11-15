@@ -37,6 +37,26 @@ VoicePlayerState.OnStartedSpeaking += player => {
 }
 ```
 
+### OnEnteredRoom : Action&lt;VoicePlayerState, string&gt;
+
+This event is raised every time this player begins listening to a new room. It is passed the state object for this player and the name of the room.
+
+```
+VoicePlayerState.OnEnteredRoom += (player, room) => {
+    Debug.Log("Player " + player.Name + " began listening to room " + room);
+}
+```
+
+### OnExitedRoom : Action&lt;VoicePlayerState, string&gt;
+
+This event is raised every time this player stops listening to a room. It is passed the state object for this player and the name of the room.
+
+```
+VoicePlayerState.OnExitedRoom += (player, room) => {
+    Debug.Log("Player " + player.Name + " stopped listening to room " + room);
+}
+```
+
 ### OnLeftSession : Action&lt;VoicePlayerState&gt;
 
 This event is raised when the player leaves the session. After this the session object will never be used again. Even if the same player rejoins with the same name, they will be assigned a new state object.
@@ -72,6 +92,14 @@ Get a value indicating if this player is currently speaking
 ### Amplitude : float
 
 Get the current amplitude of the speech from this player. Value is in the range of 0 to 1. When using this value remember that 1 is the loudest value that can possibly be produced by the audio system - in most circumstances a speech signal will be *very* quiet (0 to 0.05 or less).
+
+### SpeakerPriority : ChannelPriority?
+
+Get the current priority of speech from this speaker. Null if the player is not speaking.
+
+### Rooms : ReadOnlyCollection&lt;string&gt;
+
+Get the list of rooms this player is currently listening to.
 
 ### Playback : VoicePlayback
 
