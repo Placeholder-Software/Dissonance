@@ -15,6 +15,7 @@ pages:
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
     - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
+    - "Steamworks.NET P2P": "Basics/Quick-Start-Steamworks.Net-P2P.md"
     - "Self Contained": "Basics/Quick-Start-UNet-LLAPI.md"
 - "Basic Concepts": "Basics/Introduction-To-Chat-Rooms.md"
 - "Introductory Tutorials":
@@ -58,3 +59,4 @@ pages:
         - "PlayerChannel": "Reference/Other/PlayerChannel.md"
         - "TextChat": "Reference/Other/TextChat.md"
         - "VoicePlayerState": "Reference/Other/VoicePlayerState.md"
+        - "RemoteChannel": "Reference/Other/RemoteChannel.md"
