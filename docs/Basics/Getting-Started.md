@@ -1,7 +1,5 @@
 ## Tutorial: Getting Started
 
-**There is a video version of this tutorial [here](https://www.youtube.com/watch?v=LK3i_dG9Krs).**
-
 In this tutorial you will create a new project, import Dissonance and set up some settings required for Dissonance to work properly.
 
 ### 1. Import Dissonance

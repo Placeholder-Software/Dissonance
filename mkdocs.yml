@@ -9,6 +9,7 @@ copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder
 pages:
 - Home: "index.md"
 - "Project Setup": "Basics/Getting-Started.md"
+- "Installation Requirements": "Basics/End-User-Requirements.md"
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
     - "Forge Networking Classic": "Basics/Quick-Start-Forge.md"
