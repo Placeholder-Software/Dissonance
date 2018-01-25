@@ -12,6 +12,15 @@ The most complex part of the AEC system is working out the correct echo delay fr
 
 ## AEC Setup
 
+### Before Starting (Dissonance 6.0.0 only)
+
+There is a known bug in Dissonance 6.0.0 which will cause the mobile AEC to run on desktop platforms - this will seriously reduce the performance of echo cancellation! A fix for this will be included in Dissonance 6.0.1 (not yet available on the store as of 2018-01-25).
+
+To apply the fix yourself:
+ 1. Open `Plugins/Dissonanance/Core/Audio/Capture/WebRtcPreprocessingPipeline.cs`
+ 2. Find line 190: `return SystemInfo.deviceType != DeviceType.Handheld;`
+ 3. Replace it with `return SystemInfo.deviceType == DeviceType.Handheld;`
+
 ### 1. Audio Postprocessor
 
 The first thing required for the AEC to function is to attach the postprocessor mentioned above to an [audio mixer](https://docs.unity3d.com/Manual/AudioMixer.html). Attach the `Dissonance Echo Cancellation` audio filter to the very last audio mixer in the mixing system and disable the `Auto Mixer Suspend` option for this mixer. If you were not already using audio mixers simply create a new mixer in `Window > Audio Mixer` and attach the filter to that.
