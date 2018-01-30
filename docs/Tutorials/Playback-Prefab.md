@@ -8,7 +8,7 @@ If no prefab is set Dissonance will automatically use a default prefab.
 
 The playback prefab *must* include a `VoicePlayback` component (part of Dissonance).
 
-You may also attach an AudioSource (part of Unity) to the prefab, in which case you can adjust some of the settings to change how voice will be played back. However, the following settings will be ignored (overwritten by Dissonance):
+You may also attach a Unity `AudioSource` component, in which case you can adjust some of the settings to change how voice will be played back. However, the following settings will be overwritten by Dissonance:
 
  - Loop
  - Pitch
@@ -35,22 +35,24 @@ When another player joins an instance is retrieved and re-used:
  1. Retrieved from pool
  1. Activated
 
-To handle this in your custom script is actually quite simple because Unity provides all the necessary methods:
+To handle this in your script simply use the normal [Unity lifecycle events](https://docs.unity3d.com/Manual/ExecutionOrder.html):
 
 ```
-VoicePlayback _playback;
-string _playerName;
-
-void Start()
+void Awake()
 {
-    //This only every runs once - perform one time setup (e.g. find other components)
-    _playback = GetComponent<VoicePlayback>();
+    // This only runs once. Use this to perform one-time setup.
+    
+    // e.g. Find some Dissonance components
+    _playbackComponent = GetComponent<VoicePlayback>();
+    _dissonanceComms = GetComponent<DissonanceComms>();
 }
 
 void OnEnable()
 {
-    // This runs every time the script is activated - Perform per player setup
-    _playerName = _playback.PlayerName;
+    // This runs every time the script is activated. Use this to perform per-player setup
+    
+    // e.g. find information about this player
+    _playerState = _dissonanceComms.FindPlayer(_playback.PlayerName);
 }
 
 void Update()
@@ -60,7 +62,9 @@ void Update()
 
 void OnDisable()
 {
-    // This runs every time the script is deactivated - Perform per player teardown
-    _playerName = null;
+    // This runs every time the script is deactivated. Use this to perform per-player cleanup
+    
+    // e.g. Remove the things which were initialised in OnEnable
+    _playerState = null;
 }
 ```
