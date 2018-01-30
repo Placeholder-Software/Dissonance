@@ -13,7 +13,7 @@ Tokens can be added and removed through the inspector:
 This receipt trigger will not function unless the local player has one of the two access tokens - 'TopSecretPassword' or 'mysocratesnote'. Tokens can also be managed with scripts:
 
 ```
-var receiver = FindComponent<VoiceReceiptTrigger>();
+var receiver = FindObjectOfType<VoiceReceiptTrigger>();
 
 receiver.AddToken("correcthorsebatterystaple");             // Add
 if (receiver.ContainsToken("correcthorsebatterystaple"))    // Query
@@ -29,7 +29,7 @@ Once triggers have been configured to require tokens you will need to add some t
 You are more likely to want to manage tokens through scripts. When you create a player and do something which requires restricting their access to channels (e.g. joining a team) you should add the appropriate tokens to the local player:
 
 ```
-var local = FindComponent<DissonanceComms>();
+var local = FindObjectOfType<DissonanceComms>();
 
 local.AddToken("Green Team");
 ```
