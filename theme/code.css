@@ -1,0 +1,9 @@
+code {
+  display:block;
+  padding:1em;
+}
+  
+p code {
+  display: inline;
+  padding: 0;
+}

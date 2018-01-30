@@ -3,7 +3,7 @@ repo_url: "https://github.com/Placeholder-Software/Dissonance"
 repo_name: "Issue Tracker"
 site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
-theme: mkdocs
+theme: readthedocs
 theme_dir: theme
 copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder Software</a>"
 pages:
