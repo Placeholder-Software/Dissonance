@@ -44,7 +44,7 @@ void Awake()
     
     // e.g. Find some Dissonance components
     _playbackComponent = GetComponent<VoicePlayback>();
-    _dissonanceComms = GetComponent<DissonanceComms>();
+    _dissonanceComms = FindObjectOfType<DissonanceComms>();
 }
 
 void OnEnable()
