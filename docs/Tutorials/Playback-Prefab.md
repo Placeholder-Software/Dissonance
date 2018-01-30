@@ -52,7 +52,7 @@ void OnEnable()
     // This runs every time the script is activated. Use this to perform per-player setup
     
     // e.g. find information about this player
-    _playerState = _dissonanceComms.FindPlayer(_playback.PlayerName);
+    _playerState = _dissonanceComms.FindPlayer(_playbackComponent.PlayerName);
 }
 
 void Update()
