@@ -14,12 +14,26 @@ The most complex part of the AEC system is working out the correct echo delay fr
 
 ### Before Starting (Dissonance 6.0.0 only)
 
-There is a known bug in Dissonance 6.0.0 which will cause the mobile AEC to run on desktop platforms - this will seriously reduce the performance of echo cancellation! A fix for this will be included in Dissonance 6.0.1 (not yet available on the store as of 2018-01-25).
+There are two **known bugs** affecting AEC in Dissonance 6.0.0 (the first version to include AEC), both of these issues will be fixed in Dissonance 6.0.1 (not yet available on the store as of 2018-01-30).
 
-To apply the fix yourself:
- 1. Open `Plugins/Dissonanance/Core/Audio/Capture/WebRtcPreprocessingPipeline.cs`
- 2. Find line 190: `return SystemInfo.deviceType != DeviceType.Handheld;`
- 3. Replace it with `return SystemInfo.deviceType == DeviceType.Handheld;`
+To apply the fixes yourself:
+
+ - Device check fix:
+   1. Open `Plugins/Dissonanance/Core/Audio/Capture/WebRtcPreprocessingPipeline.cs`
+   2. Find line 190: `return SystemInfo.deviceType != DeviceType.Handheld;`
+   3. Replace it with `return SystemInfo.deviceType == DeviceType.Handheld;`
+ - Prefab type fix:
+   1. Open `Plugins/Dissonance/Editor/DissonanceCommsEditor.cs`
+   2. Find references to `VoicePlayback` on line 92 and line 94
+   3. Replace them both with `GameObject`
+
+It should look like this afterwards:
+
+```
+GameObject newPrefab = null; 
+if (prefab != null && PrefabUtility.GetPrefabType(prefab) == PrefabType.Prefab)
+    newPrefab = (GameObject)prefab;
+```
 
 ### 1. Audio Postprocessor
 
