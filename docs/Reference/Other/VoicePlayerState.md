@@ -2,17 +2,18 @@
 
 This object exposes properties to do with other players in a Dissonance session. There is one of these objects per player (including the local player) in the `Players` property on the DissonanceComms component. You can also get one of these objects for a specific player with the `FindPlayer` method on the DissonanceComms component.
 
+``` cs
+//Get your comms component
+DissonanceComms comms;
 
-    //Get your comms component
-    DissonanceComms comms;
-    
-    //Get a specific player
-    VoicePlayerState player = comms.FindPlayer("Player ID");
-    
-    //Enumerate all players in the session
-    for (var i = 0; i < comms.Players.Count; i++) {
-        VoicePlayerState player = comms.Players[i];
-    }
+//Get a specific player
+VoicePlayerState player = comms.FindPlayer("Player ID");
+
+//Enumerate all players in the session
+for (var i = 0; i < comms.Players.Count; i++) {
+    VoicePlayerState player = comms.Players[i];
+}
+```
 
 
 ## Events
