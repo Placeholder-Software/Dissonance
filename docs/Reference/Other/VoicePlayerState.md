@@ -2,18 +2,18 @@
 
 This object exposes properties to do with other players in a Dissonance session. There is one of these objects per player (including the local player) in the `Players` property on the DissonanceComms component. You can also get one of these objects for a specific player with the `FindPlayer` method on the DissonanceComms component.
 
-```
-//Get your comms component
-DissonanceComms comms;
 
-//Get a specific player
-VoicePlayerState player = comms.FindPlayer("Player ID");
+    //Get your comms component
+    DissonanceComms comms;
+    
+    //Get a specific player
+    VoicePlayerState player = comms.FindPlayer("Player ID");
+    
+    //Enumerate all players in the session
+    for (var i = 0; i < comms.Players.Count; i++) {
+        VoicePlayerState player = comms.Players[i];
+    }
 
-//Enumerate all players in the session
-for (var i = 0; i < comms.Players.Count; i++) {
-    VoicePlayerState player = comms.Players[i];
-}
-```
 
 ## Events
 
@@ -21,51 +21,41 @@ for (var i = 0; i < comms.Players.Count; i++) {
 
 This event is raised every time this player starts speaking. It is passed the state object for this player.
 
-```
-VoicePlayerState.OnStartedSpeaking += player => {
-    Debug.Log("Player " + player.Name + " Started Speaking");
-}
-```
+    VoicePlayerState.OnStartedSpeaking += player => {
+        Debug.Log("Player " + player.Name + " Started Speaking");
+    }
 
 ### OnStoppedSpeaking : Action&lt;VoicePlayerState&gt;
 
 This event is raised every time this player stops speaking. It is passed the state object for this player.
 
-```
-VoicePlayerState.OnStartedSpeaking += player => {
-    Debug.Log("Player " + player.Name + " Stopped Speaking");
-}
-```
+    VoicePlayerState.OnStoppedSpeaking += player => {
+        Debug.Log("Player " + player.Name + " Stopped Speaking");
+    }
 
 ### OnEnteredRoom : Action&lt;VoicePlayerState, string&gt;
 
 This event is raised every time this player begins listening to a new room. It is passed the state object for this player and the name of the room.
 
-```
-VoicePlayerState.OnEnteredRoom += (player, room) => {
-    Debug.Log("Player " + player.Name + " began listening to room " + room);
-}
-```
+    VoicePlayerState.OnEnteredRoom += (player, room) => {
+        Debug.Log("Player " + player.Name + " began listening to room " + room);
+    }
 
 ### OnExitedRoom : Action&lt;VoicePlayerState, string&gt;
 
 This event is raised every time this player stops listening to a room. It is passed the state object for this player and the name of the room.
 
-```
-VoicePlayerState.OnExitedRoom += (player, room) => {
-    Debug.Log("Player " + player.Name + " stopped listening to room " + room);
-}
-```
+    VoicePlayerState.OnExitedRoom += (player, room) => {
+        Debug.Log("Player " + player.Name + " stopped listening to room " + room);
+    }
 
 ### OnLeftSession : Action&lt;VoicePlayerState&gt;
 
 This event is raised when the player leaves the session. After this the session object will never be used again. Even if the same player rejoins with the same name, they will be assigned a new state object.
 
-```
-VoicePlayerState.OnLeftSession += player => {
-    Debug.Log("Player " + player.Name + " Left Session");
-}
-```
+    VoicePlayerState.OnLeftSession += player => {
+        Debug.Log("Player " + player.Name + " Left Session");
+    }
 
 ## Read Only Properties
 
@@ -73,13 +63,11 @@ VoicePlayerState.OnLeftSession += player => {
 
 The name of this player. This is the value in the `DissonanceComms:LocalPlayerName` property for that player.
 
-```
-DissonanceComms comms;
-VoicePlayerState aPlayer;
-if (aPlayer.Name == comms.LocalPlayerName) {
-    Debug.Log(aPlayer.Name + " is the local player");
-}
-```
+    DissonanceComms comms;
+    VoicePlayerState aPlayer;
+    if (aPlayer.Name == comms.LocalPlayerName) {
+        Debug.Log(aPlayer.Name + " is the local player");
+    }
 
 ### IsConnected : bool
 
