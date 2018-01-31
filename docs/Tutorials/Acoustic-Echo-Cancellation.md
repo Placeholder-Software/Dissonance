@@ -1,39 +1,28 @@
 # Acoustic Echo Cancellation
 
-> AEC Requires Dissonance v6.0.0 or greater!
+> Requires Dissonance **v6.0.2** or greater!
 
 When playing audio from speakers and recording audio from a nearby microphone you will often encounter problems when the microphone picks up the audio from the speakers. In a voice session a single person doing this can cause annoying echoes to be transmitted and multiple people doing this simultaneously can cause painful feedback which persists until everyone stops transmitting! This can be particularly problematic when using Voice Activation Detection (VAD) because the VAD automatically transmits back all speech it detects, causing constant echoes of everything other people say. It can also be very bad on platforms where the mic and the speaker are very close together such as VR headsets and mobile phones. Acoustic Echo Cancellation (AEC) is a system to automatically remove these echoes from the transmitted voice signal.
 
 ## How Does AEC Work?
 
-Dissonance already runs an audio preprocessor on the microphone signal before it is transmitted, by default this is running Noise Suppression (NS) and VAD. To enable AEC we introduce a postprocessor which has _all_ game audio passed through it - this postprocessor informs the microphone preprocessor what audio is about to be played through the speakers. With this knowledge the preprocessor can remove the echo signal from the microphone signal when it appears a short time later.
+Dissonance already runs an audio preprocessor on the microphone signal before it is transmitted, by default this is running Noise Suppression (NS) and Voice Detection (VAD). To enable AEC we introduce a postprocessor which has _all_ game audio passed through it - this postprocessor informs the microphone preprocessor what audio is about to be played through the speakers. With this knowledge the preprocessor can remove the echo signal from the microphone signal when it appears a short time later.
 
 The most complex part of the AEC system is working out the correct echo delay from postprocessing the speaker to preprocessing the capture signal. This is achieved automatically but is is important to understand that the AEC system can take several seconds to converge on the correct delay and will not cancel any echo until it has done so. If no audio is playing out of the speakers the AEC has no data to work with and will not converge! In most gaming scenarios the background music/sound effects will suffice to give the AEC data to work with. However, if you are encountering problems with the AEC not cancelling any echo you should consider adding some sound effects for the AEC to process such as a short (1-2 second) jingle when a new user joins the voice session.
 
 ## AEC Setup
 
-### Before Starting (Dissonance 6.0.0 only)
+> **Before starting ensure you are using Dissonance 6.0.2 or greater!**
 
-There are two **known bugs** affecting AEC in Dissonance 6.0.0 (the first version to include AEC), both of these issues will be fixed in Dissonance 6.0.1 (not yet available on the store as of 2018-01-30).
+### Before Starting
 
-To apply the fixes yourself:
+There is a single **known issue** which affects AEC setup in Dissonance 6.0.2. A fix for this will be included in the next version of Dissonance (not yet available as of 2018-01-31).
 
- - Device check fix:
-   1. Open `Plugins/Dissonanance/Core/Audio/Capture/WebRtcPreprocessingPipeline.cs`
-   2. Find line 190: `return SystemInfo.deviceType != DeviceType.Handheld;`
-   3. Replace it with `return SystemInfo.deviceType == DeviceType.Handheld;`
- - Prefab type fix:
-   1. Open `Plugins/Dissonance/Editor/DissonanceCommsEditor.cs`
-   2. Find references to `VoicePlayback` on line 92 and line 94
-   3. Replace them both with `GameObject`
+The fix is very simple:
 
-It should look like this afterwards:
-
-```
-GameObject newPrefab = null; 
-if (prefab != null && PrefabUtility.GetPrefabType(prefab) == PrefabType.Prefab)
-    newPrefab = (GameObject)prefab;
-```
+ 1. Open `Plugins/Dissonance/Editor/DissonanceCommsEditor.cs`
+ 2. Find `typeof(VoicePlayback)` on line 89
+ 3. Replace it with `typeof(GameObject)`
 
 ### 1. Audio Postprocessor
 
