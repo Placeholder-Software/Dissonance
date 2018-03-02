@@ -4,17 +4,32 @@ There are several options for controlling speech from scripts, depending on what
 
 ### Muting The Local Player
 
-If you want to completely prevent a player from speaking you can set the `Mute` property on the `DissonanceComms` component to true.
+If you want to completely prevent a player from speaking you can set the `IsMuted` property on the `DissonanceComms` component to true.
 
 ```
 DissonanceComms comms;
-comms.Mute = true;
+comms.IsMuted = true;
 
 // User cannot speak
 
-comms.Mute = false;
+comms.IsMuted = false;
 
 // User can speak
+```
+
+### Deafening The Local Player
+
+If you want to completely prevent the local player from hearing any speech you can set the `IsDeafened` property on the `DissonanceComms` component to true.
+
+```
+DissonanceComms;
+comms.IsDeafened = true;
+
+// User cannot hear
+
+comms.IsDeafened = false;
+
+//User can hear
 ```
 
 ### Muting Remote Players
