@@ -22,7 +22,7 @@ comms.IsMuted = false;
 If you want to completely prevent the local player from hearing any speech you can set the `IsDeafened` property on the `DissonanceComms` component to true.
 
 ```
-DissonanceComms;
+DissonanceComms comms;
 comms.IsDeafened = true;
 
 // User cannot hear
