@@ -33,12 +33,12 @@ _Provide a detailed set of steps to reproduce the problem_
 ## Your Environment
 _Include as many relevant details about the environment you experienced the bug in_
 
-- **Dissonance version used**: e.g. v1.0.0 _(Release Notes.md, inside Dissonance folder)_
+- **Dissonance version used**: e.g. v1.0.0 _(check Assets/Dissonance/changelog)_
 
-- **Unity version**: e.g. 5.3.5f1 Personal _(Help > About Unity)_
+- **Unity version**: e.g. 5.3.5f1 Personal _(check Help > About Unity)_
 
 - **Editor Operating System and version**: e.g. Microsoft Windows 10 Pro 10.0.10586 (x64) _(Depends on your OS, for windows it's in the "System Information" program)_
 
-- **Build Settings**: If this only happens on certain platforms, tell us the build settings e.g. Windows, x86_64, Development Build
+- **Build Settings**: Tell us the build settings/platforms you have encountered this issue with e.g. Windows, x86_64, Development Build
 
-- **Link to your project**: If your project source code is available, link it here
+- **Link to your project**: If your project (or a bug reproduction project) is available, link it here
