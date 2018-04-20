@@ -4,11 +4,11 @@
 
  - Low latency/real-time voice communications.
  - Efficient Opus encoding
- - Noise free speech with speex noise reduction
  - Multiple chat rooms
  - Private message to individual players
  - Voice Activation and Push To Talk
  - Positional Audio
+ - Echo cancellation
  
 ## Getting Started
 
