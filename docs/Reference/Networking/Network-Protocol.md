@@ -58,14 +58,12 @@ If a packet with an incorrect session number is received by the server it will s
 
 1. A new client sends a `HandshakeRequest` message to the server. This tells the server the codec settings in use by this client as well as it's name.
 2. The server replies with a `HandshakeResponse` message. This sends the complete state of the server to the client:
-
    - the session ID. A unique value prepended to all packets.
    - The client ID. A unique 16 bit ID for this client.
    - Client list. A list of all other clients in the session (name, codec setting, unique ID).  
    - Room list. A list of the room names which at least one client is currently listening to.
    - Listeners list. A list of clients and the rooms which they are currently listening to.
 3. The client replies with a `ClientState` message. This tells the server the complete state of the client:
-
    - Name
    - Client ID
    - Codec Settings
@@ -74,7 +72,6 @@ If a packet with an incorrect session number is received by the server it will s
 ## Joining Or Leaving A Room
 
 The server maintains a list of which rooms every client is currently listening to. Sending a complete `ClientState` message every time a client join or leaves a room would be wasteful, instead a `DeltaClientState` message is sent. This contains:
-
    - Flag indicating `joining` or `leaving`
    - Client ID
    - Room name
@@ -94,7 +91,6 @@ To set this up a client sends a `HandshakeP2P` message to every peer which it kn
 Each client records audio, preprocesses it to improve audio quality, encodes it (using opus) and then sends the packet. The client decides who to send the packet to based on it's knowledge of who is listening to what. The client sends the voice packet via P2P to as many client as possible. The remaining packets it relays via the server.
 
 The `VoiceData` packet contains:
-
  - Sender Client ID
  - 8 bit bitfield of packet flags. Currently 2 bits are used for the "channel session" and the other bits are unused.
  - Sequence number. A number which can be used to put packets into the correct order.
@@ -112,7 +108,6 @@ When the server receives one of these packets it sends the array of bytes out to
 ## Text Packets
 
 Text packets can be sent through the Dissonance session, unlike voice they are always relayed via the server. The `TextData` packet contains:
-
  - Recipient type. This indicates if the packet is targeted at a player or a room.
  - Sender ID. Client ID of the sender.
  - Recipient ID. This is either a room ID or a client ID, depending upon the recipient type.
