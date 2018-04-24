@@ -75,6 +75,7 @@ If a packet with an incorrect session number is received by the server it will s
 ## Joining Or Leaving A Room
 
 The server maintains a list of which rooms every client is currently listening to. Sending a complete `ClientState` message every time a client join or leaves a room would be wasteful, instead a `DeltaClientState` message is sent. This contains:
+
    - Flag indicating `joining` or `leaving`
    - Client ID
    - Room name
@@ -94,6 +95,7 @@ To set this up a client sends a `HandshakeP2P` message to every peer which it kn
 Each client records audio, preprocesses it to improve audio quality, encodes it (using opus) and then sends the packet. The client decides who to send the packet to based on it's knowledge of who is listening to what. The client sends the voice packet via P2P to as many client as possible. The remaining packets it relays via the server.
 
 The `VoiceData` packet contains:
+
  - Sender Client ID
  - 8 bit bitfield of packet flags. Currently 2 bits are used for the "channel session" and the other bits are unused.
  - Sequence number. A number which can be used to put packets into the correct order.
@@ -111,6 +113,7 @@ When the server receives one of these packets it sends the array of bytes out to
 ## Text Packets
 
 Text packets can be sent through the Dissonance session, unlike voice they are always relayed via the server. The `TextData` packet contains:
+
  - Recipient type. This indicates if the packet is targeted at a player or a room.
  - Sender ID. Client ID of the sender.
  - Recipient ID. This is either a room ID or a client ID, depending upon the recipient type.
