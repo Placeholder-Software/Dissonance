@@ -58,12 +58,15 @@ If a packet with an incorrect session number is received by the server it will s
 
 1. A new client sends a `HandshakeRequest` message to the server. This tells the server the codec settings in use by this client as well as it's name.
 2. The server replies with a `HandshakeResponse` message. This sends the complete state of the server to the client:
+
    - the session ID. A unique value prepended to all packets.
    - The client ID. A unique 16 bit ID for this client.
    - Client list. A list of all other clients in the session (name, codec setting, unique ID).  
    - Room list. A list of the room names which at least one client is currently listening to.
    - Listeners list. A list of clients and the rooms which they are currently listening to.
+   
 3. The client replies with a `ClientState` message. This tells the server the complete state of the client:
+
    - Name
    - Client ID
    - Codec Settings
