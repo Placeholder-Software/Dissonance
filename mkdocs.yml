@@ -13,6 +13,7 @@ pages:
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
     - "Forge Networking Classic": "Basics/Quick-Start-Forge.md"
+    - "Dark Rift 2": "Basics/Quick-Start-DR2.md"
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
     - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
