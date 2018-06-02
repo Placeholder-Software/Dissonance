@@ -80,7 +80,7 @@ The second box shows the AEC status. In this image it is showing a warning - if 
 
 When the filter first starts all of the numbers shown here will be zero or even negative. This indicates that the filter has not yet converged and will not yet be removing any echo. After a short period of time (5-10 seconds) it should converge and begin removing echoes, if `Fraction Poor Delays` is more than 0% then the AEC will likely perform very badly.
 
-Once the AEC is running and has converged remote speakers in the session the music you are playing should be almost inaudible. In our own tests we have had music playing so loud that we can't hear the remote speakers, but they still cannot hear the music!
+Once the AEC is running and has converged remote speakers in the session should not be able to hear the music you are playing. In our own tests we have had music playing loudly enough to drown out voices but even that was still cancelled!
 
 ### Known Issue With iOS
 
