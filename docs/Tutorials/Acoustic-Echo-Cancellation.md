@@ -80,4 +80,16 @@ The second box shows the AEC status. In this image it is showing a warning - if 
 
 When the filter first starts all of the numbers shown here will be zero or even negative. This indicates that the filter has not yet converged and will not yet be removing any echo. After a short period of time (5-10 seconds) it should converge and begin removing echoes, if `Fraction Poor Delays` is more than 0% then the AEC will likely perform very badly.
 
-Once the AEC is running and has converged remote speakers in the session the music you are playing should be almost inaudible. In our own tests we have had music playing so loud that we can't hear the remote speakers, but they still cannot hear the music! 
+Once the AEC is running and has converged remote speakers in the session the music you are playing should be almost inaudible. In our own tests we have had music playing so loud that we can't hear the remote speakers, but they still cannot hear the music!
+
+### Known Issue With iOS
+
+On iOS some people have reported the following error:
+
+> Audio effect Dissonance Echo Cancellation could not be found. Check that the project contains the correct native audio plugin libraries and that the importer settings are set up correctly. To fix this problem:
+
+1. Download AudioPluginInterface from [the Unity native audio plugin SDK](https://bitbucket.org/Unity-Technologies/nativeaudioplugins/src). Add it to your XCode project.
+2. add `#import "AudioPluginInterface.h";` to UnityAppController.mm in XCode.
+3. Find the `preStartUnity` method and add the line `UnityRegisterAudioPlugin(&UnityGetAudioEffectDefinitions);`
+
+If this does not fix the issue, please add a comment to [this issue](https://github.com/Placeholder-Software/Dissonance/issues/80).
