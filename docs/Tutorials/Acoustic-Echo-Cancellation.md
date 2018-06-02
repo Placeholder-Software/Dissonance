@@ -86,7 +86,9 @@ Once the AEC is running and has converged remote speakers in the session should 
 
 On iOS some people have reported the following error:
 
-> Audio effect Dissonance Echo Cancellation could not be found. Check that the project contains the correct native audio plugin libraries and that the importer settings are set up correctly. To fix this problem:
+> Audio effect Dissonance Echo Cancellation could not be found. Check that the project contains the correct native audio plugin libraries and that the importer settings are set up correctly.
+
+To fix this problem:
 
 1. Download AudioPluginInterface from [the Unity native audio plugin SDK](https://bitbucket.org/Unity-Technologies/nativeaudioplugins/src). Add it to your XCode project.
 2. add `#import "AudioPluginInterface.h";` to UnityAppController.mm in XCode.
