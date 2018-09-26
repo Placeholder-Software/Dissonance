@@ -90,6 +90,10 @@ Get the current priority of speech from this speaker. Null if the player is not 
 
 Get the list of rooms this player is currently listening to.
 
+### PacketLoss : float?
+
+Get the estimated packet loss (0 to 1) to/from this player. May be null if the player has disconnected or packet loss has not yet been measured.
+
 ### Playback : VoicePlayback
 
 Get the `VoicePlayback` component associated with this player. May be null if Dissonance is still setting up playback for this player, or the player has left the session.
