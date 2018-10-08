@@ -14,7 +14,7 @@ Finally, when you create a player and assign them to a team run a script which a
 void OnAssignPlayerToTeam(string teamName)
 {
     //Find local comms object
-    var comms = FindObjectsOfType<DissonanceComms>();
+    var comms = FindObjectOfType<DissonanceComms>();
     
     //Sanity check that we found what we're looking for
     if (comms == null)
