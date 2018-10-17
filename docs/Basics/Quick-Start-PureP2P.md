@@ -2,6 +2,8 @@
 
 > This Quick Start guide is for those of you integrating Dissonance into a game with the **WebRTC Network** asset.
 
+> **This integration requires Dissonance 6.2.5 or greater.**
+
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.
 
 Before beginning this tutorial, please refer to the [installation guide](/Basics/Getting-Started) to learn how to install Dissonance into your project.
