@@ -25,10 +25,20 @@ No runtime dependencies.
 
 No runtime dependencies.
 
-### Android (+Oculus Go)
+### Android (Including Oculus Go)
 
 On Android you must request permission to use the microphone, see the Unity documentation for this [here](https://docs.unity3d.com/Manual/android-manifest.html). If you use `Android 6.0` or greater and `API level 23` or greater there is a runtime permissions system which Unity does not support. However there is some excellent documentation by Oculus on how to build a plugin to request permissions [here](https://developer.oculus.com/blog/tech-note-android-plugins-and-permissions/).
 
 ### iOS
 
 No runtime dependencies.
+
+In the [Player Settings for iOS](https://docs.unity3d.com/Manual/class-PlayerSettingsiOS.html) there are four settings relevant to voice chat:
+
+ - `Microphone Usage Description`: You **must** enter the reason for accessing the microphone on the iOS device.
+ - `Prepare iOS for Recording`: You **must** enable this setting to enable low latency audio recording.
+
+>
+
+ - `Mute Other Audio Sources`: You **may** enable this to ensure that background audio does not interfere with voice audio.
+ - `Force iOS Speakers when Recording`: You **may** enable this to force audio to the speakers even when headphones are plugged in. If this is not enabled _all_ application audio will be played through the call speakers instead of the main speakers as soon as recording starts.
