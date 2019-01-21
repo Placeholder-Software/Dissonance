@@ -22,7 +22,7 @@ To get the names of other players inspect the Dissonance Comms component at runt
 
 #### Channel Type : Self
 
-If you have set up [Position Tracking](/Tutorials/Position-Tracking) then your player object will have an `IDissonancePlayer` component which identifies it to Dissonance. You can take advantage of this to send directly to players without having to know their name. When set to "Self" the broadcast component will look for a sibling `IDissonancePlayer` component and will send directly to that player.
+If you have set up [Position Tracking](/Tutorials/Position-Tracking) then your player object will have an `IDissonancePlayer` component which identifies it to Dissonance. You can take advantage of this to send directly to players without having to know their name. When set to "Self" the broadcast component will look for an `IDissonancePlayer` component in this gameobject or any ancestor and will send directly to that player.
 
 ## Channel Metadata
 
@@ -44,6 +44,12 @@ This determines the priority which this voice has for playback. Everyone who rec
  2. Default
  3. Medium
  4. High
+
+## IsMuted : bool
+
+When set to `true` this trigger will never activate.
+
+This can be used to create a UI push-to-talk activated broadcast trigger - set the `Activation Mode` to `Voice Activation` and toggle the `IsMuted` property with a button. When muted by the UI no voice will be sent, when unmuted the trigger will automatically transmit when speech is detected.
 
 ## Activation Mode
 
@@ -98,3 +104,4 @@ This controls how long it takes this fader to increase volume from 0 to the `Cha
 #### Fade Out Time
 
 This controls how long it takes this fader to decrease volume from `Channel Volume` slider level to 0. Note that this means voice will continue to be transmitted for this long even after the user has stopped pressing the push to talk key.
+

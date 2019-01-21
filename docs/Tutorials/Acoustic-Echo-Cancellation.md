@@ -82,16 +82,29 @@ When the filter first starts all of the numbers shown here will be zero or even 
 
 Once the AEC is running and has converged remote speakers in the session should not be able to hear the music you are playing. In our own tests we have had music playing loudly enough to drown out voices but even that was still cancelled!
 
-### Known Issue With iOS
+# Fixing `Audio effect Dissonance Echo Cancellation could not be found.` Error
 
-On iOS some people have reported the following error:
+## iOS
 
-> Audio effect Dissonance Echo Cancellation could not be found. Check that the project contains the correct native audio plugin libraries and that the importer settings are set up correctly.
+To fix this problem on iOS you must manually register the audio effect with the Unity audio pipeline.
 
-To fix this problem:
-
-1. Download AudioPluginInterface from [the Unity native audio plugin SDK](https://bitbucket.org/Unity-Technologies/nativeaudioplugins/src). Add it to your XCode project.
-2. add `#import "AudioPluginInterface.h";` to UnityAppController.mm in XCode.
+1. Download `AudioPluginInterface.h` from [the Unity native audio plugin SDK](https://bitbucket.org/Unity-Technologies/nativeaudioplugins/src) and add it to your XCode project.
+2. add `#import "AudioPluginInterface.h";` to `UnityAppController.mm` in XCode.
 3. Find the `preStartUnity` method and add the line `UnityRegisterAudioPlugin(&UnityGetAudioEffectDefinitions);`
 
 If this does not fix the issue, please add a comment to [this issue](https://github.com/Placeholder-Software/Dissonance/issues/80).
+
+## Android
+
+To fix this issue on Android you must re-import the plugin with the correct settings.
+
+1. Remove `Assets/Plugins/Dissonance/Plugins/Android/libs/armeabi-v7a/libAudioPluginDissonance.so` from the project (ensure that the `libAudioPluginDissonance.so.meta` is gone).
+2. Restart the Unity editor
+3. Put `libAudioPluginDissonance.so` back into the `Assets/Plugins/Dissonance/Plugins/Android/libs/armeabi-v7a`
+4. Configure the import settings:
+
+![libAudioPluginDissonance.so Import Settings](/images/AudioPluginDissonance.so.png)
+
+6. Check that `libAudioPluginDissonance.so.meta` contains `isPreloaded: 1`
+
+If this does not fix the issye, please add a comment to [this issue](https://github.com/Placeholder-Software/Dissonance/issues/110).

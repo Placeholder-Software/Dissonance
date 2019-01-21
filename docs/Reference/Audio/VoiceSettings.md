@@ -14,11 +14,14 @@ Because settings are saved into `PlayerPrefs` you can expose the settings to end
 
 ## Frame Size
 
+- Tiny (10ms) **LAN ONLY**
 - Small (20ms)
 - Medium (40ms)
 - Large (60ms)
 
 This setting determines how much voice data is sent in a single network packet. There is some overhead associated with each individual packet so using larger values will send less packets and thus reduce CPU load and network usage. However, larger values introduce more latency (more delay between speaking and hearing). Latency is a very important aspect of perceived voice quality and lowering this will improve the flow of conversations.
+
+The `Tiny` option is the lowest latency option as it bundles audio into 10 millisecond packets. However due to the high rate of packets (100/second) it is **not suitable for use over the internet**, only use it in a local area network when latency is very important.
 
 ## Audio Quality
 

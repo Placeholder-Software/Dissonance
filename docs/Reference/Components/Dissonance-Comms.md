@@ -153,6 +153,14 @@ Subscribes the given listener object to the voice activation detector (VAD) for 
 
 Unsubscribes a previously subscribed listener object from the VAD.
 
+### SubcribeToRecordedAudio(IMicrophoneSubscriber)
+
+Subscribes the given listener object to the microphone recorded audio _after_ it has been preprocessed. This will receive all audio recorded by the mic whether or not it is being sent over the network. Use `DissonanceComms.RoomChannels.Count` and `DissonanceComms.PlayerChannels.Count` to determine if the audio is being sent anywhere.
+
+### UnsubscribeFromRecordedAudio(IMicrophoneSubscriber)
+
+Unsubscribes a previously subscribed listener object from the microphone audio stream.
+
 ### TrackPlayerPosition(IDissonancePlayer)
 
 Begins [position tracking](/Tutorials/Position-Tracking.md) for the player represented by the given object.
