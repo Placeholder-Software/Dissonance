@@ -4,4 +4,4 @@ On Android you must request permission to use the microphone, see the Unity docu
 
 ### ARM64
 
-Dissonance includes (but does not use by default) ARM64 binaries compatible with Android. To enable these find the files in `Assets\Plugins\Dissonance\Plugins\Android\libs\ARM64` and enable them for the platforms you wish.
+Dissonance includes ARM64 binaries compatible with Android, these are only enabled in Unity 2018.1+ (Unity 2017.4 does not support ARM64).
