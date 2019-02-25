@@ -11,7 +11,7 @@ markdown_extensions:
 pages:
 - Home: "index.md"
 - "Project Setup": "Basics/Getting-Started.md"
-- "Installation Requirements": "Basics/End-User-Requirements.md"
+- "Installation Requirements": "Basics/Licensing.md"
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
     - "Forge Networking Classic": "Basics/Quick-Start-Forge.md"
@@ -22,6 +22,14 @@ pages:
     - "Steamworks.NET P2P": "Basics/Quick-Start-Steamworks.Net-P2P.md"
     - "Unity Networking LLAPI (self contained)": "Basics/Quick-Start-UNet-LLAPI.md"
     - "WebRTC Network (self contained)": "Basics/Quick-Start-PureP2P.md"
+- "Plastorm Specifics":
+    - "Platforms/Windows Desktop.md"
+    - "Platforms/Windows UWP & Hololens.md"
+    - "Platforms/Linux.md"
+    - "Platforms/MacOS.md"
+    - "Platforms/Android & Oculus Go.md"
+    - "Platforms/iOS.md"
+    - "Platforms/Magic Leap.md"
 - "Basic Concepts": "Basics/Introduction-To-Chat-Rooms.md"
 - "Introductory Tutorials":
     - "Push-To-Talk": "Tutorials/Push-to-Talk.md"
