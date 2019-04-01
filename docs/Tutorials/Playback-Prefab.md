@@ -14,6 +14,7 @@ You may also attach a Unity `AudioSource` component, in which case you can adjus
  - Pitch
  - Clip
  - Play On Awake
+ - Mute
  
 ## Lifetime
 
