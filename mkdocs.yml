@@ -27,6 +27,7 @@ pages:
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
     - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
+    - "Mirror Networking": "Basics/Quick-Start-Mirror.md"
     - "Steamworks.NET P2P": "Basics/Quick-Start-Steamworks.Net-P2P.md"
     - "Unity Networking LLAPI (self contained)": "Basics/Quick-Start-UNet-LLAPI.md"
     - "WebRTC Network (self contained)": "Basics/Quick-Start-PureP2P.md"
