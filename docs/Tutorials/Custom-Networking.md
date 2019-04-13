@@ -2,17 +2,9 @@
 
 Dissonance is built to be completely decoupled from the underlying networking system, this allows Dissonance to run on top of various different Unity networking assets (e.g. UNet, Forge, Photon etc) just by swapping which Dissonance network component is used. If you wish to use a publicly available networking system which Dissonance does not yet have an integration for [raise an issue](https://github.com/Placeholder-Software/Dissonance) and see if we'll build the integration into Dissonance. However if you're writing a custom network system and want to use Dissonance you'll have to write your own integration.
 
-### ICommsNetwork
-
-Fundamentally writing a new network integration requires that you implement the `Dissonance.Networking.ICommsNetwork` interface. This interface should be implemented on a MonoBehaviour and then an instance of that behaviour should be attached to the same game object as your `DissonanceComms` behaviour. Dissonance will automatically find the behaviour and use it as needed.
-
-When you are implementing this interface you will have to encode and decode packets containing the necessary data (which may be in format you wish to design). If you want to use the same format as other Dissonance implementations the format is documented [here](/Reference/Networking/Packet-Format). There are helper structs for reading and writing network packets in the default format avilable: `Dissonance.Networking.PacketWriter` and `Dissonance.Networking.PacketReader`.
-
-The `ICommsNetwork` interface is as minimal as possible so you should be able to fit it over any networking system with almost any number of players.
-
 ### BaseCommsNetwork
 
-Most custom networks will not need to implement `ICommsNetwork`, Dissonance includes a set of base classes which implement most of the networking logic for you. These classes assume a session with a host which everyone can communicate with (and optionally support direct p2p communication).
+Dissonance includes a set of base classes which implement most of the networking logic for you. These classes assume a session with a host which everyone can communicate with (and optionally support direct p2p communication).
 
 All of the built in network integrations are built on top of these `BaseCommsNetwork` classes. To using these for your custom network you should create a new class e.g. `MyCustomCommsNetwork` which inherits the `BaseCommsNetwork` class. This requires five generic parameters:
 

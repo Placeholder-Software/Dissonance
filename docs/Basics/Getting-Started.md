@@ -8,11 +8,11 @@ Import the Dissonance asset into the project. Every time you import a new versio
 
 ### 2. Download Integrations
 
-On the welcome screen click the `Open Integrations List` button, this will open your browser to the changelog for the latest version of Dissonance. Download the integrations you want and import them into the project (`Assets > Import Package > Custom Package`).
+On the welcome screen is a list of integrations available for Dissonance. You should install at least one network backend integration - read [these docs](/Basics/Choosing-A-Network) for help on choosing which one to use.
 
 ### 3. Run In Background
 
-Since this is a multiplayer game you're going to need the game to continue running (and processing network packets) even when the game window does not have focus. To do this navigate to Edit -> Project Settings -> Player, the inspector pane will now change to show the player settings, check the box labeled "Run In Background".
+Since this is a multiplayer game you're going to need the game to continue running (and processing network packets) even when the game window does not have focus. To do this navigate to `Edit -> Project Settings -> Player`, the inspector pane will now change to show the player settings, check the box labeled "Run In Background".
 
 ## 4. Complete!
 

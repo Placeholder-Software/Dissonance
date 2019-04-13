@@ -10,7 +10,9 @@ markdown_extensions:
     - markdown.extensions.sane_lists
 pages:
 - Home: "index.md"
-- "Project Setup": "Basics/Getting-Started.md"
+- "Project Setup":
+    - "Basics/Getting-Started.md"
+    - "Basics/Choosing-A-Network.md"
 - "Installation Requirements":
     - "Basics/Licensing.md"
     - "Platforms/Windows Desktop.md"
