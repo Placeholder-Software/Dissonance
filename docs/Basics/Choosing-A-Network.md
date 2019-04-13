@@ -14,8 +14,6 @@ These integrations simply send data though a network session which you first set
  - Photon Unity networking (2)
  - Dark Rift 2
 
----
-
 #### Steamworks.NET P2P
 The Steamworks integration hosts a voice chat session using [Steamworks.NET](https://steamworks.github.io/) peer to peer networking, it requires all users to be logged into a [Steam](https://store.steampowered.com/) account.
 
@@ -30,7 +28,7 @@ These integrations host a voice chat session separately from any other networkin
 #### UNet LLAPI
 > This integration hosts a voice chat session using the UNet low level networking API (LLAPI), to start a session you need to supply the port/IP address of the host computer to all clients. All voice packets are sent via the server. There is no NAT negotiation included in LLAPI so you may need to use a third party asset or host the server on a computer with no NAT.
 
-#### - WebRTC Network
+#### WebRTC Network
 > This integration hosts a voice chat session using [WebRTC Network](https://assetstore.unity.com/packages/tools/network/webrtc-network-47846), to start a session you need to supply a unique session ID string to all clients. This includes NAT negotiation and all packets are sent peer to peer to reduce the amount of bandwidth used by the server. There is [a demo project](https://github.com/Placeholder-Software/Dissonance-Demo) using Dissonance and this integration to build a standalone peer to peer chat application.
 
 ## Custom Networking
