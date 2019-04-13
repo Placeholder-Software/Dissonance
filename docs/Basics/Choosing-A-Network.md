@@ -23,7 +23,7 @@ Before starting Dissonance you must first have established peer to peer connecti
 
 ## Standalone Networking
 
-These integrations host a voice chat session separately from any other networking system you may be using. These are _slightly_ more complicated to setup but they have the advantage that voice data is not mixed with other application data. You may want to use these integrations if your application does not have any other networking except voice, or if your application network usage is metered and you don't want to pay the costs of voice traffic.
+These integrations host a voice chat session separately from any other networking system you may be using. These are _slightly_ more complicated to setup but they have the advantage that voice data is not mixed with other application data. You may want to use these integrations if your application does not have any other networking, or if your application network usage is metered and you don't want to pay the costs of voice traffic.
 
 #### UNet LLAPI
 > This integration hosts a voice chat session using the UNet low level networking API (LLAPI), to start a session you need to supply the port/IP address of the host computer to all clients. All voice packets are sent via the server. There is no NAT negotiation included in LLAPI so you may need to use a third party asset or host the server on a computer with no NAT.
