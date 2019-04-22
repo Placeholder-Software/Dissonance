@@ -6,7 +6,7 @@ The playback volume can be set by the speaker per broadcast channel. This can be
 
 The broadcaster trigger component exposes 2 amplitude settings in the inspector; activation fade and trigger fade.
 
-![Amplitude Fader Controls](/images/VoiceBroadcastTrigger-AmplitudeFaders.png)
+![Amplitude Fader Controls](../images/VoiceBroadcastTrigger-AmplitudeFaders.png)
 
 `Activation Fade` applies a fade in/out _every time_ speech is started or stopped. For example every time push-to-talk is pressed/released. This setting should be used with care; applying *any* fade-in is inadvisable as it will almost certainly cause the start of what is being said to be cut off.
 

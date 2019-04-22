@@ -8,7 +8,7 @@ This tutorial will explain how to broadcast a voice message directly to a specif
 
 To transmit to a specific player, change the Channel Type option on the `VoiceBroadcastTrigger` to "Player", then give the player name for Recipient Player Name.
 
-![Broadcast Trigger configured for player messaging](/images/VoiceBroadcastTrigger_Player.png)
+![Broadcast Trigger configured for player messaging](../images/VoiceBroadcastTrigger_Player.png)
 
 To change the targetted player at run time modify the `PlayerId` field of the `VoiceBroadcastTrigger` behaviour.
 
@@ -22,4 +22,4 @@ If you have set up Dissonance [position tracking](Position-Tracking.md) in your 
 
 To transmit to this player change the Channel Type option on a `VoiceBroadcastTrigger` attached to the same game object to "Self".
 
-![Broadcast Trigger configured for alternative player messaging](/images/BroadcastToSelf_Inspector.png)
+![Broadcast Trigger configured for alternative player messaging](../images/BroadcastToSelf_Inspector.png)

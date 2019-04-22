@@ -19,7 +19,7 @@ There is another priority option: `None`. If this used then the priority falls b
 
 The priority of a channel can be defined in a number of ways. The inspector for the Voice Broadcast Trigger allows you to set the priority for voice sent with this trigger:
 
-![Receipt Trigger](/images/VoiceBroadcastTrigger_Priority.png)
+![Receipt Trigger](../images/VoiceBroadcastTrigger_Priority.png)
 
 In scripts you can change the priority for a VoiceBroadcastTrigger with the `Priority` property:
 

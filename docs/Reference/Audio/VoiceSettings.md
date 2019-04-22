@@ -2,7 +2,7 @@
 
 Voice settings is a central place to control various audio settings Dissonance uses. Voice settings can be accessed through `Window > Dissonance > Quality Settings`.
 
-![Voice Settings Editor](/images/VoiceSettings_Editor.png)
+![Voice Settings Editor](../../images/VoiceSettings_Editor.png)
 
 ## Persistence
 

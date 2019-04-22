@@ -2,13 +2,13 @@
 
 The Voice Broadcast Trigger controls when and where the local voice data is sent to.
 
-![Voice Broadcast Trigger Inspector](/images/VoiceBroadcastTrigger_SectionsOverview.png "Voice Broadcast Trigger Inspector")
+![Voice Broadcast Trigger Inspector](../../images/VoiceBroadcastTrigger_SectionsOverview.png "Voice Broadcast Trigger Inspector")
 
 ## Channel Type
 
 This section controls which channel voice data will be sent to with this trigger. There are three channel type options, which one you choose will change the rest of the channel type UI to match. Channel type can be set from scripts by modifying the `ChannelType` property.
 
-![Voice Broadcast Trigger - Channel Type](/images/VoiceBroadcastTrigger_Section_ChannelType.png)
+![Voice Broadcast Trigger - Channel Type](../../images/VoiceBroadcastTrigger_Section_ChannelType.png)
 
 #### Channel Type : Room
 
@@ -28,7 +28,7 @@ If you have set up [Position Tracking](../../Tutorials/Position-Tracking.md) the
 
 This section controls which metadata is sent along with the channel.
 
-![Voice Broadcast Trigger - Channel Metadata](/images/VoiceBroadcastTrigger_Section_ChannelMetadata.png)
+![Voice Broadcast Trigger - Channel Metadata](../../images/VoiceBroadcastTrigger_Section_ChannelMetadata.png)
 
 #### Use Positional Data
 
@@ -55,7 +55,7 @@ This can be used to create a UI push-to-talk activated broadcast trigger - set t
 
 This section controls how the broadcast trigger decides when to send voice. There are three activation options, which one you choose will change the rest of the activation mode UI to match. Activation mode can be set from scripts by modifying the `Mode` property.
 
-![Voice Broadcast Trigger - Activation Mode](/images/VoiceBroadcastTrigger_Section_ActivationMode.png)
+![Voice Broadcast Trigger - Activation Mode](../../images/VoiceBroadcastTrigger_Section_ActivationMode.png)
 
 #### Activation Mode : None
 
@@ -77,7 +77,7 @@ Using collider volume activation requires [Position Tracking](../../Tutorials/Po
 
 This section controls which [Access Tokens](../../Tutorials/Access-Control-Tokens.md) are required to send with this broadcaster.
 
-![Voice Broadcast Trigger - Access Tokens](/images/VoiceBroadcastTrigger_Section_AccessTokens.png)
+![Voice Broadcast Trigger - Access Tokens](../../images/VoiceBroadcastTrigger_Section_AccessTokens.png)
 
 The DissonanceComms component keeps a set of tokens which the local player has. The broadcast trigger will only send voice if the player has one or more of the necessary tokens.
 
@@ -91,7 +91,7 @@ This section controls the amplitude and soft fading of voice sent with this trig
 
 Since there are two faders this means the trigger will have two different volumes to use, they will be multiplied together and the result is used as the actual volume value.
 
-![Voice Broadcast Trigger - Amplitude Faders](/images/VoiceBroadcastTrigger_Section_AmplitudeFaders.png)
+![Voice Broadcast Trigger - Amplitude Faders](../../images/VoiceBroadcastTrigger_Section_AmplitudeFaders.png)
 
 #### Channel Volume
 

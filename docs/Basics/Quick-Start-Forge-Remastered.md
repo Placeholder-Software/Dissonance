@@ -20,7 +20,7 @@ Before you can speak to anyone, you need to add a "Voice Broadcast Trigger" scri
 
 The "Voice Broadcast Trigger" controls when the user's microphone is being transmitted to other players, and to whom the user is talking. There are many configuration options on this script to provide more advanced control of under what sitations we should be transmitting and who to, but for this tutorial simply leave the settings at default.
 
-![Broadcast Trigger Configuration](/images/VoiceBroadcastTrigger_Default.png)
+![Broadcast Trigger Configuration](../images/VoiceBroadcastTrigger_Default.png)
 
 The default broadcast trigger configuration includes two settings of note:
 1. Transmit on *Voice Activation*. This means Dissonance will transmit whenever it detects that the user is speaking.
@@ -32,7 +32,7 @@ Now you are talking into the 'Global' room automatically whenever you speak. How
 
 To listen to the 'Global' room, add a "Voice Receipt Trigger" to the scene. Like the "Voice Broadcast Trigger", this script can be placed anywhere, but for this tutorial you should simply add it to the DissonanceSetup game object.
 
-![Receipt Trigger Configuration](/images/VoiceReceiptTrigger_Default.png)
+![Receipt Trigger Configuration](../images/VoiceReceiptTrigger_Default.png)
 
 Again, leave this on the default configuration, which should have trigger activation disabled and be listening to the 'Global' chat room.
 

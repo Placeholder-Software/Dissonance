@@ -2,7 +2,7 @@
 
 The Dissonance Comms component is the central place to configure Dissonance. There must be an active one within the scene for Dissonance to work.
 
-![Dissonance Comms Inspector](/images/DissonanceComms_Inspector.png "Dissonance Comms Inspector")
+![Dissonance Comms Inspector](../../images/DissonanceComms_Inspector.png "Dissonance Comms Inspector")
 
 ## Playback Prefab
 

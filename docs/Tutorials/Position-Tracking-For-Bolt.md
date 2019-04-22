@@ -8,7 +8,7 @@ This tutorial will explain how to configure your project to track the position o
 
 First you need to modify the bolt state which you use for your player; add a new string property called `DissonancePlayerId`.
 
-![Bolt State](/images/Bolt-State.png)
+![Bolt State](../images/Bolt-State.png)
 
 Now you need to create a new script which will use this state. Dissonance includes a base class which does most of the work for you.
 
@@ -33,7 +33,7 @@ To setup position tracking you simply need to attach the DissonancePlayerTrackin
  
 Ensure that this component is attached to *all* entities in the scene which represent a player (both the local player and all remote players). If you have a prefab which is used to construct your players you can simply attach the behaviour to this prefab.
  
-![A Player Prefab with position tracking behaviour added](/images/PlayerPrefab_PositionalAudio.png)
+![A Player Prefab with position tracking behaviour added](../images/PlayerPrefab_PositionalAudio.png)
 
 ## Using Position Tracking 
 
@@ -41,7 +41,7 @@ Ensure that this component is attached to *all* entities in the scene which repr
 
 When positional audio is enabled the voice from remote players will sound like it is coming from the correct position. To enable this simply tick the "use positional data" checkbox on the voice broadcast trigger.
 
-![A broadcast trigger with positional audio enabled](/images/VoiceBroadcastTrigger_Positional.png)
+![A broadcast trigger with positional audio enabled](../images/VoiceBroadcastTrigger_Positional.png)
 
 ### Collider Chat Room
 

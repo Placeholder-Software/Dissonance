@@ -6,6 +6,6 @@ Dissonance includes two default [playback prefabs](Playback-Prefab.md) in the `A
 
 # Spatialization And Custom Playback Prefabs
 
-![Audio Source](/images/AudioSource_SpatializeHighlighted.png)
+![Audio Source](../images/AudioSource_SpatializeHighlighted.png)
 
 If you are creating a custom playback prefab enaling spatialization is very simple - just tick the `Spatialize` checkbox on the AudioSource in the prefab.

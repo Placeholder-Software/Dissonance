@@ -4,7 +4,7 @@ A team chat room is a set of rooms where all users *on the same team* talk to an
 
 To create a team chat setup first create multiple pairs of broadcasters and receivers, one for each team.
 
-![Example of team chat configuration](/images/TeamChat_Inspector.png)
+![Example of team chat configuration](../images/TeamChat_Inspector.png)
 
 With the setup as shown here every player will speak and and listen to every team channel. To fix this add a unique token to each pair of triggers (e.g. the team name), once you have done this none of the triggers will activate and no one will speak or listen to any of the team rooms.
 
@@ -32,4 +32,4 @@ void OnAssignPlayerToTeam(string teamName)
 
 If you want to still have a global voice chat room *and* have per team chat rooms this can be achieved by simply having the normal [global chat room](Global-Chat-Room.md) configuration with a different activation mode (e.g. a different push-to-talk input axis, such as 'v' to team chat and 'b' to global chat).
 
-![Example of two different PTT axes](/images/VoiceBroadcastTrigger_DifferentPTT.png "Example of two different PTT axes")
+![Example of two different PTT axes](../images/VoiceBroadcastTrigger_DifferentPTT.png "Example of two different PTT axes")

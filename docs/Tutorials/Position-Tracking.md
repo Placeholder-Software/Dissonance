@@ -14,7 +14,7 @@ To setup position tracking you simply need to attach a single behaviour to all y
  
 Ensure that this component is attached to *all* entities in the scene which represent a player (both the local player and all remote players). If you have a prefab which is used to construct your players you can simply attach the behaviour to this prefab. For slightly more advanced setups you may need to write your own player script for position tracking, you can find documentation for this [here](Custom-Position-Tracking.md).
  
-![A Player Prefab with position tracking behaviour added](/images/PlayerPrefab_PositionalAudio.png)
+![A Player Prefab with position tracking behaviour added](../images/PlayerPrefab_PositionalAudio.png)
 
 ### What Does Position Tracking Cost?
 
@@ -26,7 +26,7 @@ Some people have avoided using the position tracking because they're worried tha
 
 When positional audio is enabled the voice from remote players will sound like it is coming from the correct position. To enable this simply tick the "use positional data" checkbox on the voice broadcast trigger.
 
-![A broadcast trigger with positional audio enabled](/images/VoiceBroadcastTrigger_Positional.png)
+![A broadcast trigger with positional audio enabled](../images/VoiceBroadcastTrigger_Positional.png)
 
 ### Collider Chat Room
 

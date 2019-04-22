@@ -16,7 +16,7 @@ The first thing you will need to do is define the volume which represents your l
 
 Create a new game object called "LobbyChatRoom". Add a "Box Collider" to the game object, set it's size to the size of your lobby room and check "Is Trigger".
 
-![Box Collider](/images/BoxCollider.png)
+![Box Collider](../images/BoxCollider.png)
 
 ## Step 2: Add a Receipt Trigger
 
@@ -30,11 +30,11 @@ Right now, the receipt trigger is listening to the "Global" chat room, not the c
 
 On the inspector for the "Voice Receipt Trigger" click "Config Rooms" to go to Dissonance's room configuration. By default, Dissonance creates three chat rooms; "Global", "Red Team" and "Blue Team". Click "Add Room", and rename the new room to "Lobby".
 
-![Room Configuration with Lobby](/images/RoomConfiguration_Lobby.png)
+![Room Configuration with Lobby](../images/RoomConfiguration_Lobby.png)
 
 Now, go back to the receipt trigger, and change the selection in the "Chat Room" drop down to the new "Lobby" room.
 
-![ReceiptTrigger with Lobby room available](/images/VoiceReceiptTrigger_LobbyRoom.png)
+![ReceiptTrigger with Lobby room available](../images/VoiceReceiptTrigger_LobbyRoom.png)
 
 > Chat rooms can be named dynamically when configuring the triggers programatically.
 
@@ -44,7 +44,7 @@ You now have a receiver configured to hear other people alking in the lobby room
 
 Add a "Voice Broadcast Trigger" script to the game object. Use a Channel Type of "Room", and choose the "Lobby" room.
 
-![BroadcastTrigger with Lobby room available](/images/VoiceBroadcastTrigger_LobbyRoom.png)
+![BroadcastTrigger with Lobby room available](../images/VoiceBroadcastTrigger_LobbyRoom.png)
 
 ## Finished
 

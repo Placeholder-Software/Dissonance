@@ -12,7 +12,7 @@ It can be tempting to mix voice signals in the same way as any other audio signa
 
 Games frequently have very loud sound effects such as explosions and gunfire which can drown out other sounds in the game. However, it would interrupt conversations if these noises also drowned out the voice signal. A naive solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping and sound terrible. An alternative solution would be to reduce the volume of the game audio far below the voice signal, but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
 
-![Example of audio mixer with ducking](/images/AudioMixing_Ducking.png "Example of audio mixer with ducking")
+![Example of audio mixer with ducking](../images/AudioMixing_Ducking.png "Example of audio mixer with ducking")
 
 Above is an example audio mixer for a game. Highlighted in red are all the groups of non voice data, highlighted in blue is a groups of NPC voice audio and highlighted in green is a groups of human voice data. If you do not have any groups like this then all you need to add is a single groups of "non-voice" and make sure all the game sounds play to this group. To make dissonance play to the "Human Voice" group you need to modify your playback prefab, simply drag the "Human Voice" group into the AudioSource of the prefab and all voice will play to that group.
 
@@ -22,6 +22,6 @@ The yellow arrows indicate "sends", a send sends audio from one signal processor
 
 As mentioned above you should be very cautious about applying any sound effects to the voice signal which are not for the purpose of enhancing the voice quality. However there are some situations where applying sound effects to voices could sound good, for example keeping allied communications clean, but adding a subtle radio distortion effect to enemy communications. Applying an effect is very simple, simply click add on the audio group and select the effect you want.
 
-![Example of audio mixer with distortion](/images/AudioMixing_Distortion.png "Example of audio mixer with distortion")
+![Example of audio mixer with distortion](../images/AudioMixing_Distortion.png "Example of audio mixer with distortion")
 
 Above is an example of an audio group with a [distortion](https://docs.unity3d.com/Manual/class-AudioDistortionEffect.html) effect applied.

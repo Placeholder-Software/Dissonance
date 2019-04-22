@@ -12,7 +12,7 @@ The "Trigger Activation" setting is the setting for if the user is allowed to sp
 
 ## Sender Target
 
-![Target setting highlighted on broadcast trigger inspector](/images/VoiceBroadcastTrigger_Targets.png "Target setting highlighted on broadcast trigger inspector")
+![Target setting highlighted on broadcast trigger inspector](../images/VoiceBroadcastTrigger_Targets.png "Target setting highlighted on broadcast trigger inspector")
 
 The broadcast trigger component supports three types of target: Room, Player and Self. The setting for this highlighted in the image above.
 
@@ -30,7 +30,7 @@ When the target of a bradocaster is set to "Self" the broadcaster will look for 
 
 ## Receiver
 
-![Rooms setting on the receipt trigger inspector](/images/VoiceReceiptTrigger_Rooms.png "Rooms setting on the receipt trigger inspector")
+![Rooms setting on the receipt trigger inspector](../images/VoiceReceiptTrigger_Rooms.png "Rooms setting on the receipt trigger inspector")
 
 If the sending target is "Player" or "Self" then the receiving player automatically hears anything transmitted to them. However this is not the case for rooms, receiving players need to subscribe to rooms they wish to listen to, this is controlled by the "Voice Receipt Trigger". When the trigger component is activated voice will be received from the given room.
 

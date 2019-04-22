@@ -22,7 +22,7 @@ In most scenarios this is not a problem - game sound effects and background musi
 
 The first thing required for the AEC to function is to attach the postprocessor mentioned above to an [audio mixer](https://docs.unity3d.com/Manual/AudioMixer.html). Attach the `Dissonance Echo Cancellation` audio filter to the very last audio mixer in the mixing system and disable the `Auto Mixer Suspend` option for this mixer. If you were not already using audio mixers simply create a new mixer in `Window > Audio Mixer` and attach the filter to that.
 
-![Audio Mixer With AEC Filter](/images/AudioMixer_WithAecFilter.png)
+![Audio Mixer With AEC Filter](../images/AudioMixer_WithAecFilter.png)
 
 ### 2. Route Non-Voice Audio
 
@@ -32,13 +32,13 @@ If you were already using audio mixers then ensure that all the mixers eventuall
 
 You can check that you have done this correctly by running the game and watching the audio mixer window. The dB meter on the mixer should move when non-voice audio is playing.
 
-![Audio Source With Output Highlighted](/images/AudioSource_OutputHighlighted.png)
+![Audio Source With Output Highlighted](../images/AudioSource_OutputHighlighted.png)
 
 ### 3. Route Voice Audio
 
 Voice audio also needs to be re-routed to pass through the mixer with the filter through the filter. To change where voice audio is sent you need to create a custom [playback prefab](/Tutorials/Playback-Prefab). Create a prefab with a `VoicePlayback` component and an `AudioSource` component. Set the output of the AudioSource to the correct mixer. Finally drop the prefab into the `Playback Prefab` field of the `Dissonance Comms` component.
 
-![Playback Prefab With Output Highlighted](/images/PlaybackPrefab_OutputHighlighted.png)
+![Playback Prefab With Output Highlighted](../images/PlaybackPrefab_OutputHighlighted.png)
 
 If you were already using audio mixers then you may want to consider creating a mixer specifically for voice and outputting this mixer to the root mixer. This will allow you to attach sound effects specifically to voices.
 
@@ -48,7 +48,7 @@ If you were not using audio mixers then you should just send the voice data to t
 
 Now that all the audio is routed to pass through the AEC filter AEC can run. Open the Dissonance quality settings menu `Window > Dissonance > Quality Settings` to set the amount of echo suppression applied. Desktop platforms and mobile platforms use completely different AEC systems internally and are configured separately. Dissonance will automatically switch to using the mobile AEC (AECM) when a mobile platform is detected.
 
-![AEC Settings Inspector](/images/AecSettings.png)
+![AEC Settings Inspector](../images/AecSettings.png)
 
 These settings can be set in the editor - they will be saved into an asset and used as the default values at runtime. They can be changed at runtime by accessing the `VoiceSettings` class:
 
@@ -68,7 +68,7 @@ It is advisable to start with very low AEC settings and ask the user to increase
 
 Once you have set all of this up you may want to test that AEC is working as intended. To do so simply add an `AudioSource` component to your scene playing some loud music - make sure it's routed through the correct mixer! Now run the scene in the editor and select the filter attached to the audio mixer, this will show a status screen for the AEC:
 
-![AEC Status Inspector](/images/AecStatus.png)
+![AEC Status Inspector](../images/AecStatus.png)
 
 The second box shows the AEC status. In this image it is showing a warning - if everything is setup correctly it should show `AEC filter is running`.
 
@@ -97,7 +97,7 @@ To fix this issue on Android you must re-import the plugin with the correct sett
 3. Put `libAudioPluginDissonance.so` back into the `Assets/Plugins/Dissonance/Plugins/Android/libs/armeabi-v7a`
 4. Configure the import settings:
 
-![libAudioPluginDissonance.so Import Settings](/images/AudioPluginDissonance.so.png)
+![libAudioPluginDissonance.so Import Settings](../images/AudioPluginDissonance.so.png)
 
 6. Check that `libAudioPluginDissonance.so.meta` contains `isPreloaded: 1`
 

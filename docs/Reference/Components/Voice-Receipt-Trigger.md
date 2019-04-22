@@ -2,7 +2,7 @@
 
 The Voice Receipt Trigger controls which rooms are being listened to by the local player.
 
-![Voice Receipt Trigger Inspector](/images/VoiceReceiptTrigger_Overview.png "Voice Receipt Trigger Inspector")
+![Voice Receipt Trigger Inspector](../../images/VoiceReceiptTrigger_Overview.png "Voice Receipt Trigger Inspector")
 
 ## Trigger Activation
 
