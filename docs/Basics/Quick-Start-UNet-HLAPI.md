@@ -4,7 +4,7 @@
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.
 
-Before beginning this tutorial, please refer to the [installation guide](/Basics/Getting-Started) to learn how to install Dissonance into your project.
+Before beginning this tutorial, please refer to the [installation guide](Getting-Started.md) to learn how to install Dissonance into your project.
 
 A demo scene for this tutorial can be found in the `Dissonance/Integrations/UNet_HLAPI/Demo` folder.
 
@@ -54,10 +54,10 @@ Again, leave this on the default configuration, which should have trigger activa
 
 Congratulations, you have now added voice comms to your game! What to do next?
 
-* [Transmit on key press with Push-to-Talk](/Tutorials/Push-to-Talk)
-* [Set up per-team chat channels](/Tutorials/Team-Chat-Rooms)
-* [Direct message another player](/Tutorials/Direct-Player-Transmit)
-* [Send text chat messages](/Tutorials/Text-Chat)
-* [3D Positional Audio](/Tutorials/Position-Tracking)
-* [3D Area Chat Rooms](/Tutorials/Collider-Chat-Room)
-* [Proximity Chat: Talk to players near each other](/Tutorials/Proximity-Chat)
+* [Transmit on key press with Push-to-Talk](../Tutorials/Push-to-Talk.md)
+* [Set up per-team chat channels](../Tutorials/Team-Chat-Rooms.md)
+* [Direct message another player](../Tutorials/Direct-Player-Transmit.md)
+* [Send text chat messages](../Tutorials/Text-Chat.md)
+* [3D Positional Audio](../Tutorials/Position-Tracking.md)
+* [3D Area Chat Rooms](../Tutorials/Collider-Chat-Room.md)
+* [Proximity Chat: Talk to players near each other](../Tutorials/Proximity-Chat.md)

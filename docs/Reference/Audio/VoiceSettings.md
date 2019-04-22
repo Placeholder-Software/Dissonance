@@ -19,9 +19,9 @@ Because settings are saved into `PlayerPrefs` you can expose the settings to end
 - Medium (40ms)
 - Large (60ms)
 
-This setting determines how much voice data is sent in a single network packet. There is some overhead associated with each individual packet so using larger values will send less packets and thus reduce CPU load and network usage. However, larger values introduce more latency (more delay between speaking and hearing). Latency is a very important aspect of perceived voice quality and lowering this will improve the flow of conversations.
+This setting determines how much voice data is sent in a single network packet. There is some overhead associated with each individual packet - using larger values will send less packets-per-second and thus reduce CPU load and network usage. However, larger packets introduce more latency (more delay between speaking and hearing). Latency is a very important aspect of perceived voice quality and lowering this will improve the flow of conversations.
 
-The `Tiny` option is the lowest latency option as it bundles audio into 10 millisecond packets. However due to the high rate of packets (100/second) it is **not suitable for use over the internet**, only use it in a local area network when latency is very important.
+The `Tiny` option (10ms packets) is the lowest latency option. However due to the very high rate of packets (100/second) it is **not suitable for use over the internet**, only use it in a local area network when latency is very important (e.g. shared space VR).
 
 ## Audio Quality
 
@@ -43,7 +43,7 @@ Noise suppression is not perfect and may sometimes distort speech, higher levels
 
 ## Acoustic Echo Cancellation
 
-These settings control the acoustic echo canceller, this observes sounds coming out of the speakers and then attempts to remove these sounds from the microphone signal after a short delay. It automatically calibrates the delay so expect a short period (10-40 seconds) where no echoes will be cancelled, if there is no sounds coming out of the speakers at all (or the microphone is not detecting those sounds) it will not be able to calibrates the delay. Refer to [these docs](/Tutorials/Acoustic-Echo-Cancellation/) for a tutorial on correctly setting up the acoustic echo canceller.
+These settings control the acoustic echo canceller, this observes sounds coming out of the speakers and then attempts to remove these sounds from the microphone signal after a short delay. It automatically calibrates the delay so expect a short period (10-40 seconds) where no echoes will be cancelled, if there is no sounds coming out of the speakers at all (or the microphone is not detecting those sounds) it will not be able to calibrate the delay. Refer to [these docs](../../Tutorials/Acoustic-Echo-Cancellation.md) for a tutorial on correctly setting up the acoustic echo canceller.
 
 #### Mobile Echo Cancellation
 

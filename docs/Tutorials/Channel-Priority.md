@@ -29,7 +29,7 @@ var trigger = GetComponent<VoiceBroadcastTrigger>();
 trigger.Priority = ChannelPriority.High;
 ```
 
-Alternatively if you are [directly using channels](/Tutorials/Directly-Using-Channels) instead of using the trigger behaviours you can set the priority when the channel is created, and then modify it from the channel object at any time:
+Alternatively if you are [directly using channels](Directly-Using-Channels.md) from scripts instead of using the trigger components you can set the priority when the channel is created, and then modify it from the channel object at any time:
 
 ```
 var comms = GetComponent<DissonanceComms>();

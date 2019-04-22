@@ -9,4 +9,4 @@ A global chat room is just a single room which all users talk to and listen to. 
 
 Both components will activate when the scene loads (on each different computer in the network session) and all players will be in the room.
 
-Find out more about the [broadcast trigger](/Reference/Components/Voice-Broadcast-Trigger) and the [receipt trigger](/Reference/Components/Voice-Receipt-Trigger).
+Find out more about the [broadcast trigger](../Reference/Components/Voice-Broadcast-Trigger.md) and the [receipt trigger](../Reference/Components/Voice-Receipt-Trigger.md).

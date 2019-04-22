@@ -43,7 +43,7 @@ When a channel is using positional audio the remote playeback system will positi
 
 ```ChannelPriority Priority { get; set; }```
 
-This property indicates the [priority](/Tutorials/Channel-Priority) associated with data sent over this channel. You may change this value at any time.
+This property indicates the [priority](Channel-Priority.md) associated with data sent over this channel. You may change this value at any time.
 
 When a receiver is receiving multiple channels simultaneously it will only play the highest priority channel(s) it is currently receiving.
 

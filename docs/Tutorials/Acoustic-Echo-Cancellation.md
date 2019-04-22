@@ -1,28 +1,22 @@
 # Acoustic Echo Cancellation
 
-> Requires Dissonance **v6.0.2** or greater!
+> Requires Dissonance **v6.2.0** or greater!
 
-When playing audio from speakers and recording audio from a nearby microphone you will often encounter problems when the microphone picks up the audio from the speakers. In a voice session a single person doing this can cause annoying echoes to be transmitted and multiple people doing this simultaneously can cause painful feedback which persists until everyone stops transmitting! This can be particularly problematic when using Voice Activation Detection (VAD) because the VAD automatically transmits back all speech it detects, causing constant echoes of everything other people say. It can also be very bad on platforms where the mic and the speaker are very close together such as VR headsets and mobile phones. Acoustic Echo Cancellation (AEC) is a system to automatically remove these echoes from the transmitted voice signal.
+When playing audio from speakers and recording audio from a nearby microphone you will often encounter problems when the microphone picks up the audio from the speakers. In a voice session a single person doing this can cause annoying echoes to be transmitted and multiple people doing this simultaneously can cause painful feedback which persists until everyone stops transmitting. This can be particularly problematic when using Voice Activation Detection (VAD) because the VAD automatically transmits back all speech it detects, causing constant echoes of everything other people say. It can also be very bad on platforms where the mic and the speaker are very close together such as VR headsets and mobile phones. Acoustic Echo Cancellation (AEC) is a system to automatically remove these echoes from the transmitted voice signal.
 
 ## How Does AEC Work?
 
 Dissonance already runs an audio preprocessor on the microphone signal before it is transmitted, by default this is running Noise Suppression (NS) and Voice Detection (VAD). To enable AEC we introduce a postprocessor which has _all_ game audio passed through it - this postprocessor informs the microphone preprocessor what audio is about to be played through the speakers. With this knowledge the preprocessor can remove the echo signal from the microphone signal when it appears a short time later.
 
-The most complex part of the AEC system is working out the correct echo delay from postprocessing the speaker to preprocessing the capture signal. This is achieved automatically but is is important to understand that the AEC system can take several seconds to converge on the correct delay and will not cancel any echo until it has done so. If no audio is playing out of the speakers the AEC has no data to work with and will not converge! In most gaming scenarios the background music/sound effects will suffice to give the AEC data to work with. However, if you are encountering problems with the AEC not cancelling any echo you should consider adding some sound effects for the AEC to process such as a short (1-2 second) jingle when a new user joins the voice session.
+    Audio Output -> Audio Postprocessor -> Speakers -> Echo -> Microphone -> Audio Preprocessor
+
+The most complex part of this system is working out what the delay is between the `Audio Postprocessor` and the `Audio Preprocessor`. This is achieved automatically but it is umportant to understand that the AEC system can take several seconds to work out the correct delay value - until it has done this no echo will be cancelled. The AEC cannot be calculating the delay value while there is no sound being played and it will slowly "forget" the delay value during periods of silence.
+
+In most scenarios this is not a problem - game sound effects and background music will be enough to keep the AEC synchronised with a suitable delay value. However if you are encountering problems with the AEC not working you should consider adding some sound effects for the AEC to process - e.g. a short jingle when a user joins a session, or ringing sound when joining a session.
 
 ## AEC Setup
 
-> **Before starting ensure you are using Dissonance 6.0.2 or greater!**
-
-### Before Starting
-
-There is a single **known issue** which affects AEC setup in Dissonance 6.0.2. A fix for this will be included in the next version of Dissonance (not yet available as of 2018-01-31).
-
-The fix is very simple:
-
- 1. Open `Plugins/Dissonance/Editor/DissonanceCommsEditor.cs`
- 2. Find `typeof(VoicePlayback)` on line 89
- 3. Replace it with `typeof(GameObject)`
+> **Before starting ensure you are using Dissonance 6.2.0 or greater!**
 
 ### 1. Audio Postprocessor
 
@@ -34,7 +28,7 @@ The first thing required for the AEC to function is to attach the postprocessor 
 
 The filter will only process audio which passes through the mixer it is attached to - how to achieve this depends on what kind of audio mixing system you already had setup before using AEC.
 
-If you were already using audio mixers then ensure that all the mixers eventually pass through the filter with the `Dissonance Echo Cancellation` filter attached. If you were not already using mixers then simply modify all the `AudioSource` components you use to output to the new mixer you created in the previous step.
+If you were already using audio mixers then ensure that all the mixers eventually pass through the filter with the `Dissonance Echo Cancellation` filter attached. If you were not already using mixers then simply _all_ the `AudioSource` components you use to output to the new mixer you created in the previous step.
 
 You can check that you have done this correctly by running the game and watching the audio mixer window. The dB meter on the mixer should move when non-voice audio is playing.
 
@@ -107,4 +101,4 @@ To fix this issue on Android you must re-import the plugin with the correct sett
 
 6. Check that `libAudioPluginDissonance.so.meta` contains `isPreloaded: 1`
 
-If this does not fix the issye, please add a comment to [this issue](https://github.com/Placeholder-Software/Dissonance/issues/110).
+If this does not fix the problem, please add a comment to [this issue](https://github.com/Placeholder-Software/Dissonance/issues/110).

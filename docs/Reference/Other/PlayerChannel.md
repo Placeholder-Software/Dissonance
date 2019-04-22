@@ -1,6 +1,6 @@
 # PlayerChannel
 
-This object represents a single speech channel directly to another player opened with the [PlayerChannels](/Reference/Other/PlayerChannels.md) API. The other player will receive the local voice without having to take any action.
+This object represents a single speech channel directly to another player opened with the [PlayerChannels](../Other/PlayerChannels.md) API. The other player will receive the local voice without having to take any action.
 
 ### Dispose()
 

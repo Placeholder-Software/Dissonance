@@ -50,7 +50,7 @@ player.IsLocallyMuted = false;
 
 ### Disabling Triggers
 
-The [`VoiceBroadcastTrigger`](/Reference/Components/Voice-Broadcast-Trigger) is the normal way to trigger voice transmission. Simply disabling this component will prevent it from triggering any voice transmissions until it is enabled again.
+The [`VoiceBroadcastTrigger`](../Reference/Components/Voice-Broadcast-Trigger.md) is the normal way to trigger voice transmission. Simply disabling this component will prevent it from triggering any voice transmissions until it is enabled again.
 
 ```
 VoiceBroadcastTrigger trigger;
@@ -66,7 +66,7 @@ trigger.enabled = true;
 
 ### Opening Channels
 
-The most general way to control player voice transmission from scripts is to open and close channels, for more information about channels see [this tutorial](/Tutorials/Directly-Using-Channels.md). To start talking open a channel, to stop talking dispose the channel:
+The most general way to control player voice transmission from scripts is to open and close channels, for more information about channels see [this tutorial](Directly-Using-Channels.md). To start talking open a channel, to stop talking dispose the channel:
 
 ```
 DissonanceComms comms;

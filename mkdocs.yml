@@ -5,6 +5,7 @@ site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 theme: readthedocs
 theme_dir: theme
+use_directory_urls: false
 copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder Software</a>"
 markdown_extensions:
     - markdown.extensions.sane_lists
@@ -24,7 +25,6 @@ pages:
     - "Platforms/Magic Leap.md"
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
-    - "Forge Networking Classic": "Basics/Quick-Start-Forge.md"
     - "Dark Rift 2": "Basics/Quick-Start-DR2.md"
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
     - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
@@ -65,7 +65,6 @@ pages:
         - "Voice Receipt Trigger": "Reference/Components/Voice-Receipt-Trigger.md"
         - "Dissonance Comms": "Reference/Components/Dissonance-Comms.md"
     - Audio:
-        - "Voice Activation Detection": "Reference/Audio/VAD.md"
         - "Voice Settings": "Reference/Audio/VoiceSettings.md"
     - Networking:
         - "Network Protocol": "Reference/Networking/Network-Protocol.md"

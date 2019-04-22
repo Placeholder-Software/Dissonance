@@ -8,6 +8,8 @@ The Dissonance network system manages three main bits of data:
 
 This document will give you an overview of how the Dissonance network system manages this data. To see the exact packet format look at `PacketWriter.cs` and `PacketReader.cs` in the Dissonance package, these structs have a method for writing/reading each different packet type.
 
+**Knowledge of the network format is not necessary to work with Dissonance in most cases**. This documentation is only required if you want to interact with Dissonance over the network from your own non-Unity code. For example writing a Dissonance server in another language to host separately from Unity.
+
 ## Terminology
 
 #### Peer
@@ -22,7 +24,7 @@ A client is a peer which is recording and playing voice.
 
 The server is peer in the session which manages the organisation of the session, e.g. assigning unique ID numbers to peers when they join. All non-voice packets are sent to the server.
 
-The server can be running in 2 modes. A **host** is a peer which is both a client and a server. A **dedicated server** is a pure server.
+The server can be running in 2 modes. A **host** is a peer which is both a client and a server. A **dedicated server** is a pure server (i.e. no audio capture or playback).
 
 #### Reliable
 
@@ -92,7 +94,7 @@ To set this up a client sends a `HandshakeP2P` message to every peer which it kn
 
 ## Voice Packets
 
-Each client records audio, preprocesses it to improve audio quality, encodes it (using opus) and then sends the packet. The client decides who to send the packet to based on it's knowledge of who is listening to what. The client sends the voice packet via P2P to as many client as possible. The remaining packets it relays via the server.
+Each client records audio, preprocesses it to improve audio quality, encodes it (using opus) and then sends the packet. The client decides who to send the packet to based on it's knowledge of who is listening to what. The client sends the voice packet via P2P to as many client as possible. The remaining packets are relayed via the server.
 
 The `VoiceData` packet contains:
 

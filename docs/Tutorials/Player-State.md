@@ -14,7 +14,7 @@ foreach (var player in comms.Players)
 }
 ```
 
-This will give you a set of [VoicePlayerState](/Reference/Other/VoicePlayerState) objects (including one for the local player). These objects will stay valid forever and will be updated with new information as necessary.
+This will give you a set of [VoicePlayerState](../Reference/Other/VoicePlayerState.md) objects (including one for the local player). These objects will stay valid forever and will be updated with new information as necessary.
 
 Dissonance also exposes some events which will get invoked when certain things happen, for example a new player joining the session.
 
@@ -29,4 +29,4 @@ comms.OnPlayerLeftSession += player => {
 }
 ```
 
-The `player` objects passed to the event handlers here are [VoicePlayerState](/Reference/Other/VoicePlayerState) objects which expose a lot of useful data about the players such as if they are currently talking and a live readout of the amplitue.
+The `player` objects passed to the event handlers here are [VoicePlayerState](../Reference/Other/VoicePlayerState.md) objects which expose a lot of useful data about the players such as if they are currently talking and a live readout of the amplitue.

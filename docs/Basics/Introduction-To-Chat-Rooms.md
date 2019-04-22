@@ -1,12 +1,12 @@
 ## Who Hears Whom?
 
-By default when a player speaks no one one will hear them - before players can communicate you need to set up where to send voice to on the speaking end and where to receive voice from on the listening end. Where to send to is controlled by a "[Voice Broadcast Trigger](/Reference/Components/Voice-Broadcast-Trigger)" component and where to receive from is controlled by a "[Voice Receipt Trigger](/Reference/Components/Voice-Receipt-Trigger)" component.
+By default when a player speaks no one one will hear them - before players can communicate you need to set up where to send voice to on the speaking end and where to receive voice from on the listening end. Where to send to is controlled by a "[Voice Broadcast Trigger](../Reference/Components/Voice-Broadcast-Trigger.md)" component and where to receive from is controlled by a "[Voice Receipt Trigger](..//Reference/Components/Voice-Receipt-Trigger.md)" component.
 
 ## Speech Intent
 
 The "Voice Broadcast Trigger" does not only control who sends to where it also controls *when* voice is transmitted to the given target. This is referred to as "Activation" and is divided into two further section: does the user *want* to speak and is the user *allowed* to speak.
 
-The "Activation Mode" setting on the "Voice Broadcast Trigger" determines how the user indicates if they want to speak, this can be set to: "None", "Voice Activation" and "Push To Talk" (see the [Voice Broadcast Trigger](/Reference/Components/Voice-Broadcast-Trigger) reference documentation for further details).
+The "Activation Mode" setting on the "Voice Broadcast Trigger" determines how the user indicates if they want to speak, this can be set to: "None", "Voice Activation" and "Push To Talk" (see the [Voice Broadcast Trigger](../Reference/Components/Voice-Broadcast-Trigger.md) reference documentation for further details).
 
 The "Trigger Activation" setting is the setting for if the user is allowed to speak, an associated trigger volume can enable and disable the broadcast as the player moves in and out of the volume. This can be used to create areas in the scene the player needs to stand inside to be heard (e.g. proximity chat).
 

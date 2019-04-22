@@ -33,4 +33,4 @@ These integrations host a voice chat session separately from any other networkin
 
 ## Custom Networking
 
-If none of these options work for you it's possible to write a custom network backend for Dissonance. The base classes to do this are included in the core Dissonance package. There is detailed documentation on exactly how to do this [here](/Tutorials/Custom-Networking).
+If none of these options work for you it's possible to write a custom network backend for Dissonance. The base classes to do this are included in the core Dissonance package. There is detailed documentation on exactly how to do this [here](../Tutorials/Custom-Networking.md).

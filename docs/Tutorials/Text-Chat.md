@@ -24,7 +24,7 @@ dissonance.Text.Whisper("hunter", "Did you just pull the boss?")
 
 ## Receive a text message
 
-Dissonance will only send you text messages if they are directly addressed to you or to a room which you are listening to. To listen to a room you can use a voice receipt trigger [voice receipt trigger](/Reference/Components/Voice-Receipt-Trigger), or directly use the Dissonance API from scripts to enter the room.
+Dissonance will only send you text messages if they are directly addressed to you or to a room which you are listening to. To listen to a room you can use a voice receipt trigger [voice receipt trigger](../Reference/Components/Voice-Receipt-Trigger.md), or directly use the Dissonance API from scripts to enter the room.
 
 ```
 // get the DissonanceComms script from the Dissonance game object

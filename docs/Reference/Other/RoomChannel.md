@@ -1,6 +1,6 @@
 # RoomChannel
 
-This object represents a single speech channel to a room opened with the [PlayerChannels](/Reference/Other/PlayerChannels.md) API. Other players will only receive the voice if they have joined the room.
+This object represents a single speech channel to a room opened with the [PlayerChannels](../Other/PlayerChannels.md) API. Other players will only receive the voice if they have joined the room.
 
 ### Dispose()
 

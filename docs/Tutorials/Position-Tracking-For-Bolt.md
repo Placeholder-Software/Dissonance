@@ -2,7 +2,7 @@
 
 Also see [this video](https://youtu.be/HXMYDbuLwVI?t=1179) about position tracking.
 
-This tutorial will explain how to configure your project to track the position of players. This is required for 3D positional audio playback of remote player voice chat and collider trigger support for `VoiceBroadcastTrigger` and `VoiceReceiptTrigger`. There are some additional steps required for this to work with Photon BOLT, if you are not using that network integration instead see the more general [position tracking tutorial](/Tutorials/Position-Tracking).
+This tutorial will explain how to configure your project to track the position of players. This is required for 3D positional audio playback of remote player voice chat and collider trigger support for `VoiceBroadcastTrigger` and `VoiceReceiptTrigger`. There are some additional steps required for this to work with Photon BOLT, if you are not using that network integration instead see the more general [position tracking tutorial](Position-Tracking.md).
 
 ## BOLT State Synchronisation
 
@@ -45,9 +45,9 @@ When positional audio is enabled the voice from remote players will sound like i
 
 ### Collider Chat Room
 
-Voice broadcaster triggers and voice receipt triggers can be configured to only send/receive audio when the local player is inside a certain volume. See [this](/Tutorials/Collider-Chat-Room) tutorial for how to achieve this.
+Voice broadcaster triggers and voice receipt triggers can be configured to only send/receive audio when the local player is inside a certain volume. See [this](Collider-Chat-Room.md) tutorial for how to achieve this.
 
 ### Direct Transmit To Player
 
-When position tracking is enable transmitting to a specific player is simplified. If a `Voice Broadcast Trigger` is attached to a player entity it can be configured to transmit to the player represented by the game object. See [this](/Tutorials/Direct-Player-Transmit) tutorial for details.
+When position tracking is enable transmitting to a specific player is simplified. If a `Voice Broadcast Trigger` is attached to a player entity it can be configured to transmit to the player represented by the game object. See [this](Direct-Player-Transmit.md) tutorial for details.
 

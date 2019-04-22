@@ -22,7 +22,7 @@ To get the names of other players inspect the Dissonance Comms component at runt
 
 #### Channel Type : Self
 
-If you have set up [Position Tracking](/Tutorials/Position-Tracking) then your player object will have an `IDissonancePlayer` component which identifies it to Dissonance. You can take advantage of this to send directly to players without having to know their name. When set to "Self" the broadcast component will look for an `IDissonancePlayer` component in this gameobject or any ancestor and will send directly to that player.
+If you have set up [Position Tracking](../../Tutorials/Position-Tracking.md) then your player object will have an `IDissonancePlayer` component which identifies it to Dissonance. You can take advantage of this to send directly to players without having to know their name. When set to "Self" the broadcast component will look for an `IDissonancePlayer` component in this gameobject or any ancestor and will send directly to that player.
 
 ## Channel Metadata
 
@@ -32,7 +32,7 @@ This section controls which metadata is sent along with the channel.
 
 #### Use Positional Data
 
-This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Position Tracking](/Tutorials/Position-Tracking) tutorial for information about how to set up your project for position tracking of player objects. This option can be set from a script by modifying the `BroadcastPosition` field.
+This determines whether the playback of the data sent through this broadcaster should use 3D audio playback (i.e. voice will sound as if it is coming from a certain position in space). Positional audio requires some additional setup (but does not use *any* additional CPU or network bandwidth at all when enabled). See the [Position Tracking](../../Tutorials/Position-Tracking.md) tutorial for information about how to set up your project for position tracking of player objects. This option can be set from a script by modifying the `BroadcastPosition` field.
 
 #### Priority
 
@@ -71,11 +71,11 @@ When set to "Push To Talk" the broadcaster will transmit when a given input axis
 
 #### Collider Volume Activation
 
-Using collider volume activation requires [Position Tracking](/Tutorials/Position-Tracking) to be set up. When active the broadcast trigger will find a sibling physics trigger volume and will only send voice if the local player (as defined by the `IDissonancePlayer` component) is inside the volume.
+Using collider volume activation requires [Position Tracking](../../Tutorials/Position-Tracking.md) to be set up. When active the broadcast trigger will find a sibling physics trigger volume and will only send voice if the local player (as defined by the `IDissonancePlayer` component) is inside the volume.
 
 ## Access Tokens
 
-This section controls which [Access Tokens](/Tutorials/Access-Control-Tokens/) are required to send with this broadcaster.
+This section controls which [Access Tokens](../../Tutorials/Access-Control-Tokens.md) are required to send with this broadcaster.
 
 ![Voice Broadcast Trigger - Access Tokens](/images/VoiceBroadcastTrigger_Section_AccessTokens.png)
 

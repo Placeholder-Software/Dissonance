@@ -1,6 +1,6 @@
 ## Tutorial: Custom Position Tracking
 
-This tutorial will explain how to write a scripts necessary to extend the Dissonance position tracking system to more advanced scenarios. The basics of position tracking are explained in [this tutorial](/Tutorials/Position-Tracking.md).
+This tutorial will explain how to write a scripts necessary to extend the Dissonance position tracking system to more advanced scenarios. The basics of position tracking are explained in [this tutorial](Position-Tracking.md).
 
 ## How Dissonance Tracks Players
 

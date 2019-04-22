@@ -12,7 +12,7 @@ Returns a boolean value indicating if the local player is speaking to the given 
 
 ### Open(string, [bool], [ChannelPriority], [float]) : PlayerChannel
 
-Opens a channel to begin speaking to the given player and returns a [PlayerChannel](/Reference/Other/PlayerChannel.md) object which represents this open channel (and can be used to close it).
+Opens a channel to begin speaking to the given player and returns a [PlayerChannel](../Other/PlayerChannel.md) object which represents this open channel (and can be used to close it).
 
 Takes three optional parameters.
 1. A boolean value indicating if this channel should use positional playback
