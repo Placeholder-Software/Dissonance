@@ -10,7 +10,7 @@ With the setup as shown here every player will speak and and listen to every tea
 
 Finally, when you create a player and assign them to a team run a script which adds the appropriate token to the local player. Exactly how this code works depends a lot on exactly how your game defines what a team is, feel free to [ask for help](https://www.reddit.com/r/dissonance_voip/). Here is some example code:
 
-```
+```csharp
 void OnAssignPlayerToTeam(string teamName)
 {
     //Find local comms object

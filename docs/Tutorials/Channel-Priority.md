@@ -23,7 +23,7 @@ The priority of a channel can be defined in a number of ways. The inspector for 
 
 In scripts you can change the priority for a VoiceBroadcastTrigger with the `Priority` property:
 
-```
+```csharp
 var trigger = GetComponent<VoiceBroadcastTrigger>();
 
 trigger.Priority = ChannelPriority.High;
@@ -31,7 +31,7 @@ trigger.Priority = ChannelPriority.High;
 
 Alternatively if you are [directly using channels](Directly-Using-Channels.md) from scripts instead of using the trigger components you can set the priority when the channel is created, and then modify it from the channel object at any time:
 
-```
+```csharp
 var comms = GetComponent<DissonanceComms>();
 
 //Create the channel with an explicit priority

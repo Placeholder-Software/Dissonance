@@ -12,7 +12,7 @@ To transmit to a specific player, change the Channel Type option on the `VoiceBr
 
 To change the targetted player at run time modify the `PlayerId` field of the `VoiceBroadcastTrigger` behaviour.
 
-```
+```csharp
 GetComponent<VoiceBroadcastTrigger>().PlayerId = "TheNewRemotePlayerName";
 ```
 

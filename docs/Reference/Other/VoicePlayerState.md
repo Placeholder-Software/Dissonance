@@ -2,7 +2,7 @@
 
 This object exposes properties to do with other players in a Dissonance session. There is one of these objects per player (including the local player) in the `Players` property on the DissonanceComms component. You can also get one of these objects for a specific player with the `FindPlayer` method on the DissonanceComms component.
 
-```
+```csharp
 //Get your comms component
 DissonanceComms comms;
 

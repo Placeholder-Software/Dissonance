@@ -24,7 +24,7 @@ The `Fade Out Time` slider controls how long it takes the playback amplitude to 
 
 If you are [controlling channels directly](Script-Controlled-Speech.md) from your own scripts you can control volume on the channel object.
 
-```
+```csharp
 var comms = GetComponent<DissonanceComms>();
 
 //Create a channel with explicit amplitude

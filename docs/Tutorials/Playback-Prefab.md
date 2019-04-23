@@ -38,7 +38,7 @@ When another player joins an instance is retrieved and re-used:
 
 To handle this in your script simply use the normal [Unity lifecycle events](https://docs.unity3d.com/Manual/ExecutionOrder.html):
 
-```
+```csharp
 void Awake()
 {
     // This only runs once. Use this to perform one-time setup.

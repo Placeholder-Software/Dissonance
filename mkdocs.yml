@@ -3,13 +3,18 @@ repo_url: "https://github.com/Placeholder-Software/Dissonance"
 repo_name: "Issue Tracker"
 site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
-theme: readthedocs
-theme_dir: theme
+theme:
+  name: readthedocs
+  highlightjs: false
+  custom_dir: theme
+extra_css:
+  - css/pygment_tweaks.css
 use_directory_urls: false
 copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder Software</a>"
 markdown_extensions:
     - markdown.extensions.sane_lists
-pages:
+    - codehilite
+nav:
 - Home: "index.md"
 - "Project Setup":
     - "Basics/Getting-Started.md"

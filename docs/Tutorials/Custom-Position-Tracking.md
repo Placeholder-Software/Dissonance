@@ -6,7 +6,7 @@ This tutorial will explain how to write a scripts necessary to extend the Disson
 
 Dissonance tracks the position of players through a behaviour which implements the IDissonancePlayer interface. This interface exposes the necessary information for Dissonance to play back voices in the correct locations.
 
-```
+```csharp
 public interface IDissonancePlayer
 {
     string PlayerId { get; }
@@ -20,7 +20,7 @@ public interface IDissonancePlayer
 
 This is the ID of the player which this object represents. For the local player this is the value in the `LocalPlayerName` property on your `DissonanceComms` object. This value should be synchronised across the network. How this works will depend upon your networking system. For example here is how the HLAPI integration does it:
 
-```
+```csharp
 private string _playerId;
 
 // This property implements the PlayerId part of the interface
@@ -59,7 +59,7 @@ private void CmdSetPlayerName(string playerName)
 
 These properties supply the location information which is used by Dissonance to properly play positional audio. If the behaviour is attached to the object which represents the player position then implementing this is trivial:
 
-```
+```csharp
 public Vector3 Position
 {
     get { return transform.position; }
@@ -73,7 +73,7 @@ public Quaternion Rotation
 
 If you wanted to represent a slightly different location (e.g. your player is made of multiple object, one of which represents the head) then you would need to change the implementation of the properties slightly:
 
-```
+```csharp
 private MonoBehaviour _head;
 
 public Vector3 Position
@@ -97,7 +97,7 @@ public void OnEnable()
 
 This indicates to Dissonance if this object represents the (singular) local player or one of the (multiple) remote players. How you implement this property depends upon your network system. Using the HLAPI integration as an example again:
 
-```
+```csharp
 public NetworkPlayerType Type
 {
     get { return isLocalPlayer ? NetworkPlayerType.Local : NetworkPlayerType.Remote; }

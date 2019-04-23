@@ -6,7 +6,7 @@ Dissonance offers an easy to use API for finding out information about other pla
 
 There are two ways to discover who is in the Dissonance session - events and polling. To get a list of players currently in the session, you can access the `Players` property on the DissonanceComms object:
 
-```
+```csharp
 var comms = FindObjectOfType<DissonanceComms>();
 foreach (var player in comms.Players)
 {
@@ -18,7 +18,7 @@ This will give you a set of [VoicePlayerState](../Reference/Other/VoicePlayerSta
 
 Dissonance also exposes some events which will get invoked when certain things happen, for example a new player joining the session.
 
-```
+```csharp
 var comms = FindObjectOfType<DissonanceComms>();
 comms.OnPlayerJoinedSession += player => {
 	Debug.Log("Player " + player.Name + " Joined session");

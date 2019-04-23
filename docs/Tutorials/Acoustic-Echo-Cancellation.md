@@ -52,7 +52,7 @@ Now that all the audio is routed to pass through the AEC filter AEC can run. Ope
 
 These settings can be set in the editor - they will be saved into an asset and used as the default values at runtime. They can be changed at runtime by accessing the `VoiceSettings` class:
 
-```
+```csharp
 //Change amount of AEC applied on Desktop
 VoiceSettings.Instance.AecSuppressionAmount = AecSuppressionLevels.Moderate;
 

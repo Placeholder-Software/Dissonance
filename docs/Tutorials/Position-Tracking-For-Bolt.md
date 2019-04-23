@@ -12,7 +12,7 @@ First you need to modify the bolt state which you use for your player; add a new
 
 Now you need to create a new script which will use this state. Dissonance includes a base class which does most of the work for you.
 
-```
+```csharp
 using Dissonance.Integrations.PhotonBolt;
 
 public class DissonancePlayerTracking

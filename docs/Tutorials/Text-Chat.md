@@ -4,7 +4,7 @@ Dissonance allows text chat messages to be routed through the comms network to t
 
 ## Send a text message to a Chat Room
 
-```
+```csharp
 // get the DissonanceComms script from the Dissonance game object
 var dissonance = GetComponent<DissonanceComms>();
 
@@ -14,7 +14,7 @@ dissonance.Text.Send("Party", "Who just pulled the boss?")
 
 ## Send a text message to a player
 
-```
+```csharp
 // get the DissonanceComms script from the Dissonance game object
 var dissonance = GetComponent<DissonanceComms>();
 
@@ -26,7 +26,7 @@ dissonance.Text.Whisper("hunter", "Did you just pull the boss?")
 
 Dissonance will only send you text messages if they are directly addressed to you or to a room which you are listening to. To listen to a room you can use a voice receipt trigger [voice receipt trigger](../Reference/Components/Voice-Receipt-Trigger.md), or directly use the Dissonance API from scripts to enter the room.
 
-```
+```csharp
 // get the DissonanceComms script from the Dissonance game object
 var dissonance = GetComponent<DissonanceComms>();
 
