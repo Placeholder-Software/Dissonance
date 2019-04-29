@@ -8,7 +8,7 @@ Using a channel is quite simple - when a channel is open voice will be sent to w
 
 When a player channel is opened the local voice is sent to the player associated with that channel. The receiving player does not need to take any action to receive the voice. This is accessed through the ```PlayerChannels``` property on the DissonanceComms object.
 
-```
+```csharp
 DissonanceComms comms;
 PlayerChannel channel = comms.PlayerChannels.Open(string playerId, bool positional, ChannelPriority priority);
 ```
@@ -17,12 +17,12 @@ PlayerChannel channel = comms.PlayerChannels.Open(string playerId, bool position
 
 When a room channel is opened no voice is sent anywhere by default. Receiving players must take an action to indicate that they wish to receive the voice (i.e. join the room). This is accessed through the ```RoomChannels``` property on the DissonanceComms object (to open a sending channel) and the ```Rooms``` property (to control receipt).
 
-```
+```csharp
 DissonanceComms comms;
 RoomChannel channel = comms.RoomChannels.Open(string roomId, bool positional, ChannelPriority priority);
 ```
 
-```
+```csharp
 DissonanceComms comms;
 comms.Rooms.Join(string roomId);
 ```
