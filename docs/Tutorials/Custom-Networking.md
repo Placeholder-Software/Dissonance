@@ -47,12 +47,14 @@ You will have a number of build errors like "abstract member [...] not implement
 In your custom comms network class you will need to create your custom client and custom server objects. Dissonance will call these methods when a server or client needs to be created. You shouldn't connect to the network in this method, simply create the objects. Here are examples from the HLAPI integration:
 
 ```csharp
-protected override HlapiServer CreateServer(Unit details)   // We specified `Unit` above, so we get given a `Unit`
+// We specified `Unit` as `TServerParam`, so we get given a `Unit`
+protected override HlapiServer CreateServer(Unit details)
 {
     return new HlapiServer(this);
 }
 
-protected override HlapiClient CreateClient(Unit details)   // We specified `Unit` above, so we get given a `Unit`
+// We specified `Unit` as `TClientParam`, so we get given a `Unit`
+protected override HlapiClient CreateClient(Unit details)
 {
     return new HlapiClient(this);
 }
@@ -66,7 +68,8 @@ protected override void Initialize()
     //Sanity check the channel configuration set in the inspector
     //... << Removed code for simplicity of example >>
 
-    // HLAPI requires a message handler for every type code. Register one which just discards packets while Dissonance is _not_ running.
+    // HLAPI requires a message handler for every type code.
+    //Register one which just discards packets while Dissonance is _not_ running.
     NetworkServer.RegisterHandler(TypeCode, NullMessageReceivedHandler);
 
     // Don't forget to call base.Initialize!
@@ -86,17 +89,21 @@ protected override void Update()
     if (IsInitialized)
     {
         // Check if the HLAPI is ready
-        var networkActive = NetworkManager.singleton.isNetworkActive && (NetworkServer.active || NetworkClient.active);
+        var networkActive = NetworkManager.singleton.isNetworkActive &&
+            (NetworkServer.active || NetworkClient.active);
         if (networkActive)
         {
-            // Check what mode the HLAPI is in (is if it a server, is it a client?)
+            // Check what mode the HLAPI is in
             var server = NetworkServer.active;
             var client = NetworkClient.active;
 
-            // Check what mode Dissonance is in, if they're different then call the correct method
-            if (Mode.IsServerEnabled() != server || Mode.IsClientEnabled() != client)
+            // Check what mode Dissonance is in and if
+            // they're different then call the correct method
+            if (Mode.IsServerEnabled() != server
+                || Mode.IsClientEnabled() != client)
             {
-                // HLAPI is server and client, so run as a non dedicated host (passing in the correct parameters, in this case nothing)
+                // HLAPI is server and client, so run as a non-dedicated
+                // host (passing in the correct parameters)
                 if (server && client)
                     RunAsHost(Unit.None, Unit.None);
                     
@@ -111,7 +118,7 @@ protected override void Update()
         }
         else if (Mode != NetworkMode.None)
         {
-            //Network is not active, so make sure Dissonance is not active too
+            //Network is not active, make sure Dissonance is not active
             Stop();
         }
     }
@@ -194,7 +201,14 @@ Finally you should create an inspector for your CustomCommsNetwork. Doing this i
 ```csharp
 [CustomEditor(typeof(HlapiCommsNetwork))]
 public class UNetCommsNetworkEditor
-    : BaseDissonnanceCommsNetworkEditor<HlapiCommsNetwork, HlapiServer, HlapiClient, HlapiConn, Unit, Unit>
+    : BaseDissonnanceCommsNetworkEditor<
+        HlapiCommsNetwork,
+        HlapiServer,
+        HlapiClient,
+        HlapiConn,
+        Unit,
+        Unit
+    >
 {
 }
 ```
@@ -220,25 +234,24 @@ To handle this many of the Dissonance integrations have a special check for loop
 ```csharp
 internal bool PreprocessPacketToClient(ArraySegment<byte> packet, HlapiConn destination)
 {
-    //This should never even be called if this peer is not the host!
-    if (Server == null)
-        throw Log.CreatePossibleBugException("server packet preprocessing running, but this peer is not a server", "8f9dc0a0-1b48-4a7f-9bb6-f767b2542ab1");
-
-    //If there is no local client (e.g. this is a dedicated server) then there can't possibly be loopback
+    // No client means this can't be loopback
     if (Client == null)
         return false;
 
-    //HLAPI way to check if this is loopback. If it's not the packet will be sent over the network.
+    // HLAPI way to check if this is loopback.
     if (NetworkManager.singleton.client.connection != destination.Connection)
         return false;
 
-    //This is loopback!
+    // This is loopback!
 
-    // check that we have a valid local client (in cases of startup or in-progress shutdowns)
+    // check that we have a valid local client,
+    // in cases of startup or in-progress shutdowns
     if (Client != null)
     {
-        // Don't immediately deliver the packet, add it to a queue and deliver it next frame. This prevents the local client from executing "within" ...
-        // ...the local server which can cause confusing stack traces.
+        // Don't immediately deliver the packet, add it to a queue and
+        // deliver it next frame. This prevents the local client from
+        // executing "within" the local server which can cause
+        // confusing stack traces.
         _loopbackQueue.Add(packet.CopyTo(_loopbackBuffers.Get()));
     }
 
@@ -276,7 +289,8 @@ If you have decided to use peer to peer you need to modify your `CustomClient` c
 
 ```csharp
 // This event is called by PUN when a packet arrives
-public void PacketDelivered(byte eventcode, ArraySegment<byte> data, int senderid)
+public void PacketDelivered(byte eventcode, ArraySegment<byte> data,
+    int senderid)
 {
     // Skip events we don't care about
     if (eventcode != _network.EventCodeToClient)
@@ -285,7 +299,8 @@ public void PacketDelivered(byte eventcode, ArraySegment<byte> data, int senderi
     // Receive the packet, capture return value
     var id = NetworkReceivedPacket(data);
 
-    // If the value is not null, pass to handshake method with the `senderid` of this packet
+    // If the value is not null
+    // pass to handshake method with the `senderid` of this packet
     if (id.HasValue)
         ReceiveHandshakeP2P(id.Value, senderid);
 }
@@ -293,14 +308,17 @@ public void PacketDelivered(byte eventcode, ArraySegment<byte> data, int senderi
 
 You now need to implement two more methods for sending packets:
 
-#### `SendReliableP2P(List<ClientInfo<TPeer?>> destinations, ArraySegment<byte> packet)` and `SendUnreliableP2P(List<ClientInfo<TPeer?>> destinations, ArraySegment<byte> packet)`
+#### `SendReliableP2P(List<ClientInfo<TPeer?>> destinations, ArraySegment<byte> packet)`
+#### `SendUnreliableP2P(List<ClientInfo<TPeer?>> destinations, ArraySegment<byte> packet)`
 
 These methods send a packet to a list of destinations. You should send the packet to as many of these destinations as possible and remove them from the list. Once you are done call the base method with the remaining items in the list, they will be sent via the server as usual. For example the PUN implementation of this is:
 
 ```csharp
-private void SendUnreliableP2P(IList<ClientInfo<int?>> destinations, ArraySegment<byte> packet)
+private void SendUnreliableP2P(IList<ClientInfo<int?>> destinations,
+    ArraySegment<byte> packet)
 {
-    // Build a list of destinations we know how to send to (have a non-null Connection object)
+    // Build a list of destinations we know how to send to
+    // i.e. have a non-null Connection object
     var dests = new List<int>();
     foreach (var item in destinations)
         if (item.Connection.HasValue)
@@ -312,7 +330,8 @@ private void SendUnreliableP2P(IList<ClientInfo<int?>> destinations, ArraySegmen
     // Send the packets to the list of destinations through PUN
     _network.Send(packet, dests, reliable: false);
       
-    // Call base to do server relay for all the peers we don't know how to contact
+    // Call base to do server relay for all the peers we don't
+    // know how to contact
     base.SendUnreliableP2P(destinations, packet);
 }
 ```
