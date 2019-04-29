@@ -1,6 +1,6 @@
 ## Tutorial: Custom Network Integration
 
-Dissonance is built to be completely decoupled from the underlying networking system, this allows Dissonance to run on top of various different Unity networking assets (e.g. UNet, Forge, Photon etc) just by swapping which Dissonance network component is used. If none of the [existing integrations](../Basic/Choosing-A-Network.md) work for your application then you may need to build a custom network integration.
+Dissonance is built to be completely decoupled from the underlying networking system, this allows Dissonance to run on top of various different Unity networking assets (e.g. UNet, Forge, Photon etc) just by swapping which Dissonance network component is used. If none of the [existing integrations](../Basics/Choosing-A-Network.md) work for your application then you may need to build a custom network integration.
 
 ### Getting Started
 
@@ -69,7 +69,8 @@ protected override void Initialize()
     //... << Removed code for simplicity of example >>
 
     // HLAPI requires a message handler for every type code.
-    //Register one which just discards packets while Dissonance is _not_ running.
+    // Register one which just discards packets while Dissonance
+    // is _not_ running.
     NetworkServer.RegisterHandler(TypeCode, NullMessageReceivedHandler);
 
     // Don't forget to call base.Initialize!
@@ -232,7 +233,8 @@ The Dissonance networking system create a `CustomClient` _and_ a `CustomServer` 
 To handle this many of the Dissonance integrations have a special check for loopback. For example in the HLAPI integration there is a `HlapiCommsNetwork:PreprocessPacketToClient` method which is given all packets sent from the server to the client, it checks if the packet is a loopback packet and if so it passes it directly to the client and HLAPI itself never has to deal with this packet.
 
 ```csharp
-internal bool PreprocessPacketToClient(ArraySegment<byte> packet, HlapiConn destination)
+internal bool PreprocessPacketToClient(ArraySegment<byte> packet,
+    HlapiConn destination)
 {
     // No client means this can't be loopback
     if (Client == null)
