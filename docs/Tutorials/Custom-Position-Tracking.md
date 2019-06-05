@@ -16,6 +16,8 @@ public interface IDissonancePlayer
 }
 ```
 
+Once you have implemented these four properties on your tracker you must register it with Dissonance, To do this simply call `FindObjectOfType<DissonanceComms>().TrackPlayerPosition(this);` at some point after tracking has started. Once this tracker is no longer in use you must unregister your tracker from Dissonance, to do this simply call `FindObjectOfType<DissonanceComms>().StopTracking(this);`.
+
 #### PlayerId
 
 This is the ID of the player which this object represents. For the local player this is the value in the `LocalPlayerName` property on your `DissonanceComms` object. This value should be synchronised across the network. How this works will depend upon your networking system. For example here is how the HLAPI integration does it:
@@ -37,7 +39,8 @@ public override void OnStartAuthority()
     // Call set player name, to sync the name across all peers
     SetPlayerName(FindObjectOfType<DissonanceComms>().LocalPlayerName);
     
-    // Make sure that if the local name is changed, we sync the change across the network
+    // Make sure that if the local name is changed the
+    // changed is synced the change across the network
     comms.LocalPlayerNameChanged += SetPlayerName;
 }
 
@@ -46,8 +49,8 @@ private void SetPlayerName(string playerName)
     CmdSetPlayerName(playerName);
 }
 
-// This is a "Command" which means that it is run on *all* peers when invoked.
-// This is what does the actual synchronisation of the name across the network
+// This is a "Command" which means that it is run on *all* peers when run.
+// This is does the actual synchronisation of the name across the network.
 [Command]
 private void CmdSetPlayerName(string playerName)
 {
@@ -71,7 +74,7 @@ public Quaternion Rotation
 }
 ```
 
-If you wanted to represent a slightly different location (e.g. your player is made of multiple object, one of which represents the head) then you would need to change the implementation of the properties slightly:
+If you wanted to represent a slightly different location (e.g. your player is made of multiple objects, one of which represents the head) then you would need to change the implementation of the properties slightly:
 
 ```csharp
 private MonoBehaviour _head;
@@ -104,4 +107,4 @@ public NetworkPlayerType Type
 }
 ```
 
-This assumes that the component is attached to a player object. Therefore is it is *not* the local player then it must be a remote player.
+This assumes that the component is attached to a player object. Therefore if it is *not* the local player then it must be a remote player.
