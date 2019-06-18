@@ -28,7 +28,7 @@ The first thing required for the AEC to function is to attach the postprocessor 
 
 The filter will only process audio which passes through the mixer it is attached to - how to achieve this depends on what kind of audio mixing system you already had setup before using AEC.
 
-If you were already using audio mixers then ensure that all the mixers eventually pass through the filter with the `Dissonance Echo Cancellation` filter attached. If you were not already using mixers then simply _all_ the `AudioSource` components you use to output to the new mixer you created in the previous step.
+If you were already using audio mixers then ensure that all the mixers eventually pass through the filter with the `Dissonance Echo Cancellation` filter attached. If you were not already using mixers then simply set _all_ og the `AudioSource` components to output to the new mixer you created in the previous step.
 
 You can check that you have done this correctly by running the game and watching the audio mixer window. The dB meter on the mixer should move when non-voice audio is playing.
 
