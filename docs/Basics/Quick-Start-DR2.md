@@ -16,9 +16,9 @@ To place the default Dissonance game object into your scene, drag and drop the `
 
 ## Step 1a: Server Setup
 
-Dark Rift has a system of server side plugins to process packets, Dissonance includes two plugins. For the demo scene there is a `DissonanceDemoPlugin.dll`, this is a very basic plugin to synchronise the positions of characters in the demo scene. There is also the `DissonanceServerPlugin.dll` which runs the Dissonance server logic. The precompiled plugin DLL files are included in the package, simply drop them into the plugins folder on your dark rift server.
+Dark Rift has a system of server side plugins to process packets, Dissonance includes two plugins. For the demo scene there is a `DissonanceDemoPlugin.dll`, this is a very basic plugin to synchronise the positions of characters in the demo scene. There is also the `DissonanceServerPlugin.dll` which runs the Dissonance server logic. The precompiled plugin DLL files are included in the package, simply drop them into the plugins folder on your dark rift server. Sometimes these plugins can confuse Unity because they are not Unity plugins but Unity might try to load them anyway - if you have an error which mentions `... ambiguous between the following methods or properties` then you should remove the server plugins from with the Unity project to prevent Unity from trying to load them.
 
-If you need to modify the code of the plugins unzip the `ServerProject.zip` into `Assets/Dissonance/Integrations/DarkRift2/.ServerProject`, this will create two visual studio projects (one for each of the DLLs). The projects reference the Dissonance source files by relative path, so it's critical that you unzip into the correct location!
+If you need to modify the code of the plugins contact `admin@placeholder-software.co.uk` with your invoice number to request the source code.
 
 ## Step 2: Add a Broadcast Trigger
 
