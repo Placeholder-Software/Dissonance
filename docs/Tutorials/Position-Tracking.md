@@ -6,19 +6,15 @@ This tutorial will explain how to configure your project to track the position o
 
 ## Setup Tracking
 
-To setup position tracking you simply need to attach a single behaviour to all your player entities. This behaviour depends upon which network integration you are using, it will be located in the folder for your integration:
+To setup position tracking you need to attach a single behaviour to all your player gameObjects. The behaviour can be found in the folder for the network integration you are using, for example for HLAPI it is located at `Assets/Dissonance/Integrations/UNet_HLAPI/HlapiPlayer.cs`. Ensure that this component is attached to *all* gameObjects in the scene which represent a player (the local player and all remote players). If you have a prefab which is used to construct your players you can simply attach the behaviour to this prefab.
 
- - Integrations/UNet_HLAPI/HlapiPlayer
- - Integrations/ForgeNetworking/ForgePlayer
- - Integrations/PhotonUnityNetworking/PhotonPlayer
- 
-Ensure that this component is attached to *all* entities in the scene which represent a player (both the local player and all remote players). If you have a prefab which is used to construct your players you can simply attach the behaviour to this prefab. For slightly more advanced setups you may need to write your own player script for position tracking, you can find documentation for this [here](Custom-Position-Tracking.md).
+Some network integrations do not include player tracking scripts. In this case you will need to implement it yourself. View the documentation for custom position tracking [here](Custom-Position-Tracking.md).
  
 ![A Player Prefab with position tracking behaviour added](../images/PlayerPrefab_PositionalAudio.png)
 
 ### What Does Position Tracking Cost?
 
-Some people have avoided using the position tracking because they're worried that it's wasting network bandwidth - after all your player positions are already synchronised across the network so it would be a waste for Dissonance to send the positions to. However **Dissonance does not send any extra data** across the network when position tracking is enabled - instead it relies on your game objects already being in the right place on every client and simply plays the audio from wherever they are in space.
+Dissonance **does not send any extra data** across the network when position tracking is enabled - instead it relies on your game objects already being in the right place on every client and simply plays the audio from wherever they are in space. Enabling position tracking does not use any extra bandwidth.
 
 ## Using Position Tracking 
 
