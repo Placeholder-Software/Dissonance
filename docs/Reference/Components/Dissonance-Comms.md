@@ -184,3 +184,7 @@ Returns a boolean value indicating if the local player has the [token](../../Tut
 ### HasAnyToken(TokenSet) : bool
 
 Returns a boolean value indicating if the local player has *any* of the [tokens](../../Tutorials/Access-Control-Tokens.md) in the given TokenSet.
+
+### ResetMicrophoneCapture
+
+Forces a complete restart of the audio capture pipeline.
