@@ -71,6 +71,7 @@ pages:
         - "Dissonance Comms": "Reference/Components/Dissonance-Comms.md"
     - Audio:
         - "Voice Settings": "Reference/Audio/VoiceSettings.md"
+        - "IMicrophoneCapture": "Reference/Audio/IMicrophoneCapture.md"
     - Networking:
         - "Network Protocol": "Reference/Networking/Network-Protocol.md"
     - Other:
