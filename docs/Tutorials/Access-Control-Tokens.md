@@ -10,7 +10,7 @@ Tokens can be added and removed through the inspector:
 
 ![Receipt Trigger](../images/VoiceReceiptTrigger_Tokens.png)
 
-This receipt trigger will not function unless the local player has one of the two access tokens - 'TopSecretPassword' or 'mysocratesnote'. Tokens can also be managed with scripts:
+Tokens can also be managed with scripts:
 
 ```csharp
 var receiver = FindObjectOfType<VoiceReceiptTrigger>();
