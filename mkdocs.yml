@@ -28,6 +28,7 @@ pages:
     - "Platforms/Android & Oculus Go.md"
     - "Platforms/iOS.md"
     - "Platforms/Magic Leap.md"
+    - "Platforms/Oculus OVR.md"
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
     - "Dark Rift 2": "Basics/Quick-Start-DR2.md"
