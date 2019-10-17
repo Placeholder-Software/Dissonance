@@ -41,6 +41,10 @@ This setting determines how much noise suppression will be applied to the microp
 
 Noise suppression is not perfect and may sometimes distort speech, higher levels will remove more background noise but also risk more distortion of speech. However, the risk is fairly low - the distortion is quite minor and the noise suppressor is adaptive so it will only apply really high noise suppression when there is a lot of background noise.
 
+## Voice Detector Sensitivity
+
+This setting determines how sensitive the voice detector is. This settings is a tradeoff between accuracy (never classifying non-voice audio as voice) and sensitivity (never classifying voice audio as non-voice). Higher values will send more non-voice background noise.
+
 ## Acoustic Echo Cancellation
 
 These settings control the acoustic echo canceller, this observes sounds coming out of the speakers and then attempts to remove these sounds from the microphone signal after a short delay. It automatically calibrates the delay so expect a short period (10-40 seconds) where no echoes will be cancelled, if there is no sounds coming out of the speakers at all (or the microphone is not detecting those sounds) it will not be able to calibrate the delay. Refer to [these docs](../../Tutorials/Acoustic-Echo-Cancellation.md) for a tutorial on correctly setting up the acoustic echo canceller.
