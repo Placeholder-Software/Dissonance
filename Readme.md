@@ -7,3 +7,4 @@ Dissonance is a drop in voice chat asset for multiplayer games built in unity. T
  - [Documentation](https://dissonance.readthedocs.io/en/latest/)
  - [Issue Tracker](https://github.com/Placeholder-Software/Dissonance/issues)
  - [Discussion Forum](https://www.reddit.com/r/dissonance_voip)
+ - [Discord Server](https://discord.gg/8dKpP5W)
