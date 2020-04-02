@@ -15,7 +15,7 @@ These integrations simply send data though a network session which you first set
  - [Photon Unity Networking (Classic)](https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF)
  - [Photon Unity networking (2)](https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF)
  - [Dark Rift 2](https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF)
- - TNet3 (Coming Soon!)
+ - [TNet3](https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF)
 
 #### Steamworks.NET P2P
 The Steamworks integration hosts a voice chat session using [Steamworks.NET](https://steamworks.github.io/) peer to peer networking, **it requires all users to be logged into a [Steam](https://store.steampowered.com/) account**. This can be a useful integration to use if your game already uses steamworks for game networking, or if your primary game networking is not suitable for voice.
