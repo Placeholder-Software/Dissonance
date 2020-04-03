@@ -28,7 +28,7 @@ The "Voice Broadcast Trigger" controls when the user's microphone is being trans
 
 ![Broadcast Trigger Configuration](../images/VoiceBroadcastTrigger_Default.png)
 
-The default broadcast trigger configuration includes two settings of note:
+To set up the broadcast trigger, change the following two settings:
 1. Transmit on *Voice Activation*. This means Dissonance will transmit whenever it detects that the user is speaking.
 2. Transmit to the 'Global' chat room.
 
