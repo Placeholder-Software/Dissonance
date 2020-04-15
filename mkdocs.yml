@@ -65,7 +65,6 @@ pages:
     - "Writing A Custom Microphone Capture System": "Tutorials/Custom-Microphone-Capture.md"
     - "Using Channels": "Tutorials/Directly-Using-Channels.md"
     - "Acoustic Echo Cancellation": "Tutorials/Acoustic-Echo-Cancellation.md"
-    - "Assembly Definitions": "Tutorials/Assembly-Definitions.md"
 - Reference:
     - Components:
         - "Voice Broadcast Trigger": "Reference/Components/Voice-Broadcast-Trigger.md"
