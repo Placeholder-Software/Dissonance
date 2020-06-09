@@ -8,7 +8,7 @@ To record audio a MacOS app requires permission from the user. See the Unity doc
 
 # Notarization
 
-All applications running on MacOS Catalina 10.15 require "notarization". See this Apple docs [here](https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution) and a tutorial on permissions and notarization [here](https://gist.github.com/dpid/270bdb6c1011fe07211edf431b2d0fe4).
+All applications running on MacOS Catalina 10.15 require "notarization". See the Apple docs [here](https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution) and a tutorial on permissions and notarization for Unity apps [here](https://gist.github.com/dpid/270bdb6c1011fe07211edf431b2d0fe4).
 
 To access the microphone you will need to add two keys to the entitlements file:
  - com.apple.security.device.audio-input
