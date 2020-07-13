@@ -14,6 +14,7 @@ copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder
 markdown_extensions:
     - markdown.extensions.sane_lists
     - codehilite
+    - admonition
 pages:
 - Home: "index.md"
 - "Project Setup":
