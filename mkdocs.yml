@@ -26,7 +26,7 @@ pages:
     - "Platforms/Windows UWP & Hololens.md"
     - "Platforms/Linux.md"
     - "Platforms/MacOS.md"
-    - "Platforms/Android & Oculus Go.md"
+    - "Platforms/Android.md"
     - "Platforms/iOS.md"
     - "Platforms/Magic Leap.md"
     - "Platforms/Oculus OVR.md"
