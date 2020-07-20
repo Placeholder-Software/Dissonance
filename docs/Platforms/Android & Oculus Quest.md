@@ -1,0 +1,3 @@
+# Android (Including Oculus Quest)
+
+On Android you must request permission to use the microphone, see the Unity documentation for this [here](https://docs.unity3d.com/Manual/android-manifest.html). If you use `Android 6.0` or greater and `API level 23` or greater there is a runtime permissions system which Unity makes available through the Android.Permissions, see the section titled "Runtime permissions in Android 6.0 (Marshmallow)" [on this page](https://docs.unity3d.com/Manual/android-manifest.html).
