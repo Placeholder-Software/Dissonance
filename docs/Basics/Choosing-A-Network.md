@@ -1,39 +1,119 @@
 # Network Integrations
 
-The core Dissonance package does not do any networking itself - instead it relies on integrations with other network systems to send and receive data. This gives you a lot of flexibility in choosing how you want voice data to be sent between computers. If none of the existing integrations are suitable for you you can even write a custom network integration.
+The core Dissonance package does not include any network - instead Dissonance relies on integrations with other network systems to send and receive data. This gives you a lot of flexibility in choosing how you want voice data to be sent over the network. If none of the existing integrations are suitable for you you can also write a custom network integration.
 
-The easiest setup is simply to send voice data through whatever networking system you are already using. However this isn't required - for example if you have a game using TCP for it's networking (which is unsuitable for voice comms) you could keep the game over that network and establish a second session just for voice chat. See the `Standalone Networking` section for more details on this.
+## The Options
 
-## Basic Integrations
+Dissonance has free support for 10 network systems:
 
-These integrations simply send data though a network session which you first setup - Dissonance starts itself when it detects that a network session has been started and stops itself when the network session is stopped. These are the simplest network integrations to use, if your application is already using one of these backends you just need to drop some components into the scene and you immediately have a functional Dissonance voice chat session.
+* [UNet HLAPI](https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF)
+* [Mirror Networking](https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF)
+* [Dark Rift 2](https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF)
+* [Forge Remastered](https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF)
+* [Photon Unity Networking (Classic)](https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF)
+* [Photon Unity networking (2)](https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF)
+* [Photon Bolt](https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF)
+* [TNet3](https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF)
+* [Steamworks.NET (P2P)](https://assetstore.unity.com/packages/slug/143292?aid=1100lJD)
+* [WebRTC Network (P2P)](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF)
 
- - [UNet HLAPI](https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF)
- - [Mirror Networking](https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF)
- - [Forge Remastered](https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF)
- - [Photon Bolt](https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF)
- - [Photon Unity Networking (Classic)](https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF)
- - [Photon Unity networking (2)](https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF)
- - [Dark Rift 2](https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF)
- - [TNet3](https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF)
+All of these packages can be downloaded from the asset store for free.
 
-#### Steamworks.NET P2P
-The Steamworks integration hosts a voice chat session using [Steamworks.NET](https://steamworks.github.io/) peer to peer networking, **it requires all users to be logged into a [Steam](https://store.steampowered.com/) account**. This can be a useful integration to use if your game already uses steamworks for game networking, or if your primary game networking is not suitable for voice.
+## My Application Already Has Networking
 
-Before starting Dissonance you must first have established peer to peer connectivity between all peers using Steamworks.NET, refer to the [Steamworks documentation](https://partner.steamgames.com/doc/api/ISteamNetworking) for further details on this. This is separated from the others in this section because you will need to have done some scripting to setup the session and will need to inform Dissonance of certain networking events (e.g. start/stop/join/leave session).
+If you already have a network system set up in your application then simply sending voice through that system is the easiest option. If there is an integration package listed above for your networking system it is recommended to use that.
 
----
+## There Is No Integration Package
 
-## Standalone Networking
+If you already have networking in your application but there is no integration package available there are two options.
 
-These integrations host a voice chat session separately from any other networking system you may be using. These are _slightly_ more complicated to setup but they have the advantage that voice data is not mixed with other application data. You may want to use these integrations if your application does not have any other networking, or if your application network usage is metered and you don't want to pay the costs of voice traffic.
+The first option is to build your own [custom network integration](../Tutorials/Custom-Networking.md). Dissonance includes base classes which can be extended to create a new network integration relatively easily - all that is required is writing the code to send packets, receive packets and inform Dissonance about session events (leave/join/connect/disconnect etc). This requires that your networking system supports **Unreliable & Unordered** packets (e.g. UDP), TCP is not suitable for voice chat.
 
-#### UNet LLAPI
-> This integration hosts a voice chat session using the UNet low level networking API (LLAPI), to start a session you need to supply the port/IP address of the host computer to all clients. All voice packets are sent via the server. There is no NAT negotiation included in LLAPI so you may need to use a third party asset or host the server on a computer with no NAT.
+The second option is to establish another network session just for voice, using one of the existing integrations. Any integration can be used for this.
 
-#### WebRTC Network
-> This integration hosts a voice chat session using [WebRTC Network](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF), to start a session you need to supply a unique session ID string to all clients. This includes NAT negotiation and all packets are sent peer to peer to reduce the amount of bandwidth used by the server. There is [a demo project](https://github.com/Placeholder-Software/Dissonance-Demo) using Dissonance and this integration to build a standalone peer to peer chat application.
+## My Application Does Not Have Networking
 
-## Custom Networking
+If you do not have any network system already set up in your application then you can choose any supported network integration.
 
-If none of these options work for you it's possible to write a custom network backend for Dissonance - any system which can send _unreliable_ packets (e.g. UDP) can carry voice data. There is detailed documentation on exactly how to do this [here](../Tutorials/Custom-Networking.md).
+## Which One To Choose?
+
+### Mirror
+
+[Mirror](https://assetstore.unity.com/packages/tools/network/mirror-129321?aid=1100lJDF) is a community built replacement for UNet. Mirror supports several different network backends, the default (Telepathy) uses TCP which is _not_ suitable for voice chat. Instead you should use Ignorance or LiteNetLibTransport (these are both very easy to install). **If you are just starting out with Unity networking, this is our recommendation**.
+ * [Discord](https://discord.gg/8pmJkfH)
+ * Client/Server
+ * No CCU limit
+
+ <br />
+
+### Forge Remastered
+
+[Forge Remastered](https://assetstore.unity.com/packages/tools/network/forge-networking-remastered-38344?aid=1100lJDF) is a free networking system available on the asset store.
+ * [Discord](https://discord.gg/5kMT7zN)
+ * Client/Server
+ * No CCU limit
+
+<br />
+
+### Dark Rift 2
+
+[Dark Rift 2](https://assetstore.unity.com/packages/tools/network/darkrift-networking-2-95309?aid=1100lJDF) is a free networking system available on the asset store.
+ * [Discord](https://discord.gg/3dxyu3g)
+ * Client/Server
+ * No CCU limit
+ * Standalone server - does not require Unity on the server
+
+<br />
+
+### TNet3
+
+[TNet3](https://assetstore.unity.com/packages/tools/network/networking-and-serialization-tools-tnet-3-56798?aid=1100lJDF) is a networking and serialization system available on the asset store.
+ * [Discord](https://discord.gg/tasharen)
+ * Client/Server
+ * No CCU limit
+
+<br />
+
+### Photon Bolt
+
+[Photon Bolt](https://assetstore.unity.com/packages/tools/network/photon-bolt-free-127156?aid=1100lJDF) is a free (up to 20 CCU) networking system available on the asset store.
+ * [Discord](https://discord.gg/5ySmPdQ)
+ * Client/Server
+ * CCU Limit (20 free)
+
+<br />
+
+### Photon Unity Networking 2
+
+[Photon Unity Networking 2](https://assetstore.unity.com/packages/tools/network/pun-2-free-119922?aid=1100lJDF) is the upgrade to the very popular Photon Unity Networking asset. It is a free (up to 20 CCU) networking system available on the asset store.
+ * [Forum](https://forum.photonengine.com/)
+ * Photon Cloud Hosting
+ * CCU Limit (20 free)
+
+<br />
+
+### Steamworks P2P
+
+[Steamworks.Net](https://steamworks.github.io/) is a free low level wrapper around the Steamworks SDK. This integration requires that all users are logged into a [Steam](https://store.steampowered.com/) account. If your game already uses Steam networking this can be a free and low latency way to set up voice. Setting this up to work with Dissonance requires a little extra scripting - first you must set up a network session with `Steamworks.Net`,please refer to the [Getting Started](../Basics/Quick-Start-Steamworks.Net-P2P.md) tutorial for more details.
+ * Full P2P
+ * No CCU limit
+
+<br />
+
+### WebRTC Video Chat
+
+[WebRTC Video Chat](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF) is a p2p networking, voice and video chat application. This integration uses **just the networking** part of the asset to carry Dissonance voice traffic - it does _not_ integrate in a way that allows `WebRTC Voice Chat` and `Dissonance Voice Chat` to understand each other. This can be used to quickly set up a fully p2p chat session requiring only a very lightweight session server (which carries no voice traffic).
+ * Full P2P
+ * No CCU limit
+
+<br />
+
+### Photon Unity Networking (Classic)
+
+[Photon Unity Networking](https://assetstore.unity.com/packages/tools/network/photon-unity-networking-classic-free-1786?aid=1100lJDF) is a free (up to 20 CCU) networking system available on the asset store. This asset is deprecated and has been replaced with **Photon Unity Networking 2**,  it is **not** recommended to use this for new applications.
+
+<br />
+
+### UNet HLAPI
+
+UNet is the **deprecated** Unity networking system. It is **not** recommended to use this for new applications.
