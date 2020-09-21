@@ -6,7 +6,15 @@ This tutorial will guide you through the steps required to get a basic Dissonanc
 
 Before beginning this tutorial, please refer to the [installation guide](Getting-Started.md) to learn how to install Dissonance into your project.
 
-A demo scene for this tutorial can be found in the `Dissonance/Integrations/PhotonBolt/Demo` folder. Be sure to read the README in the demo folder, as the demo will not initially compile until you have configured BOLT.
+A demo scene for this tutorial can be found in the `Dissonance/Integrations/PhotonBolt/Demo` folder.
+
+## Setup BOLT
+
+Photon BOLT requires defining the packet types it can send and receive in the Unity editor. Add two new Events (both with no properties):
+ * DissonanceToClient
+ * DissonanceToServer
+
+For the Demo scene to correctly synchronise player positions you will also need to add a new "State", details of this are in the README in the demo folder.
 
 ## Step 1: Dissonance Comms Object
 
