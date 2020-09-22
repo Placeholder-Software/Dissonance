@@ -11,6 +11,7 @@ A demo scene for this tutorial can be found in the `Dissonance/Integrations/Phot
 ## Setup BOLT
 
 Photon BOLT requires defining the packet types it can send and receive in the Unity editor. Add two new Events (both with no properties):
+
  * DissonanceToClient
  * DissonanceToServer
 
