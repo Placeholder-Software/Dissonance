@@ -13,8 +13,9 @@ class DissonanceAudioRecorder
     : MonoBehaviour, IMicrophoneSubscriber
 {
 
-    // Create a buffer to hold unprocessed data. A `Queue` is not ideal, in a real world
-    // situation you should use something like a ring buffer.
+    // Create a buffer to hold unprocessed data. A `Queue` is not ideal,
+    // in a real world situation you should use something like a
+    // ring buffer.
     Queue<float> _transferBuffer = new Queue<float>(8192);
 
     // Store the format of data that we are expecting from Dissonance.
@@ -26,9 +27,10 @@ class DissonanceAudioRecorder
     // This will be called automatically by Dissonance.
     void IMicrophoneSubscriber.Reset()
     {
-        // The audio pipeline is being reset. Throw away any buffered data that has not been processed yet.
-        // This is all done inside a lock to ensure thread safety. In your code you MUST ensure that any locks
-        // are held for the shortest time possible!
+        // The audio pipeline is being reset. Throw away any buffered data
+        // that has not been processed yet. This is all done inside a lock
+        // to ensure thread safety. In your code you MUST ensure that any
+        // locks are held for the shortest time possible!
         lock (_transferBuffer)
         {
             _transferBuffer.Clear();
@@ -38,7 +40,10 @@ class DissonanceAudioRecorder
     }
 
     // This will be called automatically by Dissonance.
-    void IMicrophoneSubscriber.ReceiveMicrophoneData(ArraySegment<float> buffer, WaveFormat format)
+    void IMicrophoneSubscriber.ReceiveMicrophoneData(
+        ArraySegment<float> buffer,
+        WaveFormat format
+    )
     {
         lock (_transferBuffer)
         {
@@ -49,7 +54,10 @@ class DissonanceAudioRecorder
             // Otherwise, check that the format has not changed. A change here
             // indicates a bug!
             else if (!_format.Equals(format))
-                throw new InvalidOperationException("Format was changed without a call to reset!");
+                throw new InvalidOperationException(
+                    "Format was changed " + 
+                    "without a call to reset!"
+                );
 
             // Copy all of the data into the _transferBuffer.
             for (var i = 0; i < buffer.Count; i++)
@@ -65,7 +73,8 @@ class DissonanceAudioRecorder
     {
         var reset = false;
 
-        // Copy data out of the `_transferBuffer` to the `_readyForProcessing` buffer
+        // Copy data out of the `_transferBuffer` to the
+        // `_readyForProcessing` buffer
         lock (_transferBuffer)
         {
             if (_transferBuffer.Count >= _readyForProcessing.Length)
@@ -78,9 +87,9 @@ class DissonanceAudioRecorder
             reset = _reset;
         }
 
-        // A reset occurred on the other thread. Whatever is processing the audio should
-        // be reset as well. For example if you are writing to a file, the handle shold
-        // be flushed and closed here.
+        // A reset occurred on the other thread. Whatever is processing the
+        // audio should be reset as well. For example if you are writing to
+        // a file, the file handle shold be flushed and closed here.
         if (reset)
             ResetAudioProcessing();
 
