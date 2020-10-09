@@ -14,7 +14,7 @@ First you need to create a new script with the IMicrophoneCapture interface on i
 
 Now you need to properly start and stop the script without throwing exceptions.
 
-`StartCapture` should return the format of the audio you will be providing. This **must** be mono (i.e. 1 channel) and any sample rate is acceptable (just use whatever is most convenient for you). If your capture system is not ready you can return null to prevent startup. If you return a non-null value you **must** set `IsRecording` to `true` and you **should** set `Latency` to an appropriate value. The `Latency` value indicates an estimate of the time between sound physically hitting the microphone to submitting the audio to Dissonance, if you don't know this value leave it set to zero.
+`StartCapture` should return the format of the audio you will be providing. This **must** be mono (i.e. 1 channel) and any sample rate is acceptable (just use whatever is most convenient for you). If your capture system is not ready you can return null to prevent start-up. If you return a non-null value you **must** set `IsRecording` to `true` and you **should** set `Latency` to an appropriate value. The `Latency` value indicates an estimate of the time between sound physically hitting the microphone to submitting the audio to Dissonance, if you don't know this value leave it set to zero.
 
 `StopCapture` should do whatever you need to stop the underlying capture system. Once this is done you **must** set `IsRecording` to `false`.
 

@@ -64,6 +64,7 @@ pages:
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
     - "Writing A Custom IDissonancePlayer": "Tutorials/Custom-Position-Tracking.md"
     - "Writing A Custom Microphone Capture System": "Tutorials/Custom-Microphone-Capture.md"
+    - "Direct Access To Recorded Audio": "Tutorials/UsingIMicrophoneSubscriber.md"
     - "Using Channels": "Tutorials/Directly-Using-Channels.md"
     - "Acoustic Echo Cancellation": "Tutorials/Acoustic-Echo-Cancellation.md"
 - Reference:
@@ -74,6 +75,7 @@ pages:
     - Audio:
         - "Voice Settings": "Reference/Audio/VoiceSettings.md"
         - "IMicrophoneCapture": "Reference/Audio/IMicrophoneCapture.md"
+        - "IMicrophoneSubscriber": "Reference/Audio/IMicrophoneSubscriber.md"
     - Networking:
         - "Network Protocol": "Reference/Networking/Network-Protocol.md"
     - Other:
