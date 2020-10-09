@@ -51,8 +51,8 @@ class DissonanceAudioRecorder
             if (_format == null)
                 _format = format;
 
-            // Otherwise, check that the format has not changed. A change here
-            // indicates a bug!
+            // Otherwise, check that the format has not changed. A change
+            // here indicates a bug!
             else if (!_format.Equals(format))
                 throw new InvalidOperationException(
                     "Format was changed " + 
