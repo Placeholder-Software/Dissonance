@@ -25,6 +25,7 @@ class DissonanceAudioRecorder
     bool _reset = false;
 
     // This will be called automatically by Dissonance.
+    // This is **not** called on the main thread! Be careful what you do in this method.
     void IMicrophoneSubscriber.Reset()
     {
         // The audio pipeline is being reset. Throw away any buffered data
@@ -40,6 +41,7 @@ class DissonanceAudioRecorder
     }
 
     // This will be called automatically by Dissonance.
+    // This is **not** called on the main thread! Be careful what you do in this method.
     void IMicrophoneSubscriber.ReceiveMicrophoneData(
         ArraySegment<float> buffer,
         WaveFormat format
@@ -61,7 +63,7 @@ class DissonanceAudioRecorder
 
             // Copy all of the data into the _transferBuffer.
             for (var i = 0; i < buffer.Count; i++)
-                _transferBuffer.Enqueue(buffer[buffer.Offset + i]);
+                _transferBuffer.Enqueue(buffer.Array[buffer.Offset + i]);
         }
     }
 
