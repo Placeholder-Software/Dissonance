@@ -1,7 +1,5 @@
 # Acoustic Echo Cancellation
 
-> Requires Dissonance **v6.2.0** or greater!
-
 When playing audio from speakers and recording audio from a nearby microphone you will often encounter problems when the microphone picks up the audio from the speakers. In a voice session a single person doing this can cause annoying echoes to be transmitted and multiple people doing this simultaneously can cause painful feedback which persists until everyone stops transmitting. This can be particularly problematic when using Voice Activation Detection (VAD) because the VAD automatically transmits back all speech it detects, causing constant echoes of everything other people say. It can also be very bad on platforms where the mic and the speaker are very close together such as VR headsets and mobile phones. Acoustic Echo Cancellation (AEC) is a system to automatically remove these echoes from the transmitted voice signal.
 
 ## How Does AEC Work?
@@ -15,8 +13,6 @@ The most complex part of this system is working out what the delay is between th
 In most scenarios this is not a problem - game sound effects and background music will be enough to keep the AEC synchronised with a suitable delay value. However if you are encountering problems with the AEC not working you should consider adding some sound effects for the AEC to process - e.g. a short jingle when a user joins a session, or ringing sound when joining a session.
 
 ## AEC Setup
-
-> **Before starting ensure you are using Dissonance 6.2.0 or greater!**
 
 ### 1. Audio Postprocessor
 
@@ -82,7 +78,7 @@ Once the AEC is running and has converged remote speakers in the session should 
 
 To fix this problem on iOS you must manually register the audio effect with the Unity audio pipeline.
 
-1. Download `AudioPluginInterface.h` from [the Unity native audio plugin SDK](https://bitbucket.org/Unity-Technologies/nativeaudioplugins/src) and add it to your XCode project.
+1. Download `AudioPluginInterface.h` from [the Unity native audio plugin SDK](https://github.com/Unity-Technologies/NativeAudioPlugins) and add it to your XCode project.
 2. add `#import "AudioPluginInterface.h";` to `UnityAppController.mm` in XCode.
 3. Find the `preStartUnity` method and add the line `UnityRegisterAudioPlugin(&UnityGetAudioEffectDefinitions);`
 
