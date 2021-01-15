@@ -1,21 +1,43 @@
-site_name: "Dissonance: Unity Voice Chat"
+site_name: "Dissonance Voice Chat"
 repo_url: "https://github.com/Placeholder-Software/Dissonance"
 repo_name: "Issue Tracker"
 site_favicon: "dissonance.png"
 google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
 theme:
-  name: readthedocs
-  highlightjs: false
-  custom_dir: theme
+    name: material
+    include_sidebar: false
+    palette:
+        scheme: slate
+        primary: light blue
+    features:
+        - navigation.instant
+        - toc.integrate
+    icon:
+        repo: fontawesome/brands/github
+    favicon: dissonance.png
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/placeholdersoft
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/8dKpP5W
+    - icon: fontawesome/brands/github
+      link: https://github.com/Placeholder-Software/Crowds/
 extra_css:
   - css/pygment_tweaks.css
 use_directory_urls: false
 copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder Software</a>"
 markdown_extensions:
-    - markdown.extensions.sane_lists
-    - codehilite
+    - attr_list
     - admonition
-pages:
+    - pymdownx.superfences
+    - pymdownx.highlight
+    - toc:
+        permalink: ⚓︎
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+nav:
 - Home: "index.md"
 - "Project Setup":
     - "Basics/Getting-Started.md"
