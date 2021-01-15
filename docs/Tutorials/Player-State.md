@@ -1,5 +1,3 @@
-# Player State
-
 Dissonance offers an easy to use API for finding out information about other players in the session.
 
 ## Discovering Players

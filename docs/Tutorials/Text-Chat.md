@@ -1,6 +1,4 @@
-# Text Chat
-
-Dissonance allows text chat messages to be routed through the comms network to the same players and chat rooms used by the voice comms network. This tutorial will demonstrate the APIs provided to send and receive text chat messages with Dissonance.
+Dissonance allows text chat messages to be routed through the network to the same players and chat rooms used by voice. This tutorial will demonstrate the APIs provided to send and receive text chat messages with Dissonance.
 
 ## Send a text message to a Chat Room
 

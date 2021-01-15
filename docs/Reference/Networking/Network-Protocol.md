@@ -1,5 +1,8 @@
 # Network Format
 
+!!! warning "Network Protocol"
+    Knowledge of the network format is not necessary to work with Dissonance in most cases. This documentation is only required if you want to interact with Dissonance over the network from your own non-Unity code. For example writing a Dissonance server in another language.
+
 The Dissonance network system manages three main bits of data:
 
  - Who is in the session
@@ -8,23 +11,25 @@ The Dissonance network system manages three main bits of data:
 
 This document will give you an overview of how the Dissonance network system manages this data. To see the exact packet format look at `PacketWriter.cs` and `PacketReader.cs` in the Dissonance package, these structs have a method for writing/reading each different packet type.
 
-**Knowledge of the network format is not necessary to work with Dissonance in most cases**. This documentation is only required if you want to interact with Dissonance over the network from your own non-Unity code. For example writing a Dissonance server in another language to host separately from Unity.
-
-## Terminology
+## Glossary
 
 #### Peer
-
 Every different machine in the session is a peer. This include both the server and the client.
 
 #### Client
-
-A client is a peer which is recording and playing voice.
+A peer which is recording and playing voice.
 
 #### Server
 
-The server is peer in the session which manages the organisation of the session, e.g. assigning unique ID numbers to peers when they join. All non-voice packets are sent to the server.
+A which manages the organisation of the session and relays voice to clients.
 
-The server can be running in 2 modes. A **host** is a peer which is both a client and a server. A **dedicated server** is a pure server (i.e. no audio capture or playback).
+#### Host
+
+A peer which is both a server and a client.
+
+#### Dedicated Server
+
+A server which is not a client (i.e. no auto recording or playback).
 
 #### Reliable
 

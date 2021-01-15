@@ -4,5 +4,5 @@ If you are using the [Oculus OVR SDK](https://assetstore.unity.com/packages/tool
 
 ![OVR Local Avatar](../images/OVR Local Avatar.png "OVR Local Avatar")
 
-1. Locate the `LocalAvatar` gameobject
+1. Locate the `LocalAvatar` GameObject
 2. Unchecked `Can Own Microphone` in the inspector for the `Ovr Avatar` component

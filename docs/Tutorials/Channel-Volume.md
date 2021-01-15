@@ -1,5 +1,3 @@
-# Channel Volume
-
 The playback volume can be set by the speaker per broadcast channel. This can be used to individually reduce the volume of a speaker. For example fading off voice over a small period of time when someone stops speaking.
 
 ## Broadcast Trigger Component

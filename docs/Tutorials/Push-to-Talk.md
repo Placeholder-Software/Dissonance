@@ -1,8 +1,5 @@
-# Tutorial: Push-to-Talk
-
-There is a video version of this tutorial [here](https://www.youtube.com/watch?v=Kz7qM6XditI).
-
-
+!!! Video Tutorial
+    See [this video](https://www.youtube.com/watch?v=Kz7qM6XditI) about push to talk activation.
 
 When a broadcast trigger is in Push-To-Talk (PTT) mode voice will only be transmitted while the "talk" button is pressed.
 

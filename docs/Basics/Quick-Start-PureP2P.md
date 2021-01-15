@@ -1,5 +1,3 @@
-# Quick Start: Dissonance with PureP2P WebRTC Network
-
 > This Quick Start guide is for those of you integrating Dissonance into a game with the **WebRTC Network** asset.
 
 > **This integration requires Dissonance 6.2.5 or greater.**

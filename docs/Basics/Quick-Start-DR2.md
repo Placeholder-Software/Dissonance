@@ -1,5 +1,3 @@
-# Quick Start: Dissonance with Dark🗲Rift 2
-
 > This Quick Start guide is for those of you integrating Dissonance into a game with **Dark Rift 2**.
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.

@@ -18,11 +18,11 @@ When using the "Room" channel type broadcaster sends voice to the specified room
 
 When set to "Player" the broadcaster sends voice directly to the specified player. The inspector will show a text box to enter the name of the player to send to. The target player name can be configured from a script by modifying the `PlayerId` field.
 
-To get the names of other players inspect the Dissonance Comms component at runtime - when in a session it will show a list of all players in the session. To get the name of players by script enumerate the `DissonanceComms:Players` property.
+To get the names of other players inspect the DissonanceComms component at runtime - when in a session it will show a list of all players in the session. To get the name of players by script enumerate the `DissonanceComms:Players` property.
 
 #### Channel Type : Self
 
-If you have set up [Position Tracking](../../Tutorials/Position-Tracking.md) then your player object will have an `IDissonancePlayer` component which identifies it to Dissonance. You can take advantage of this to send directly to players without having to know their name. When set to "Self" the broadcast component will look for an `IDissonancePlayer` component in this gameobject or any ancestor and will send directly to that player.
+If you have set up [Position Tracking](../../Tutorials/Position-Tracking.md) then your player object will have an `IDissonancePlayer` component which identifies it to Dissonance. You can take advantage of this to send directly to players without having to know their name. When set to "Self" the broadcast component will look for an `IDissonancePlayer` component in this GameObject or any ancestor and will send directly to that player.
 
 ## Channel Metadata
 
@@ -45,7 +45,7 @@ This determines the priority which this voice has for playback. Everyone who rec
  3. Medium
  4. High
 
-## IsMuted : bool
+#### IsMuted : bool
 
 When set to `true` this trigger will never activate.
 

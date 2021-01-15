@@ -1,5 +1,3 @@
-# Playback Prefab
-
 The playback prefab is how Dissonance plays the audio signal from each player. A copy of the prefab is instantiated for each player and then moved into the correct position for positional audio to work. Creating your own playback prefab allows you to customise the AudioSource settings used for voice or attach your own script to the prefab. To use a custom prefab drag the prefab into the `Playback Prefab` field on the [Dissonance Comms](../Reference/Components/Dissonance-Comms.md) component inspector.
 
 If no prefab is set Dissonance will automatically use a default prefab.

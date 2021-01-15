@@ -1,5 +1,3 @@
-## Team Chat Rooms
-
 A team chat room is a set of rooms where all users *on the same team* talk to and listen to the same room. To create a setup like this requires a small amount of scripting as it depends on how your game defines what a "team" actually is!
 
 To create a team chat setup first create multiple pairs of broadcasters and receivers, one for each team.

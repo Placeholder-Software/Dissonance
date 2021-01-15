@@ -1,5 +1,3 @@
-# Quick Start: Dissonance with TNet3
-
 > This Quick Start guide is for those of you integrating Dissonance into a game with the **[TNet3](https://assetstore.unity.com/packages/tools/network/networking-and-serialization-tools-tnet-3-56798?aid=1100lJDF)** asset.
 
 > **This integration requires Dissonance 6.4.2 or greater.**

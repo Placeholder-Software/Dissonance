@@ -1,6 +1,5 @@
-# Proximity Chat
-
-Also see [this video](https://youtu.be/HXMYDbuLwVI?t=323) about proximity chat rooms.
+!!! Video Tutorial
+    See [this video](https://youtu.be/HXMYDbuLwVI?t=323) about proximity chat rooms.
 
 This tutorial will explain how to build a proximity chat system where players can only talk to other players who are standing close to them. How this will work in your game depends upon exactly how you create player objects - feel free to [ask for help](https://www.reddit.com/r/dissonance_voip/).
 

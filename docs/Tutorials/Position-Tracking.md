@@ -1,6 +1,5 @@
-## Tutorial: Position Tracking
-
-Also see [this video](https://youtu.be/HXMYDbuLwVI?t=1179) about position tracking.
+!!! Video Tutorial
+    See [this video](https://youtu.be/HXMYDbuLwVI?t=1179) about position tracking.
 
 This tutorial will explain how to configure your project to track the position of players. This is required for 3D positional audio playback of remote player voice chat and collider trigger support for `VoiceBroadcastTrigger` and `VoiceReceiptTrigger`.
 

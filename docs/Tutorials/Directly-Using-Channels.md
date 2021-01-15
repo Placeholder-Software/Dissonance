@@ -1,5 +1,3 @@
-# Directly Using Channels
-
 This tutorial will explain how to use the channel API for fine grained control over when and where voice is sent. Channels are the system which are used internally by the transmit triggers which come with Dissonance. Direct use of channels requires writing scripts.
 
 Using a channel is quite simple - when a channel is open voice will be sent to whoever is appropriate. A single client may have *multiple* channels open at once, potentially all sending to the same remote player. The remote playback system will correctly handle this situation and will only play the voice back once. There are two kinds of channels, which correspond to two different types of receivers.

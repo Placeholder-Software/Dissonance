@@ -1,5 +1,3 @@
-# Quick Start: Dissonance with Mirror Networking
-
 > This Quick Start guide is for those of you integrating Dissonance into a game with the **Mirror Networking**. You must use a network backend which supports unreliable networking such as **Ignorance**.
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.

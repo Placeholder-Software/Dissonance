@@ -1,5 +1,3 @@
-## Script Controlled Speech
-
 There are several options for controlling speech from scripts, depending on what you want to achieve.
 
 ### Muting The Local Player

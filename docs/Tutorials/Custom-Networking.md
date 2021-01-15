@@ -1,5 +1,3 @@
-## Tutorial: Custom Network Integration
-
 Dissonance is built to be completely decoupled from the underlying networking system, this allows Dissonance to run on top of various different Unity networking assets (e.g. UNet, Forge, Photon etc) just by swapping which Dissonance network component is used. If none of the [existing integrations](../Basics/Choosing-A-Network.md) work for your application then you may need to build a custom network integration.
 
 ### Getting Started

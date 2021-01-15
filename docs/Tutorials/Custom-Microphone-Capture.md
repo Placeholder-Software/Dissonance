@@ -1,5 +1,3 @@
-## Tutorial: Custom Microphone Capture
-
 By default Dissonance uses the `BasicMicrophoneCapture` behaviour to record audio from a microphone using the Unity [Microphone API](https://docs.unity3d.com/ScriptReference/Microphone.html) and feed it into Dissonance. However this script is not ideal for all use cases. You can replace the microphone capture system in Dissonance by creating a new behaviour which implements `IMicrophoneCapture` and adding the script to the same gameObject as the `DissonanceComms` behaviour.
 
 This tutorial will explain how to build a replacement capture system which streams audio from a file. before following the tutorial make sure you've read the [reference docs](../Reference/Audio/IMicrophoneCapture.md) so you understand what the `IMicrophoneCapture` interface means.

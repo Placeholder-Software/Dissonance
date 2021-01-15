@@ -1,14 +1,12 @@
-# Acoustic Echo Cancellation
-
 When playing audio from speakers and recording audio from a nearby microphone you will often encounter problems when the microphone picks up the audio from the speakers. In a voice session a single person doing this can cause annoying echoes to be transmitted and multiple people doing this simultaneously can cause painful feedback which persists until everyone stops transmitting. This can be particularly problematic when using Voice Activation Detection (VAD) because the VAD automatically transmits back all speech it detects, causing constant echoes of everything other people say. It can also be very bad on platforms where the mic and the speaker are very close together such as VR headsets and mobile phones. Acoustic Echo Cancellation (AEC) is a system to automatically remove these echoes from the transmitted voice signal.
 
 ## How Does AEC Work?
 
-Dissonance already runs an audio preprocessor on the microphone signal before it is transmitted, by default this is running Noise Suppression (NS) and Voice Detection (VAD). To enable AEC we introduce a postprocessor which has _all_ game audio passed through it - this postprocessor informs the microphone preprocessor what audio is about to be played through the speakers. With this knowledge the preprocessor can remove the echo signal from the microphone signal when it appears a short time later.
+Dissonance already runs an audio pre-processor on the microphone signal before it is transmitted, by default this is running Noise Suppression (NS) and Voice Detection (VAD). To enable AEC we introduce a postprocessor which has _all_ game audio passed through it - this postprocessor informs the microphone pre-processor what audio is about to be played through the speakers. With this knowledge the pre-processor can remove the echo signal from the microphone signal when it appears a short time later.
 
     Audio Output -> Audio Postprocessor -> Speakers -> Echo -> Microphone -> Audio Preprocessor
 
-The most complex part of this system is working out what the delay is between the `Audio Postprocessor` and the `Audio Preprocessor`. This is achieved automatically but it is umportant to understand that the AEC system can take several seconds to work out the correct delay value - until it has done this no echo will be cancelled. The AEC cannot be calculating the delay value while there is no sound being played and it will slowly "forget" the delay value during periods of silence.
+The most complex part of this system is working out what the delay is between the `Audio Postprocessor` and the `Audio Preprocessor`. This is achieved automatically but it is important to understand that the AEC system can take several seconds to work out the correct delay value - until it has done this no echo will be cancelled. The AEC cannot be calculating the delay value while there is no sound being played and it will slowly "forget" the delay value during periods of silence.
 
 In most scenarios this is not a problem - game sound effects and background music will be enough to keep the AEC synchronised with a suitable delay value. However if you are encountering problems with the AEC not working you should consider adding some sound effects for the AEC to process - e.g. a short jingle when a user joins a session, or ringing sound when joining a session.
 

@@ -1,6 +1,5 @@
-# Collider Chat Rooms
-
-Also see [this video](https://youtu.be/HXMYDbuLwVI?t=323) about collider chat rooms.
+!!! Video Tutorial
+    See [this video](https://youtu.be/HXMYDbuLwVI?t=323) about collider chat rooms.
 
 This tutorial will introduce volume triggers for transmission and receipt triggers, and how they can be used to implement localised chat rooms which allow users standing within the same area in your game world to chat with each other. This tutorial builds upon the setup in the [Position tracking](Position-Tracking.md) guide.
 
@@ -36,11 +35,11 @@ Now, go back to the receipt trigger, and change the selection in the "Chat Room"
 
 ![ReceiptTrigger with Lobby room available](../images/VoiceReceiptTrigger_LobbyRoom.png)
 
-> Chat rooms can be named dynamically when configuring the triggers programatically.
+> Chat rooms can be named dynamically when configuring the triggers programmatically.
 
 ## Step 4: Add a Broadcast Trigger
 
-You now have a receiver configured to hear other people alking in the lobby room, but no one is saying anything! You need to add a broadcast trigger to the room.
+You now have a receiver configured to hear other people talking in the lobby room, but no one is saying anything! You need to add a broadcast trigger to the room.
 
 Add a "Voice Broadcast Trigger" script to the game object. Use a Channel Type of "Room", and choose the "Lobby" room.
 

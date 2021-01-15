@@ -1,6 +1,5 @@
-## Tutorial: Audio Mixing
-
-Also see [this video](https://youtu.be/HXMYDbuLwVI?t=1516) about audio mixing.
+!!! Video Tutorial
+    See [this video](https://youtu.be/HXMYDbuLwVI?t=1516) about audio mixing.
 
 Dissonance does not have any special support built in for audio mixing, because unity already has a powerful mixing system built in which dissonance audio is routed through. You can find out more about the unity audio mixing system [here](http://blogs.unity3d.com/2014/07/24/mixing-sweet-beats-in-unity-5-0/). This tutorial offers advice about the best way to use the unity audio pipeline for VoIP.
 
@@ -10,7 +9,7 @@ It can be tempting to mix voice signals in the same way as any other audio signa
 
 ## Volume Ducking
 
-Games frequently have very loud sound effects such as explosions and gunfire which can drown out other sounds in the game. However, it would interrupt conversations if these noises also drowned out the voice signal. A naive solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping and sound terrible. An alternative solution would be to reduce the volume of the game audio far below the voice signal, but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
+Games frequently have very loud sound effects such as explosions and gunfire which can drown out other sounds in the game. However, it would interrupt conversations if these noises also drowned out the voice signal. A naïve solution would be to increase the volume of the voice signal far above the game sounds but doing this would cause clipping and sound terrible. An alternative solution would be to reduce the volume of the game audio far below the voice signal, but doing this would cause the game sounds to lack impact even when no one is talking. The best solution is to play game sounds at full volume when no one is talking but then when someone starts talking simply "duck" the volume so the voice can be clearly heard over the game sounds.
 
 ![Example of audio mixer with ducking](../images/AudioMixing_Ducking.png "Example of audio mixer with ducking")
 
