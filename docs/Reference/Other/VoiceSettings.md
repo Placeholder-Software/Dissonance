@@ -7,7 +7,7 @@ Various Dissonance audio settings can be tweaked through the VoiceSettings asset
 
 All of these settings can be accessed at runtime from a script through `Dissonance.Config.VoiceSettings.Instance`. Any settings which are changed by script are automatically saved into `PlayerPrefs` and override the default settings (stored in the asset). This means you can configure these settings in your menus and they will persist when your application is closed and re-opened.
 
-![Voice Settings](../../../images/VoiceSettings.webp)
+![Voice Settings](../../images/VoiceSettings.webp)
 
 ## Frame Size
 
