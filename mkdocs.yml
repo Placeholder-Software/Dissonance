@@ -39,16 +39,16 @@ nav:
 - "Project Setup":
     - "Basics/Getting-Started.md"
     - "Basics/Choosing-A-Network.md"
-- "Installation Requirements":
-    - "Basics/Licensing.md"
-    - "Platforms/Windows Desktop.md"
-    - "Platforms/Windows UWP & Hololens.md"
-    - "Platforms/Linux.md"
-    - "Platforms/MacOS.md"
-    - "Platforms/Android.md"
-    - "Platforms/iOS.md"
-    - "Platforms/Magic Leap.md"
-    - "Platforms/Oculus OVR.md"
+    - "Installation Requirements":
+        - "Basics/Licensing.md"
+        - "Platforms/Windows Desktop.md"
+        - "Platforms/Windows UWP & Hololens.md"
+        - "Platforms/Linux.md"
+        - "Platforms/MacOS.md"
+        - "Platforms/Android.md"
+        - "Platforms/iOS.md"
+        - "Platforms/Magic Leap.md"
+        - "Platforms/Oculus OVR.md"
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
     - "Dark Rift 2": "Basics/Quick-Start-DR2.md"
@@ -98,6 +98,7 @@ nav:
     - Networking:
         - "Network Protocol": "Reference/Networking/Network-Protocol.md"
     - Other:
+        - "Voice Settings": "Reference/Other/VoiceSettings.md"
         - "Rooms": "Reference/Other/Rooms.md"
         - "RoomChannels": "Reference/Other/RoomChannels.md"
         - "RoomChannel": "Reference/Other/RoomChannel.md"
