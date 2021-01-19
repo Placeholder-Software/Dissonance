@@ -1,6 +1,6 @@
 The core Dissonance package does not include any network - instead Dissonance relies on integrations with other network systems to send and receive data. This gives you a lot of flexibility in choosing how you want voice data to be sent over the network. If none of the existing integrations are suitable for you you can also write a custom network integration.
 
-## The Options
+## Free Integrations
 
 Dissonance has support for 10 network systems:
 
