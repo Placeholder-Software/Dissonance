@@ -5,7 +5,7 @@ Dissonance does not have any special support built in for audio mixing, because 
 
 ### General Principles
 
-It can be tempting to mix voice signals in the same way as any other audio signal in your game and to add various sound effects to the voice for realism/immersion. Things such as drowning out teammates with loud gunfire, deafening players when they're hit by a flashbang or adding extreme radio fuzz when the enemy team use jammers might all sound immersive but in reality will just force people not to use the in game VoIP. Any audio mixing done to the voice signal should be done to improve the voice the voice quality.
+It can be tempting to mix voice signals in the same way as any other audio signal in your game and to add various sound effects to the voice for realism/immersion. Things such as drowning out teammates with loud gunfire, deafening players when they're hit by a flashbang or adding extreme radio fuzz when the enemy team use jammers might all sound immersive but in reality will just force people not to use the in game VoIP. Generally any audio mixing done to the voice signal should be done to improve the voice quality.
 
 ## Volume Ducking
 
