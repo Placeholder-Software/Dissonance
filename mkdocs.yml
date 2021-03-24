@@ -38,6 +38,8 @@ markdown_extensions:
     - pymdownx.highlight
     - toc:
         permalink: ⚓︎
+extra_javascript:
+  - javascript/redirector.js
 nav:
 - Home: "index.md"
 - "Project Setup":
