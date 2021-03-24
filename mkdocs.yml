@@ -1,8 +1,12 @@
 site_name: "Dissonance Voice Chat"
 repo_url: "https://github.com/Placeholder-Software/Dissonance"
 repo_name: "Issue Tracker"
+site_url: https://placeholder-software.github.io/Dissonance
 site_favicon: "dissonance.png"
-google_analytics: ["UA-46722926-2", "dissonance.readthedocs.io"]
+google_analytics:
+    - UA-46722926-2
+    - auto
+copyright: "<a href='https://placeholder-software.co.uk/'>Placeholder Software</a>"
 theme:
     name: material
     include_sidebar: false
@@ -58,7 +62,6 @@ nav:
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
     - "Mirror Networking": "Basics/Quick-Start-Mirror.md"
     - "Steamworks.NET P2P": "Basics/Quick-Start-Steamworks.Net-P2P.md"
-#    - "Unity Networking LLAPI (self contained)": "Basics/Quick-Start-UNet-LLAPI.md"
     - "WebRTC Network (self contained)": "Basics/Quick-Start-PureP2P.md"
 - "Basic Concepts": "Basics/Introduction-To-Chat-Rooms.md"
 - "Introductory Tutorials":
