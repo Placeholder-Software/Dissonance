@@ -1,16 +1,18 @@
-In this tutorial you will create a new project, import Dissonance and set up some settings required for Dissonance to work properly.
+In this tutorial you will create a new project, import Dissonance and change some settings required for Dissonance to work properly.
 
 ### 1. Import Dissonance
 
-Import the Dissonance asset into the project. Every time you import a new version of Dissonance a window will pop up offering to take you to the latest changelog, you can launch this window again by navigating to `Windows > Dissonance > Welcome Screen`.
+Import the Dissonance asset into the project. This will install two folders into your project: `Assets/Plugins/Dissonance` contains the main source code of Dissonance, `Assets/Dissonance` will contain any integration packages which you install.
 
 ### 2. Download Integrations
 
-On the welcome screen is a list of integrations available for Dissonance. You **must** install at a network backend integration - without this Dissonance cannot send anything over the network! Refer to [these docs](Choosing-A-Network.md) for help on choosing which one to use.
+When you import a new version of Dissonance a window will pop up with a list of available integrations, you can launch this window again by navigating to `Windows > Dissonance > Download Integrations`.
+
+To use Dissonance you **must** install at a network backend integration - without this Dissonance cannot send anything over the network! Refer to [these docs](Choosing-A-Network.md) for help on choosing which one to use. Each integration package includes a demo scene, you should run this demo scene once you have installed the package to verify that Dissonance is properly installed and working in your project.
 
 ### 3. Run In Background
 
-Multiplayer games need to keep running (and processing network packets) even when the game window does not have focus. To do this navigate to `Edit -> Project Settings -> Player` and enable "Run In Background".
+Multiplayer games need to keep running (and processing network packets) even when the game window does not have focus. To do this navigate to `Edit -> Project Settings -> Player` and enable **Run In Background**.
 
 ### 4. Per Platform Specific Setup
 
@@ -23,6 +25,7 @@ Some platforms have special setup requirements, make sure to read the documentat
  - [Magic Leap](../Platforms/Magic Leap.md)
  - [Windows (Desktop)](../Platforms/Windows Desktop.md)
  - [Windows (UWP/Hololens)](../Platforms/Windows UWP & Hololens.md)
+ - [Oculus OVR](../Platforms/Oculus OVR.md)
 
 ## 4. Complete!
 

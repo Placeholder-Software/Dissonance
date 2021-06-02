@@ -8,7 +8,6 @@ Dissonance has support for 10 network systems:
 * [Mirror Networking](https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF)
 * [Dark Rift 2](https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF)
 * [Forge Remastered](https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF)
-* [Photon Unity Networking (Classic)](https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF)
 * [Photon Unity networking (2)](https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF)
 * [Photon Bolt](https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF)
 * [TNet3](https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF)
@@ -21,11 +20,7 @@ All of these packages can be downloaded from the asset store for free.
 
 If you already have a network system set up in your application then simply sending voice through that system is the easiest option. If there is an integration package listed above for your networking system it is recommended to use that.
 
-## There Is No Integration Package
-
-If you already have networking in your application but there is no integration package available there are two options.
-
-The first option is to build your own [custom network integration](../Tutorials/Custom-Networking.md). Dissonance includes base classes which can be extended to create a new network integration relatively easily - all that is required is writing the code to send packets, receive packets and inform Dissonance about session events (leave/join/connect/disconnect etc). This requires that your networking system supports **Unreliable & Unordered** packets (e.g. UDP), TCP is not suitable for voice chat.
+However, if there is no available integration package then there are two options. The first option is to build your own [custom network integration](../Tutorials/Custom-Networking.md). Dissonance includes base classes which can be extended to create a new network integration relatively easily - all that is required is writing the code to send packets, receive packets and inform Dissonance about session events (leave/join/connect/disconnect etc). This requires that your networking system supports **Unreliable & Unordered** packets (e.g. UDP), TCP is **not** suitable for high quality voice chat.
 
 The second option is to establish another network session just for voice, using one of the existing integrations. Any integration can be used for this.
 
@@ -90,6 +85,7 @@ If you do not have any network system already set up in your application then yo
 
  - Full P2P
  - No CCU limit
+ - Steam Only
 
 ### WebRTC Video Chat
 
@@ -97,10 +93,6 @@ If you do not have any network system already set up in your application then yo
 
  - Full P2P
  - No CCU limit
-
-### Photon Unity Networking (Classic)
-
-[Photon Unity Networking](https://assetstore.unity.com/packages/tools/network/photon-unity-networking-classic-free-1786?aid=1100lJDF) is a free (up to 20 CCU) networking system available on the asset store. This asset is deprecated and has been replaced with **Photon Unity Networking 2**,  it is **not** recommended to use this for new applications.
 
 ### UNet HLAPI
 
