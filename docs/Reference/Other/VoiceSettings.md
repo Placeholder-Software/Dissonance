@@ -7,7 +7,9 @@ Various Dissonance audio settings can be tweaked through the VoiceSettings asset
 
 All of these settings can be accessed at runtime from a script through `Dissonance.Config.VoiceSettings.Instance`. Any settings which are changed by script are automatically saved into `PlayerPrefs` and override the default settings (stored in the asset). This means you can configure these settings in your menus and they will persist when your application is closed and re-opened.
 
-![Voice Settings](../../images/VoiceSettings.webp)
+<br />
+
+![Voice Settings](../../images/VoiceSettings2.webp)
 
 ## Frame Size
 
@@ -35,10 +37,18 @@ Controls if the codec is using `Forward Error Correction` which improves audio q
 
 ## Noise Suppression
 
-Controls how much the audio pre-processor removes noise from the signal. Higher values will remove noise more aggressively but may also make speech quieter as a side effect.
+Controls how much the audio pre-processor removes noise from the signal. Higher values will remove more noise but may also make speech quieter.
 
 !!! info
     Sounds such as people talking in the background are not noise and will not be removed by the noise suppressor. This system removes non-voice sounds such as fans hum, keyboard clatter, or fuzz from a poor quality microphone.
+
+## Background Sound Removal
+
+Enables [RNNoise](https://jmvalin.ca/demo/rnnoise/), an ML based background sound removal system. When there is a lot of background sound (e.g. people talking, dogs barking, keyboard clatter, fan noise, loud breathing) this system will remove it, but will distort speech much more than the basic `Noise Suppression` system. Dissonance can run both noise removal systems at once, which reduces the amount of distortion present even in very noisy environments.
+
+The intensity slider limits the amount of background sound that can be removed and _also_ limits the maximum amount of distortion even in the worst case. Set it higher to cancel more noise.
+
+It is recommended to enable this system if you are building an application where there is likely to be a lot of environmental noise (e.g. a mobile app, where the user is expected to be on-the-move while talking) or an intense VR game (where the user may be breathing heavily while talking).
 
 ## Voice Detector Sensitivity
 
