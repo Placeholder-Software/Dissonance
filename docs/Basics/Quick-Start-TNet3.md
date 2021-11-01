@@ -10,7 +10,7 @@ A demo scene for this tutorial can be found in the `Assets/Dissonance/Integratio
 
 ## Step 1: Dissonance Comms Object
 
-> Dissonance runs mostly from a single game object, which should be placed somewhere near the root of your scene. This object contains the main "Dissonance Comms" behavior, together with the TNet3 networking script.
+> Dissonance runs mostly from a single game object, which should be placed somewhere near the root of your scene. This object contains the main "Dissonance Comms" behaviour, together with the TNet3 networking script.
 
 To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/TNet3` folder into your scene.
 
@@ -48,7 +48,7 @@ You now have a functional Dissonance comms system, but you are not yet transmitt
 
 Before you can speak to anyone, you need to add a "Voice Broadcast Trigger" script to the scene. This script can be placed anywhere, but for this tutorial, you should simply add it to the DissonanceSetup game object you created in step 1.
 
-The "Voice Broadcast Trigger" controls when the user's microphone is being transmitted to other players, and to whom the user is talking. There are many configuration options on this script to provide more advanced control of under what sitations we should be transmitting and who to, but for this tutorial simply leave the settings at default.
+The "Voice Broadcast Trigger" controls when the user's microphone is being transmitted to other players, and to whom the user is talking. There are many configuration options on this script to provide more advanced control of under what situations we should be transmitting and who to, but for this tutorial simply leave the settings at default.
 
 ![Broadcast Trigger Configuration](../images/VoiceBroadcastTrigger_Default.png)
 

@@ -33,8 +33,9 @@ That's all you need to get a project set up and ready for Dissonance. Next, foll
 
  - [Quick Start - Mirror](Quick-Start-Mirror.md)
  - [Quick Start - Forge Remastered](Quick-Start-Forge-Remastered.md)
- - [Quick Start - Photon (PUN)](Quick-Start-Photon.md)
+ - [Quick Start - Photon (PUN2)](Quick-Start-Photon.md)
  - [Quick Start - Photon Bolt](Quick-Start-Photon-Bolt.md)
+ - [Quick Start - Unity Netcode For GameObjects](Quick-Start-Unity-NFGO.md)
  - [Quick Start - Unity Networking HLAPI](Quick-Start-UNet-HLAPI.md)
  - [Quick Start - Dark🗲Rift 2](Quick-Start-DR2.md)
  - [Quick Start - WebRTC Network](Quick-Start-PureP2P.md)

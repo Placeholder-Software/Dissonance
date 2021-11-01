@@ -11,10 +11,10 @@ This template is a guideline for how to create a good issue. However it's not ob
 ## Context
 _Describe in detail the problem you are encountering, what you have tried and what happened instead_
 
-## Expected Behavior
+## Expected behaviour
 _Summarise exactly what you expect to happen_
 
-## Actual Behavior
+## Actual behaviour
 _Summarise exactly what actually happens_
 
 ## Workaround
