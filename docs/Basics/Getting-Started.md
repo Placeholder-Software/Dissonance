@@ -10,6 +10,8 @@ When you import a new version of Dissonance a window will pop up with a list of 
 
 To use Dissonance you **must** install at a network backend integration - without this Dissonance cannot send anything over the network! Refer to [these docs](Choosing-A-Network.md) for help on choosing which one to use. Each integration package includes a demo scene, you should run this demo scene once you have installed the package to verify that Dissonance is properly installed and working in your project.
 
+You may also wish to use some of our other integrations. Refer to [these docs](Other-Integrations) for a list of what's available.
+
 ### 3. Run In Background
 
 Multiplayer games need to keep running (and processing network packets) even when the game window does not have focus. To do this navigate to `Edit -> Project Settings -> Player` and enable **Run In Background**.

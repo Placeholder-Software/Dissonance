@@ -55,6 +55,7 @@ nav:
         - "Platforms/iOS.md"
         - "Platforms/Magic Leap.md"
         - "Platforms/Oculus OVR.md"
+    - "Basics/Other-Integrations.md"
 - "Quick Start Guides":
     - "Forge Networking Remastered": "Basics/Quick-Start-Forge-Remastered.md"
     - "Dark Rift 2": "Basics/Quick-Start-DR2.md"

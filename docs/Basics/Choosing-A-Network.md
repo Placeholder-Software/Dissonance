@@ -33,7 +33,7 @@ If you do not have any network system already set up in your application then yo
 
 ### Mirror
 
-[Mirror](https://assetstore.unity.com/packages/tools/network/mirror-129321?aid=1100lJDF) is a community built replacement for UNet. Mirror supports several different network backends, the default (Telepathy) uses TCP which is _not_ suitable for voice chat. Instead you should use Ignorance or LiteNetLibTransport (these are both very easy to install). **If you are just starting out with Unity networking, this is our recommendation**.
+[Mirror](https://assetstore.unity.com/packages/tools/network/mirror-129321?aid=1100lJDF) is a community built replacement for UNet. **If you are just starting out with Unity networking, this is our recommendation**.
 
  - [Discord](https://discord.gg/8pmJkfH)
  - Client/Server
@@ -90,7 +90,7 @@ If you do not have any network system already set up in your application then yo
 
 ### Steamworks P2P
 
-[Steamworks.Net](https://steamworks.github.io/) is a free low level wrapper around the Steamworks SDK. This integration requires that all users are logged into a [Steam](https://store.steampowered.com/) account. If your game already uses Steam networking this can be a free and low latency way to set up voice. Setting this up to work with Dissonance requires a little extra scripting - first you must set up a network session with `Steamworks.Net`,please refer to the [Getting Started](../Basics/Quick-Start-Steamworks.Net-P2P.md) tutorial for more details.
+[Steamworks.Net](https://steamworks.github.io/) is a free low level wrapper around the Steamworks SDK. This integration requires that all users are logged into a [Steam](https://store.steampowered.com/) account. If your game already uses Steam networking this can be a free and low latency way to set up voice. Setting this up to work with Dissonance requires a little extra scripting - first you must set up a network session with `Steamworks.Net`, please refer to the [Getting Started](../Basics/Quick-Start-Steamworks.Net-P2P.md) tutorial for more details.
 
  - Full P2P
  - No CCU limit
