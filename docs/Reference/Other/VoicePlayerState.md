@@ -126,6 +126,6 @@ Get or set if this player is locally muted and will not produce any audio on the
 
 ## Methods
 
-###  GetSpeakingChannels(channels: List<RemoteChannel>)
+###  GetSpeakingChannels(channels: List&lt;RemoteChannel&gt;)
 
 Get a snapshot of the channels you are hearing this speaker through. If they are not speaking to you then this will return no results. The `channels` parameter passed in must not be null, the list will be cleared and then filled with the current snapshot.
