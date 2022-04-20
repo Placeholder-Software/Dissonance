@@ -29,56 +29,49 @@ public class HlapiCommsNetwork
   >
 ```
 
-You should now have several new classes and structs:
-
+You should define three new classes:
  - `CustomCommsNetwork : BaseCommsNetwork`
  - `CustomClient : BaseClient`
  - `CustomServer : BaseServer`
+
+And three new structs:
  - `CustomPeer struct`
- - `ServerParam` (maybe)
- - `ClientParam` (maybe)
+ - `CustomServerParam`
+ - `CustomClientParam`
 
 You will have a number of build errors like "abstract member [...] not implemented" - these are the things you must implement before the network integration can work.
 
 ## `CustomCommsNetwork : BaseCommsNetwork`
 
-In your custom comms network class you will need to create your custom client and custom server objects. Dissonance will call these methods when a server or client needs to be created. You shouldn't connect to the network in this method, simply create the objects. Here are examples from the HLAPI integration:
+In your custom comms network class you will need to create your custom client and custom server objects. Dissonance will call these methods when a server or client needs to be created. You shouldn't connect to the network in this method, simply create the objects.
 
 ```csharp
-// We specified `Unit` as `TServerParam`, so we get given a `Unit`
-protected override HlapiServer CreateServer(Unit details)
+protected override CustomServer CreateServer(CustomServerParam details)
 {
-    return new HlapiServer(this);
+    return new CustomServer(this, details);
 }
 
-// We specified `Unit` as `TClientParam`, so we get given a `Unit`
-protected override HlapiClient CreateClient(Unit details)
+protected override CustomClient CreateClient(CustomClientParam details)
 {
-    return new HlapiClient(this);
+    return new CustomClient(this, details);
 }
 ```
 
-You may also need to override the `Initialize` method. This allows you to setup your network system before any networking is done. The HLAPI integration look like this:
+If you need to do any other setup work for your network system, you may need to override the `Initialize` method.
 
 ```csharp
 protected override void Initialize()
 {
-    //Sanity check the channel configuration set in the inspector
-    //... << Removed code for simplicity of example >>
-
-    // HLAPI requires a message handler for every type code.
-    // Register one which just discards packets while Dissonance
-    // is _not_ running.
-    NetworkServer.RegisterHandler(TypeCode, NullMessageReceivedHandler);
+    Network.DoSomethingImportant();
 
     // Don't forget to call base.Initialize!
     base.Initialize();
 }
 ```
 
-Finally you need to decide how your network integration will be started, there are two techniques for this. Some integrations (e.g. HLAPI/Photon) have a network system which is already running and Dissonance simply uses that, in this case the `CustomCommsNetwork` should watch the status of the external network system and make sure that the Dissonance network is synchronized with it (e.g. when the external network stops Dissonance should stop and when it starts Dissonance should start). Some other integrations (e.g. WebRTC/LLAPI) host a separate network session entirely within the custom network components, in this case you may want to add StartNetwork/StopNetwork methods to your component which you can use to control the networking.
+Finally you need to start the network and tell it to connect, there are two main techniques for this. Some integrations (e.g. Mirror/Photon) have a network system which is already connected and Dissonance can use that, other integrations (e.g. WebRTC) host a network session specifically for voice chat.
 
-If you are using the first technique then you need to monitor the external network system and make sure that Dissonance is running in the same way as the network system. Here is how this is implemented in the HLAPI network integration:
+If you are using the first technique then you need to monitor the external network system and make sure that Dissonance is running in the same way as the network system by calling `RunAsHost`, `RunAsDedicatedServer`, `RunAsClient` or `Stop`. Here is how this is implemented in the HLAPI network integration:
 
 ```csharp
 // Check every frame
@@ -88,8 +81,7 @@ protected override void Update()
     if (IsInitialized)
     {
         // Check if the HLAPI is ready
-        var networkActive = NetworkManager.singleton.isNetworkActive &&
-            (NetworkServer.active || NetworkClient.active);
+        var networkActive = NetworkManager.singleton.isNetworkActive && (NetworkServer.active || NetworkClient.active);
         if (networkActive)
         {
             // Check what mode the HLAPI is in
@@ -98,8 +90,7 @@ protected override void Update()
 
             // Check what mode Dissonance is in and if
             // they're different then call the correct method
-            if (Mode.IsServerEnabled() != server
-                || Mode.IsClientEnabled() != client)
+            if (Mode.IsServerEnabled() != server || Mode.IsClientEnabled() != client)
             {
                 // HLAPI is server and client, so run as a non-dedicated
                 // host (passing in the correct parameters)
@@ -126,9 +117,7 @@ protected override void Update()
 }
 ```
 
-As you can see this is ultimately calling the methods `RunAsHost` (if HLAPI is a client and a server), `RunAsDedicatedServer` (if HLAPI is just a server), `RunAsClient` (if HLAPI is just a client) or `Stop` if HLAPI is not running.
-
-If you are using the self hosted technique you should expose public methods which call these 4 methods when you want to start/stop networking.
+If you are using the second technique then you will need to decide when to call `RunAsHost`, `RunAsDedicatedServer`, `RunAsClient` or `Stop` at the appropriate times.
 
 ## `CustomClient : BaseClient`
 
@@ -137,23 +126,21 @@ This class handles all of the client side logic of Dissonance, one of these will
 `Base class [...] doesn't contain a parameterless constructor`. To fix this simply add a constructor which passes a `CustomCommsNetwork` to the base class:
 
 ```csharp
-public CustomClient(CustomCommsNetwork network)
+public CustomClient(CustomCommsNetwork network, CustomClientParam details)
     : base(network)
 {
 }
 ```
 
-You already implemented the `CreateClient` method in your `CustomCommsNetwork` which uses this constructor. Make sure to pass in other parameters here (e.g. connection parameters) as necessary.
-
 `abstract member [...] not implemented`. There will be four of these errors to fix:
 
 #### public override void Connect()
 
-This will be called when you need to connect to the session. Once you have finished connecting (which may take a long time) you should call `base.Connected()`. For example in the HLAPI integration this simply binds a message handler and immediately calls `Connected`, wheras in the LLAPI integration it starts connecting the network socket and does not call `Connected` until that succeeds.
+This will be called when you need to connect to the session. You should start connecting to the network when this is called, once you have finished connecting (which may take a long time) you must call `base.Connected()`. In systems where there is already a network connection setup you may just immediately call `base.Connected()`.
 
 #### protected override void ReadMessages()
 
-This will be called periodically to poll messages from the network system. Any packets you receive should be to `base.NetworkPacketReceived`.
+This will be called periodically to poll messages from the network system. Any packets you receive must be passed to `base.NetworkPacketReceived`.
 
 #### protected override void SendReliable(ArraySegment<byte> packet)
 
@@ -169,44 +156,44 @@ This class handles all the server side logic of Dissonance, one of these will be
 
 #### `public override void Connect()`
 
-This will be called when you need to host a session, you should do any setup required here. For example in the HLAPI integration this binds message handlers, in the LLAPI integration it creates and opens a listen socket.
+This will be called when you need to host a new network session (e.g. open a socket).
 
 #### `public override void Disconnect()`
 
-This will be called when you need to stop hosting a session, you should do any required teardown here.
+This will be called when you need to stop hosting a session (e.g. close the socket).
 
 #### `protected override void ReadMessages()`
 
-This will be called periodically to poll messages from the network system. Any packets you receive should be to `base.NetworkPacketReceived`. The `base.NetworkPacketReceived` method on the server requires an instance of your `TPeer` type (e.g. `CustomPeer`).
+This will be called periodically to poll messages from the network system. Any packets you receive should be to `base.NetworkPacketReceived`. The `base.NetworkPacketReceived` method on the server requires an instance of your `CustomPeer` type which indicates who sent the message.
 
-#### `protected override void SendReliable(TPeer destination, ArraySegment<byte> packet)`
+#### `protected override void SendReliable(CustomPeer destination, ArraySegment<byte> packet)`
 
 This method sends a reliable packet to another peer using a **reliable** and **in order** channel (e.g. TCP). Packets sent with this method are not latency sensitive but MUST arrive in order. If you detect that a reliable packet has been lost you should immediately stop the Dissonance network session.
 
-This is where you should decide what your `CustomPeer` struct needs to contain. Whatever information you require to specify which peer to send to should be added into your struct. For example in the HLAPI integration sending requires a `NetworkConnection` object, so the `CustomPeer` struct contains a single `NetworkConnection` field.
+If you need some extra information about who the packet is being sent to, you should add it to the `CustomPeer` struct. Remember to go to the `ReadMessages` method and add that information to the `CustomPeer` struct you passed in to `NetworkPacketReceived`.
 
-#### `protected override void SendUnreliable(TPeer destination, ArraySegment<byte> packet)`
+#### `protected override void SendUnreliable(CustomPeer destination, ArraySegment<byte> packet)`
 
 This methods sends a packet to the server using an **unreliable** and **unordered** channel (e.g. UDP). Packets sent with this method are _extremely_ latency sensitive and must arrive as soon as possible or not at all. It is expected that some packets sent using this method may be lost or arrive out of order.
 
 #### `ClientDisconnected`
 
-Finally there is one more method that you must call when appropriate: `ClientDisconnected` indicates that a client has left the session. You should call this as soon as you know a client has left.
+When a peer disconnects from the server you must call `ClientDisconnected` to notify the server.
 
 ## Editor Inspector
 
-Finally you should create an inspector for your CustomCommsNetwork. Doing this is very simple, extend the `BaseDissonanceCommsNetworkEditor` class and pass the same 5 generic types you defined above. Attach the `CustomEditor` attribute to the class. For example in the HLAPI integration the inspector looks like this:
+Finally you should create an inspector for your CustomCommsNetwork. Doing this is very simple, extend the `BaseDissonanceCommsNetworkEditor` class and pass the same 5 generic types you defined above. Attach the `CustomEditor` attribute to the class. 
 
 ```csharp
-[CustomEditor(typeof(HlapiCommsNetwork))]
-public class UNetCommsNetworkEditor
+[CustomEditor(typeof(CustomCommsNetwork))]
+public class CustomCommsNetworkEditor
     : BaseDissonnanceCommsNetworkEditor<
-        HlapiCommsNetwork,
-        HlapiServer,
-        HlapiClient,
-        HlapiConn,
-        Unit,
-        Unit
+        CustomCommsNetwork,
+        CustomServer,
+        CustomClient,
+        CustomConn,
+        CustomClientParam,
+        CustomServerParam
     >
 {
 }
