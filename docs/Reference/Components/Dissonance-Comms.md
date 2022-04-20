@@ -188,3 +188,7 @@ Returns a boolean value indicating if the local player has *any* of the [tokens]
 ### ResetMicrophoneCapture
 
 Forces a complete restart of the audio capture pipeline.
+
+### GetMicrophoneDevices(List<string> output)
+
+Get a list of available microphones. Microphone names will be added to the `output` list.
