@@ -106,3 +106,7 @@ If you do not have any network system already set up in your application then yo
 ### UNet HLAPI
 
 UNet is the **deprecated** Unity networking system. It is **not** recommended to use this for new applications.
+
+### Fish Networking
+
+[Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF) is a free open source, easy to use, feature rich networking library for Unity. Dissonance has support for Fish networking through a community developed integration package, [available here](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
