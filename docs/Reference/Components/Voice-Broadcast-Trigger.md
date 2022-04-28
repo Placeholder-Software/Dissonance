@@ -69,6 +69,10 @@ When set to "Voice Activation" the broadcaster will automatically transmit when 
 
 When set to "Push To Talk" the broadcaster will transmit when a given input axis is chosen. You must set the name of a Unity input axis and then configure it in the Unity input manager.
 
+#### Activation Mode : Open
+
+When set to "Open" the broadcaster will constantly transmit (unless muted).
+
 #### Collider Volume Activation
 
 Using collider volume activation requires [Position Tracking](../../Tutorials/Position-Tracking.md) to be set up. When active the broadcast trigger will find a sibling physics trigger volume and will only send voice if the local player (as defined by the `IDissonancePlayer` component) is inside the volume.

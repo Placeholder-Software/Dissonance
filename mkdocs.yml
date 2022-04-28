@@ -29,6 +29,7 @@ extra:
       link: https://github.com/Placeholder-Software/Dissonance
 extra_css:
   - css/pygment_tweaks.css
+  - css/header_tweaks.css
 use_directory_urls: false
 copyright: "<a href='https://placeholder-software.co.uk/dissonance/'>Placeholder Software</a>"
 markdown_extensions:
