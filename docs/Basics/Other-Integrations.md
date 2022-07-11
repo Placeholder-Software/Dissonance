@@ -19,7 +19,3 @@ For a download link and more information, see the [full documentation](https://c
 
 !!! important ""
     Using this integration does **not** require that you are using FMOD for audio playback. You can install FMOD just for the higher quality audio recording and continue to use the normal Unity audio systems.
-
-## [NatDevice](https://assetstore.unity.com/packages/tools/integration/dissonance-for-natdevice-api-176918?aid=1100lJDF)
-
-[NatDevice](https://assetstore.unity.com/packages/tools/integration/natdevice-media-device-api-162053?aid=1100lJDF) is a cross platform media API which provides low level access to cameras and microphones. The [Dissonance For NatDevice API](https://assetstore.unity.com/packages/tools/integration/dissonance-for-natdevice-api-176918?aid=1100lJDF) integration package provides higher quality and lower latency audio to Dissonance through NatDevice.
