@@ -43,6 +43,11 @@ If you do not have any network system already set up in your application then yo
 
 [Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF) is a free open source, easy to use, feature rich networking library for Unity. Dissonance has support for Fish networking through a community developed integration package, [available here](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
 
+ - [Discord](https://discord.gg/fishnetworking)
+ - [Documentation](https://fish-networking.gitbook.io/docs/)
+ - Client/Server
+ - No CCU limit
+
 ### Unity Netcode For GameObjects
 
 [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/) is the new multiplayer solution developed by Unity.
