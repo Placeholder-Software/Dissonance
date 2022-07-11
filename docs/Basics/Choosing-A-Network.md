@@ -2,7 +2,7 @@ The core Dissonance package does not include any network - instead Dissonance re
 
 ## Free Integrations
 
-Dissonance has support for 10 network systems:
+Dissonance has support for 10 network systems. All of these packages can be downloaded from the asset store for free and receive support as part of Dissonance.
 
 * [Mirror Networking](https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF)
 * [Unity Netcode For GameObjects](https://assetstore.unity.com/packages/slug/206514?aid=1100lJDF)
@@ -15,7 +15,7 @@ Dissonance has support for 10 network systems:
 * [Steamworks.NET (P2P)](https://assetstore.unity.com/packages/slug/143292?aid=1100lJD)
 * [WebRTC Network (P2P)](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF)
 
-All of these packages can be downloaded from the asset store for free.
+There is also a community developed and maintained package for [Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF), available from [GitHub](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
 
 ## My Application Already Has Networking
 
@@ -38,6 +38,10 @@ If you do not have any network system already set up in your application then yo
  - [Discord](https://discord.gg/8pmJkfH)
  - Client/Server
  - No CCU limit
+
+### Fish Networking
+
+[Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF) is a free open source, easy to use, feature rich networking library for Unity. Dissonance has support for Fish networking through a community developed integration package, [available here](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
 
 ### Unity Netcode For GameObjects
 
@@ -106,7 +110,3 @@ If you do not have any network system already set up in your application then yo
 ### UNet HLAPI
 
 UNet is the **deprecated** Unity networking system. It is **not** recommended to use this for new applications.
-
-### Fish Networking
-
-[Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF) is a free open source, easy to use, feature rich networking library for Unity. Dissonance has support for Fish networking through a community developed integration package, [available here](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
