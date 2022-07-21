@@ -1,12 +1,10 @@
-# IMicrophoneSubscriber
+# BaseMicrophoneSubscriber
 
-This interface allows a script to be added into the Dissonance audio recording pipeline, giving you direct access to the audio data.
+This script makes it easier to directly access the recorded audio data. All methods on this script are called on the main thread.
 
-Once you have implemented the `IMicrophoneSubscriber` on a class you can register an instance of the class to receive data by calling `DissonanceComms.SubscribeToRecordedAudio`. See [this tutorial](../../Tutorials/UsingIMicrophoneSubscriber.md) for more information.
+Implement a new script with `BaseMicrophoneSubscriber` as the base class instead of `MonoBehaviour`, once you have done this register an instance of the behaviour to receive data by calling `DissonanceComms.SubscribeToRecordedAudio`.
 
-The methods on this interface are automatically called by Dissonance, they **are not called on the main thread**. You must be careful in implementations of this interface to handle 
-
-See also [BaseMicrophoneCapture](BaseMicrophoneCapture.md) which implements this interface in an more convenient package.
+See also [IMicrophoneSubscriber](IMicrophoneSubscriber.md) which does not have any of the ease-of-use features of this script, providing more direct access.
 
 ### Reset
 
