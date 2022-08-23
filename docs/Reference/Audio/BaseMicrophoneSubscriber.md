@@ -6,12 +6,14 @@ Implement a new script with `BaseMicrophoneSubscriber` as the base class instead
 
 See also [IMicrophoneSubscriber](IMicrophoneSubscriber.md) which does not have any of the ease-of-use features of this script, providing more direct access.
 
-### Reset
+### ResetAudioStream(WaveFormat waveFormat)
 
-This method is called by Dissonance whenever the audio pipeline is being reset. When this is called you should immediately finish any work you were doing with the audio and prepare for more audio to be delivered soon. For example if you are recording audio to a file you would flush the file writer and close the file handle.
+This method is called by Dissonance whenever the audio stream is being reset, or the audio format is changing. The `waveFormat` argument indicates the format of the next data which will be delivered.
 
-### ReceiveMicrophoneData
+When this is called you should immediately finish any work you were doing with the audio and prepare for more audio to be delivered soon. For example if you are recording audio to a file you would flush the file writer and close the file handle.
 
-This method is called by Dissonance for every frame of recorded audio data. The `buffer` argument contains raw PCM audio data. The `format` argument indicates the format of the data in the buffer, this will only change after `Reset` has been called.
+### ReceiveMicrophoneData(ArraySegment<float> data)
 
-After this method has finished executing you **must not** hold any references to the `buffer` argument. Any data that you want to store for processing later must be copied out of the `buffer`.
+This method is called by Dissonance for every frame of recorded audio data. The `data` argument contains raw PCM audio data.
+
+After this method has finished executing you **must not** hold any references to the `data` argument. Any data that you want to store for processing later must be copied out of the `data`.
