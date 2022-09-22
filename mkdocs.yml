@@ -98,6 +98,8 @@ nav:
     - Components:
         - "Voice Broadcast Trigger": "Reference/Components/Voice-Broadcast-Trigger.md"
         - "Voice Receipt Trigger": "Reference/Components/Voice-Receipt-Trigger.md"
+        - "Voice Proximity Broadcast Trigger": "Reference/Components/Voice-Proximity-Broadcast-Trigger.md"
+        - "Voice Proximity Receipt Trigger": "Reference/Components/Voice-Proximity-Receipt-Trigger.md"
         - "Dissonance Comms": "Reference/Components/Dissonance-Comms.md"
     - Audio:
         - "Voice Settings": "Reference/Audio/VoiceSettings.md"
