@@ -71,11 +71,13 @@ When the filter first starts all of the stats will be labelled as "initialising.
 
 ### 6. Other Improvements
 
-AEC is **not** a perfect system and there will usually be some echo which is not cancelled out. Certain conditions such a high background noise or a very large delay (e.g. bluetooth headphones/microphones) can make this much worse or even not work at all. Therefore it's important to have other mitigations to reduce the impact of bad echo.
+AEC is **not** a perfect system and there will usually be some echo which is not cancelled out. Certain conditions such a high background noise or a very large delay (e.g. Bluetooth headphones/microphones) can make this much worse or even not work at all. Therefore it's important to have other mitigations to reduce the impact of bad echo.
 
 [Voice Ducking](../Reference/Other/VoiceSettings#audio-duck-attenuation) automatically reduces the volume of received voices when voice is being transmitted. This reduces the chance of feedback occurring since incoming voices are quieter and less likely to be picked up by the mic.
 
 [Audio Ducking](../Tutorials/Audio-Mixing#volume-ducking) can be set up in the Unity mixer to reduce the volume of all non-voice sounds when any voice audio is being received. Because the other sound effects are quieter this allows you to reduce the volume of all voices, reducing the chance of the mic recording them.
+
+[Background Sound Removal](../Reference/Other/VoiceSettings#background-sound-removal) automatically removes non-voice sounds from the microphone signal. This cannot fix echoed voices, but it can improve other non-voice sounds that are recorded by the microphone.
 
 A [Low Pass Filter](https://docs.unity3d.com/Manual/class-AudioLowPassFilter.html) can be set up in the Unity mixer on the received voices, with a `Cutoff Frequency` of around 6000Hz. This is above the range of normal human speech. If the worst kind of feedback happens (very high pitched squealing) this will reduce the volume and prevent it from getting any worse.
 
