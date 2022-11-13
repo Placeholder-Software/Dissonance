@@ -33,7 +33,7 @@ You can check that you have done this correctly by running the game and watching
 
 ### 3. Route Voice Audio
 
-Voice audio also needs to be re-routed to pass through the mixer with the filter attached. To change where voice audio is sent you need to create a custom [playback prefab](/Tutorials/Playback-Prefab). Create a prefab with a `VoicePlayback` component and an `AudioSource` component. Set the output of the AudioSource to the correct mixer. Finally drop the prefab into the `Playback Prefab` field of the `Dissonance Comms` component.
+Voice audio also needs to be re-routed to pass through the mixer with the filter attached. To change where voice audio is sent you need to create a custom [playback prefab](/Tutorials/Playback-Prefab.md). Create a prefab with a `VoicePlayback` component and an `AudioSource` component. Set the output of the AudioSource to the correct mixer. Finally drop the prefab into the `Playback Prefab` field of the `Dissonance Comms` component.
 
 ![Playback Prefab With Output Highlighted](../images/PlaybackPrefab_OutputHighlighted.png)
 
