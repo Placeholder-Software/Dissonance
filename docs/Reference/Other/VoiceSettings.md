@@ -18,6 +18,13 @@ Controls how much audio is packed into a single network packet. Smaller frames r
 !!! warning
     The smallest option (`Tiny`) is not suitable for use over the internet or over a wireless network. This option should only be used in very special cases where all clients will be connected to the same wired local area network.
 
+The exact frame size at each setting is:
+
+ - Tiny: 10ms (100 packets/s)
+ - Small: 20ms (50 packets/s)
+ - Medium: 40ms (25 packets/s)
+ - Large: 60ms (16.6 packets/second)
+
 ## Audio Quality
 
 Controls how many bits-per-second (on average) the audio codec will use to encode audio. Higher bitrates sound better but use more network data and slightly more CPU power.
