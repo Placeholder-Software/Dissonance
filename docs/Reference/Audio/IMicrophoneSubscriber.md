@@ -6,7 +6,7 @@ Once you have implemented the `IMicrophoneSubscriber` on a class you can registe
 
 The methods on this interface are automatically called by Dissonance, they **are not called on the main thread**. You must be careful in implementations of this interface to handle 
 
-See also [BaseMicrophoneCapture](BaseMicrophoneCapture.md) which implements this interface in an more convenient package.
+See also [BaseMicrophoneSubscriber](BaseMicrophoneSubscriber.md) which implements this interface in an more convenient package.
 
 ### Reset
 
