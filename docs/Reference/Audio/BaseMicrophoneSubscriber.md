@@ -12,7 +12,7 @@ This method is called by Dissonance whenever the audio stream is being reset, or
 
 When this is called you should immediately finish any work you were doing with the audio and prepare for more audio to be delivered soon. For example if you are recording audio to a file you would flush the file writer and close the file handle.
 
-### ReceiveMicrophoneData(ArraySegment<float> data)
+### ProcessAudio(ArraySegment<float> data)
 
 This method is called by Dissonance for every frame of recorded audio data. The `data` argument contains raw PCM audio data.
 
