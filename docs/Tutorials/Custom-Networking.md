@@ -208,6 +208,7 @@ This will set up a basic inspector for you.
 ## Testing
 
 At this point you should have a basic voice chat system functioning with your custom network. You should set up a test scene to test it. While the test scene is running check these things:
+
  - Look at the inspector for your `CustomCommsNetwork` component.
    - Once the network session is started the `Mode` should shows "Server & Client", "Client" or "Server" depending on the mode this peer is running in.
    - Once the network session has connected the `Connection Status` should show "Connected"
@@ -327,7 +328,7 @@ private void SendUnreliableP2P(IList<ClientInfo<int?>> destinations,
 }
 ```
 
-Because there is a fallback mechanism you can mix P2P and non-P2P packets as necessary. For example you start by sending everything via the server, establish a p2p connection between clients and if it fails (e.g. due to firewall or NAT settings) you can simply keep on sending via relay for that specific pair of clients. Alternatively you could monitor client bandwidth and send via P2P if there is spare bandwidth - falling back to server relay if the client is close to reaching it's bandwidth limit.
+Because there is a fall-back mechanism you can mix P2P and non-P2P packets as necessary. For example you start by sending everything via the server, establish a p2p connection between clients and if it fails (e.g. due to firewall or NAT settings) you can simply keep on sending via relay for that specific pair of clients. Alternatively you could monitor client bandwidth and send via P2P if there is spare bandwidth - falling back to server relay if the client is close to reaching it's bandwidth limit.
 
 Finally you need to start establishing p2p connections. Override the `OnServerAssignedSessionId` method, when this is called you should send a "handshake" packet to every peer you know how to contact directly. This will tell those peers that you are available for p2p communication. For example in the PUN integration this is implemented as:
 
