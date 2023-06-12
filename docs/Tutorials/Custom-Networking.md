@@ -8,38 +8,42 @@ Dissonance includes a set of base classes which implement most of the networking
  * `BaseServer` - This is a class created by the comms network component on one of the peers in the session. It manages the session as other peers join and leave. You will extend this class to implement your server logic.
  * `BaseClient` - This is a class created by the comms network component on all the peers in the session. It manages sending and receiving voice. You will extend this class to implement your client logic.
 
-These classes all take 5 type parameters, which specify some extra details about your network system:
-
- - `TServer` - This is the type of the class you have extended from `BaseServer`
- - `TClient` - This is the type of the class you have extended from `BaseClient`
- - `TPeer` - This is a type of your choice which represents other peers in the network. For now just create a new empty `struct` type and fill in the details later.
- - `TClientParam` - This is the type of data needed for a client to join the session (e.g. an IP address). If your network does not need this (e.g. it is already running before Dissonance is started) then just pass `Unit`.
- - `TServerParam` - This is the type of data needed for a server to host a session (e.g. a port number). If your network does not need this (e.g. it is already running before Dissonance is started) then just pass `Unit`.
-
-Here is an example from the HLAPI integration of these types in use:
+Create the `CustomCommsNetwork` class which extends `BaseCommsNetwork`:
 
 ```csharp
-public class HlapiCommsNetwork
+public class CustomCommsNetwork
   : BaseCommsNetwork<
-      HlapiServer,      // A class which implements BaseServer
-      HlapiClient,      // A class which implements BaseClient
-      HlapiConn,        // A struct which contains a HLAPI NetworkConnection
-      Unit,             // Nothing
-      Unit              // Nothing
+      CustomServer,      // A class which implements BaseServer
+      CustomClient,      // A class which implements BaseClient
+      CustomPeer,        // A struct which represents a network connection
+      Unit,              // Nothing
+      Unit               // Nothing
   >
+{
+}
 ```
 
-You should define three new classes:
- - `CustomCommsNetwork : BaseCommsNetwork`
- - `CustomClient : BaseClient`
- - `CustomServer : BaseServer`
+As you can see `BaseCommsNetwork` requires 5 type parameters, which specify all the parts of your custom network integration:
+
+ - `CustomServer` - This is a class you will create which extends `BaseServer`
+ - `CustomClient` - This is a class you will create which extends `BaseClient`
+ - `CustomPeer` - This is a struct you will create which represents another peer in the network session.
+ - `CustomClientParam` - This is a struct you will create which contains the data necessary create a network connection (e.g. an IP address). If your network does not need this (e.g. it is already running before Dissonance is started) then just pass `Unit`.
+ - `CustomServerParam` - This is a struct you will create which contains the data necessary host a network session (e.g. a port number). If your network does not need this (e.g. it is already running before Dissonance is started) then just pass `Unit`.
+
+To create all these types define two new classes:
+
+ - `class CustomCommsNetwork : BaseCommsNetwork {}`
+ - `class CustomClient : BaseClient {}`
+ - `class CustomServer : BaseServer {}`
 
 And three new structs:
- - `CustomPeer struct`
- - `CustomServerParam`
- - `CustomClientParam`
 
-You will have a number of build errors like "abstract member [...] not implemented" - these are the things you must implement before the network integration can work.
+ - `struct CustomPeer : IEquatable<CustomPeer> {}`
+ - `struct CustomServerParam {}`
+ - `struct CustomClientParam {}`
+
+ Once you have done this you will have a large number of build errors like "abstract member [...] not implemented" - these are the things you must implement before the network integration can work.
 
 ## `CustomCommsNetwork : BaseCommsNetwork`
 
@@ -57,7 +61,7 @@ protected override CustomClient CreateClient(CustomClientParam details)
 }
 ```
 
-If you need to do any other setup work for your network system, you may need to override the `Initialize` method.
+If you need to do any other setup work for your network system you can override the `Initialize` method.
 
 ```csharp
 protected override void Initialize()
