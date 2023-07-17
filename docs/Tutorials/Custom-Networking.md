@@ -210,8 +210,8 @@ This will set up a basic inspector for you.
 At this point you should have a basic voice chat system functioning with your custom network. You should set up a test scene to test it. While the test scene is running check these things:
 
  - Look at the inspector for your `CustomCommsNetwork` component.
-   - Once the network session is started the `Mode` should shows "Server & Client", "Client" or "Server" depending on the mode this peer is running in.
-   - Once the network session has connected the `Connection Status` should show "Connected"
+    - Once the network session is started the `Mode` should shows "Server & Client", "Client" or "Server" depending on the mode this peer is running in.
+    - Once the network session has connected the `Connection Status` should show "Connected"
  - Try sending a [text chat](Text-Chat.md) message.
  - Create a [broadcast and receipt](Global-Chat-Room.md) trigger and speak.
  - Look at the inspector for the `DissonanceComms` component. It shows a list of client in the session, disconnect a client and make sure they disappear.

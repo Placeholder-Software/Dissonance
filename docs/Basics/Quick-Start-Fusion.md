@@ -1,18 +1,18 @@
-> This Quick Start guide is for those of you integrating Dissonance into a game with **Unity Netcode For GameObjects**.
+> This Quick Start guide is for those of you integrating Dissonance into a game with **Photon Fusion**.
 
 This tutorial will guide you through the steps required to get a basic Dissonance setup working in your project. By the end of this tutorial, you will having working voice comms with all users talking in a global chat room.
 
 Before beginning this tutorial, please refer to the [installation guide](Getting-Started.md) to learn how to install Dissonance into your project.
 
-A demo scene for this tutorial can be found in the `Dissonance/Integrations/UNet_NFGO/Demo` folder.
+A demo scene for this tutorial can be found in the `Dissonance/Integrations/PhotonFusion/Demo` folder.
 
 ## Step 1: Dissonance Comms Object
 
 > Dissonance runs mostly from a single game object, which should be placed somewhere near the root of your scene. This object contains the main "Dissonance Comms" behaviour, together with the UNet HLAPI networking script.
 
-To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/UNet_NFGO` folder into your scene.
+To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/PhotonFusion` folder into your scene.
 
-Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: `DissonanceComms` and `NfgoCommsNetwork`.
+Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: `DissonanceComms` and `FusionCommsNetwork`.
 
 ## Step 2: Add a Broadcast Trigger
 
