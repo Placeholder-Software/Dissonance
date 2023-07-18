@@ -6,11 +6,18 @@ Before beginning this tutorial, please refer to the [installation guide](Getting
 
 A demo scene for this tutorial can be found in the `Dissonance/Integrations/PhotonFusion/Demo` folder.
 
+## Fusion Multi Peer
+
+!!! warning "Photon Fusion Multi Peer"
+    Dissonance does not support [Fusion Multi Peer Mode](https://doc.photonengine.com/fusion/current/manual/multipeer).
+
+Photon Fusion supports [multi peer mode](https://doc.photonengine.com/fusion/current/manual/multipeer) which allows multiple clients to run in one Unity editor instance, this is great for rapid testing. However, Dissonance uses some resources that fundamentally cannot be shared (e.g. the microphone) and does not support this mode.
+
 ## Step 1: Dissonance Comms Object
 
-> Dissonance runs mostly from a single game object, which should be placed somewhere near the root of your scene. This object contains the main "Dissonance Comms" behaviour, together with the UNet HLAPI networking script.
+> Dissonance runs mostly from a single game object, which should be created as a child of your Photon Fusion "Network Runner". This object contains the main "Dissonance Comms" behaviour, together with the Photon Fusion networking script.
 
-To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/PhotonFusion` folder into your scene.
+To place the default Dissonance object into your scene, drag and drop the `DissonanceSetup` prefab from the `Dissonance/Integrations/PhotonFusion` folder into your "Network Runner" GameObject.
 
 Once you have instantiated the `DissonanceSetup` prefab, you should have an object with two scripts attached: `DissonanceComms` and `FusionCommsNetwork`.
 
