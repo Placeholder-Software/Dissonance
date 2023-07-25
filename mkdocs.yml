@@ -64,6 +64,7 @@ nav:
     - "Dark Rift 2": "Basics/Quick-Start-DR2.md"
     - "Photon Unity Networking": "Basics/Quick-Start-Photon.md"
     - "Photon BOLT": "Basics/Quick-Start-Photon-Bolt.md"
+    - "Photon Fusion": "Basics/Quick-Start-Fusion.md"
     - "TNet3": "Basics/Quick-Start-TNet3.md"
     - "Unity Networking HLAPI": "Basics/Quick-Start-UNet-HLAPI.md"
     - "Steamworks.NET P2P": "Basics/Quick-Start-Steamworks.Net-P2P.md"
