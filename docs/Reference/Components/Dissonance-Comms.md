@@ -145,9 +145,7 @@ An event which runs whenever a token is removed from the local player.
 
 Attempt to find the player with the given Dissonance ID. Will return null if no such player can be found.
 
-### SubscribeToVoiceActivation(IVoiceActivationListener)
-
-<a href="#subcribetovoiceactivationivoiceactivationlistener" style="visibility: hidden">Invisible anchor link for old misspelt version of this method</a>
+### SubscribeToVoiceActivation(IVoiceActivationListener) <a href="#subcribetovoiceactivationivoiceactivationlistener"> </a>
 
 Subscribes the given listener object to the voice activation detector (VAD) for the local player. When VAD detects speech the `VoiceActivationStart` method will be called. When the VAD stops detecting speech the `VoiceActivationStop` method will be called.
 
@@ -155,9 +153,7 @@ Subscribes the given listener object to the voice activation detector (VAD) for 
 
 Unsubscribes a previously subscribed listener object from the VAD.
 
-### SubscribeToRecordedAudio(IMicrophoneSubscriber)
-
-<a href="#subcribetorecordedaudioimicrophonesubscriber" style="visibility: hidden">Invisible anchor link for old misspelt version of this method</a>
+### SubscribeToRecordedAudio(IMicrophoneSubscriber) <a href="#subcribetorecordedaudioimicrophonesubscriber"> </a>
 
 Subscribes the given listener object to the microphone recorded audio _after_ it has been preprocessed. This will receive all audio recorded by the mic whether or not it is being sent over the network. Use `DissonanceComms.RoomChannels.Count` and `DissonanceComms.PlayerChannels.Count` to determine if the audio is being sent anywhere.
 
