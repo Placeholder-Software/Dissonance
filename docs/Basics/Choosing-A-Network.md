@@ -81,14 +81,6 @@ If you do not have any network system already set up in your application then yo
  - Client/Server
  - No CCU limit
 
-### Photon Bolt
-
-[Photon Bolt](https://assetstore.unity.com/packages/tools/network/photon-bolt-free-127156?aid=1100lJDF) is a free (up to 20 CCU) networking system available on the asset store.
-
- - [Discord](https://discord.gg/5ySmPdQ)
- - Client/Server
- - CCU Limit (20 free)
-
 ### Photon Unity Networking 2
 
 [Photon Unity Networking 2](https://assetstore.unity.com/packages/tools/network/pun-2-free-119922?aid=1100lJDF) is the upgrade to the very popular Photon Unity Networking asset. It is a free (up to 20 CCU) networking system available on the asset store.
@@ -97,13 +89,12 @@ If you do not have any network system already set up in your application then yo
  - Photon Cloud Hosting
  - CCU Limit (20 free)
 
-### Steamworks P2P
+### Photon Fusion
 
-[Steamworks.Net](https://steamworks.github.io/) is a free low level wrapper around the Steamworks SDK. This integration requires that all users are logged into a [Steam](https://store.steampowered.com/) account. If your game already uses Steam networking this can be a free and low latency way to set up voice. Setting this up to work with Dissonance requires a little extra scripting - first you must set up a network session with `Steamworks.Net`, please refer to the [Getting Started](../Basics/Quick-Start-Steamworks.Net-P2P.md) tutorial for more details.
+[Photon Fusion](https://assetstore.unity.com/packages/tools/network/photon-fusion-267958?aid=1100lJDF) is a new network package from the developer of the very popular Photon Unity Networking asset.
 
- - Full P2P
- - No CCU limit
- - Steam Only
+ - [Forum](https://forum.photonengine.com/)
+ - Photon Cloud Hosting
 
 ### WebRTC Video Chat
 
