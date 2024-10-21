@@ -21,7 +21,9 @@ Before any kind of proximity chat can work you must set up [position tracking](P
 2. Set the `Chat Room` to the same value as the broadcast trigger.
 3. Set the range to **exactly the same value** as the broadcast trigger.
 
-## Collider Proximity
+## Collider Proximity (Deprecated)
+
+> is still supported, but should be considered **deprecated**. Prefer to use Grid Proximity where possible.
 
 A more precise system of proximity chat can be set up by combining [direct player transmission](Direct-Player-Transmit.md) and [collider chat rooms](Collider-Chat-Room.md). Each player in your game should have a voice broadcast trigger attached to it (set to broadcast directly to that player) and configured as a collider chat room with a suitable collision volume (e.g. a large sphere). When two players stand close to one another they will enter each others transmission trigger volumes and begin talking to one another.
 
