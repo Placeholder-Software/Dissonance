@@ -6,24 +6,30 @@ Dissonance includes two ways to set up proximity chat: `Grid Proximity` and `Col
 
 ## Grid Proximity
 
-Before any kind of proximity chat can work you must set up [position tracking](Position-Tracking.md) to tell Dissonance where each player is. Each player in the scene should have a player tracker attached to them, the transform of this tracker is the position that Dissonance uses as the position of that player.
+Grid proximity creates an infinite grid of cells, each cell is a unique chat room. Players are automatically placed into all cells which are within range of their position. This means that only nearby players can be heard.
+
+#### Setup
+
+1. Set up [position tracking](Position-Tracking.md), this tells Dissonance where players are.
 
 ![Voice Proximity Broadcast Trigger Inspector](../images/ProximityBroadcastTrigger_Inspector.png)
 
-1. Add a `Voice Proximity Broadcast Trigger` to the scene. This controls when voice will be **sent**.
-2. Choose a `Chat Room` for this trigger.
-3. Choose a range, all other players within this distance will hear your voice.
-4. Choose an `Activation Mode` which decides when voice should be transmitted.
+2. Add a `Voice Proximity Broadcast Trigger` to the scene. This controls when voice will be **sent**.
+  - Do **not** attach the proximity trigger to the player prefab!
+3. Choose a `Chat Room` for this trigger.
+4. Choose a range, all other players within this distance will hear your voice.
+5. Choose an `Activation Mode` which decides when voice should be transmitted.
 
 ![Voice Proximity Receipt Trigger Inspector](../images/ProximityReceiptTrigger_Inspector.png)
 
-1. Add a `Voice Proximity Receipt Trigger` to the scene. This controls when voice will be **received**.
-2. Set the `Chat Room` to the same value as the broadcast trigger.
-3. Set the range to **exactly the same value** as the broadcast trigger.
+6. Add a `Voice Proximity Receipt Trigger` to the scene. This controls when voice will be **received**.
+  - Do **not** attach the proximity trigger to the player prefab!
+7. Set the `Chat Room` to the same value as the broadcast trigger.
+8. Set the range to **exactly the same value** as the broadcast trigger.
 
 ## Collider Proximity (Deprecated)
 
-> is still supported, but should be considered **deprecated**. Prefer to use Grid Proximity where possible.
+> Collider Proximity is deprecated. It is still supported and will not be removed from Dissonance, but should not be used in new projects. Prefer to use Grid Proximity where possible.
 
 A more precise system of proximity chat can be set up by combining [direct player transmission](Direct-Player-Transmit.md) and [collider chat rooms](Collider-Chat-Room.md). Each player in your game should have a voice broadcast trigger attached to it (set to broadcast directly to that player) and configured as a collider chat room with a suitable collision volume (e.g. a large sphere). When two players stand close to one another they will enter each others transmission trigger volumes and begin talking to one another.
 
