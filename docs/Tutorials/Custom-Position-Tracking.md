@@ -23,10 +23,10 @@ This is the ID of the player which this object represents. For the local player 
 
 Usually this discovery is done by sending the ID across the network, exactly how this works depends on your networking system. Most implementations follow a similar flow:
 
-1) Discover that this instance represents the local player (e.g. `OnStartClient`, `OnStartAuthority` callback)
-2) Get `DissonanceComms.GetSingleton().LocalPlayerName` and send it to the server (e.g. `ServerRPC`)
-3) Server sends the `LocalPlayerName` to all instances (e.g. `SyncVar`, or `Command`)
-4) Instances receive this message and then:
+1. Discover that this instance represents the local player (e.g. `OnStartClient`, `OnStartAuthority` callback)
+2. Get `DissonanceComms.GetSingleton().LocalPlayerName` and send it to the server (e.g. `ServerRPC`)
+3. Server sends the `LocalPlayerName` to all instances (e.g. `SyncVar`, or `Command`)
+4. Instances receive this message and then:
   - set `PlayerId = ID`
   - set `Type = Remote`
   - set `IsTracking = true`
