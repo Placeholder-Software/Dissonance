@@ -27,10 +27,10 @@ Usually this discovery is done by sending the ID across the network, exactly how
 2. Get `DissonanceComms.GetSingleton().LocalPlayerName` and send it to the server (e.g. `ServerRPC`)
 3. Server sends the `LocalPlayerName` to all instances (e.g. `SyncVar`, or `Command`)
 4. Instances receive this message and then:
-  - set `PlayerId = ID`
-  - set `Type = Remote`
-  - set `IsTracking = true`
-  - call `DissonanceComms.GetSingleton().TrackPlayerPosition(this);`
+  a. set `PlayerId = ID`
+  b. set `Type = Remote`
+  c. set `IsTracking = true`
+  d. call `DissonanceComms.GetSingleton().TrackPlayerPosition(this);`
 
 Care must be taken to ensure that late-joining players receive the message in step #3 correctly. For example using a `buffered RPC` or a `SyncVar`.
 
