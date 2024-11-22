@@ -11,50 +11,28 @@ public interface IDissonancePlayer
     Vector3 Position { get; }
     Quaternion Rotation { get; }
     NetworkPlayerType Type { get; }
+    bool IsTracking { get; }
 }
 ```
 
-Once you have implemented these four properties on your tracker you must register it with Dissonance, To do this simply call `FindObjectOfType<DissonanceComms>().TrackPlayerPosition(this);` at some point after tracking has started. Once this tracker is no longer in use you must unregister your tracker from Dissonance, to do this simply call `FindObjectOfType<DissonanceComms>().StopTracking(this);`.
+Once you have implemented these five properties on your tracker you must register it with Dissonance, To do this simply call `DissonanceComms.GetSingleton().TrackPlayerPosition(this);` after tracking has started. Once this tracker is no longer in use you must unregister your tracker from Dissonance, to do this simply call `DissonanceComms.GetSingleton().StopTracking(this);`.
 
 #### PlayerId
 
-This is the ID of the player which this object represents. For the local player this is the value in the `LocalPlayerName` property on your `DissonanceComms` object. This value should be synchronised across the network. How this works will depend upon your networking system. For example here is how the HLAPI integration does it:
+This is the ID of the player which this object represents. For the local player this is the value in the `LocalPlayerName` property on your `DissonanceComms` object. Trackers attached to remote player objects must discover the ID for the players it represents.
 
-```csharp
-private string _playerId;
+Usually this discovery is done by sending the ID across the network, exactly how this works depends on your networking system. Most implementations follow a similar flow:
 
-// This property implements the PlayerId part of the interface
-public string PlayerId { get { return _playerId; } }
+1) Discover that this instance represents the local player (e.g. `OnStartClient`, `OnStartAuthority` callback)
+2) Get `DissonanceComms.GetSingleton().LocalPlayerName` and send it to the server (e.g. `ServerRPC`)
+3) Server sends the `LocalPlayerName` to all instances (e.g. `SyncVar`, or `Command`)
+4) Instances receive this message and then:
+  - set `PlayerId = ID`
+  - set `Type = Remote`
+  - set `IsTracking = true`
+  - call `DissonanceComms.GetSingleton().TrackPlayerPosition(this);`
 
-// When the network system starts this behaviour, this method runs
-public override void OnStartAuthority()
-{
-    base.OnStartAuthority();
-
-    // Get the local DissonanceComms object 
-    var comms = FindObjectOfType<DissonanceComms>();
-
-    // Call set player name, to sync the name across all peers
-    SetPlayerName(FindObjectOfType<DissonanceComms>().LocalPlayerName);
-    
-    // Make sure that if the local name is changed the
-    // changed is synced the change across the network
-    comms.LocalPlayerNameChanged += SetPlayerName;
-}
-
-private void SetPlayerName(string playerName)
-{
-    CmdSetPlayerName(playerName);
-}
-
-// This is a "Command" which means that it is run on *all* peers when run.
-// This is does the actual synchronisation of the name across the network.
-[Command]
-private void CmdSetPlayerName(string playerName)
-{
-    _playerId = playerName;
-}
-```
+Care must be taken to ensure that late-joining players receive the message in step #3 correctly. For example using a `buffered RPC` or a `SyncVar`.
 
 #### Position And Rotation
 
@@ -72,7 +50,7 @@ public Quaternion Rotation
 }
 ```
 
-If you wanted to represent a slightly different location (e.g. your player is made of multiple objects, one of which represents the head) then you would need to change the implementation of the properties slightly:
+If you want to represent a slightly different location (e.g. your player is made of multiple objects, one of which represents the head) then you would need to change the implementation of the properties slightly:
 
 ```csharp
 private MonoBehaviour _head;
@@ -87,16 +65,15 @@ public Quaternion Rotation
     get { return _head.transform.rotation; }
 }
 
-// When this behaviour is enabled, find the other object we want to get the position from
 public void OnEnable()
 {
-    _head = GetEntityWhichRepresentsTheHead();
+    _head = GetHeadTransform();
 }
 ```
 
 #### Type
 
-This indicates to Dissonance if this object represents the (singular) local player or one of the (multiple) remote players. How you implement this property depends upon your network system. Using the HLAPI integration as an example again:
+This indicates to Dissonance if this object represents the (singular) local player or one of the (multiple) remote players. How you implement this property depends upon your network system. For example:
 
 ```csharp
 public NetworkPlayerType Type
@@ -104,5 +81,3 @@ public NetworkPlayerType Type
     get { return isLocalPlayer ? NetworkPlayerType.Local : NetworkPlayerType.Remote; }
 }
 ```
-
-This assumes that the component is attached to a player object. Therefore if it is *not* the local player then it must be a remote player.
