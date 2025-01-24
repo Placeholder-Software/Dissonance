@@ -16,8 +16,9 @@ Dissonance has support for 10 network systems. All of these packages can be down
 * [WebRTC Network (P2P)](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF)
 
 There are also community developed and maintained packages.
- * [Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF), available from [GitHub](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
- * [PurrNet](https://assetstore.unity.com/packages/tools/network/purrnet-297320?aid=1100lJDF), available from [GitHub](https://github.com/BobsiUnity/PurrNet-VoiceChat).
+
+* [Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF), available from [GitHub](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
+* [PurrNet](https://assetstore.unity.com/packages/tools/network/purrnet-297320?aid=1100lJDF), available from [GitHub](https://github.com/BobsiUnity/PurrNet-VoiceChat).
 
 
 ## My Application Already Has Networking
