@@ -15,7 +15,10 @@ Dissonance has support for 10 network systems. All of these packages can be down
 * [Steamworks.NET (P2P)](https://assetstore.unity.com/packages/slug/143292?aid=1100lJD)
 * [WebRTC Network (P2P)](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF)
 
-There is also a community developed and maintained package for [Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF), available from [GitHub](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
+There are also community developed and maintained packages.
+ * [Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF), available from [GitHub](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
+ * [PurrNet](https://assetstore.unity.com/packages/tools/network/purrnet-297320?aid=1100lJDF), available from [GitHub](https://github.com/BobsiUnity/PurrNet-VoiceChat).
+
 
 ## My Application Already Has Networking
 
@@ -45,6 +48,15 @@ If you do not have any network system already set up in your application then yo
 
  - [Discord](https://discord.gg/fishnetworking)
  - [Documentation](https://fish-networking.gitbook.io/docs/)
+ - Client/Server
+ - No CCU limit
+
+### PurrNet
+
+[PurrNet](https://assetstore.unity.com/packages/tools/network/purrnet-297320?aid=1100lJDF) is a free open source networking package designed for ease of use, scalability and performance. Dissonance has support for PurrNet through a community developed integration package, [available here](https://github.com/BobsiUnity/PurrNet-VoiceChat).
+
+ - [Discord](https://discord.gg/NP9tP9Qx9R)
+ - [Documentation](https://purrnet.gitbook.io/)
  - Client/Server
  - No CCU limit
 
