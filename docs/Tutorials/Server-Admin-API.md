@@ -1,6 +1,6 @@
 ## Server Scripting
 
-The controls in Dissonance for where audio is being sent ([VoiceBroadcastTrigger](../Reference/Components/Voice-Broadcast-Trigger.md)/[Channels](Directly-Using-Channels.md)) and received ([VoiceReceiptTrigger](../Reference/Components/Voice-Receipt-Trigger.md)/[Rooms](../Reference/Components/Rooms.md)) are client side. Dissonance has a limited server side API which allows some control/monitoring from the server.
+The controls in Dissonance for where audio is being sent ([VoiceBroadcastTrigger](../Reference/Components/Voice-Broadcast-Trigger.md)/[Channels](Directly-Using-Channels.md)) and received ([VoiceReceiptTrigger](../Reference/Components/Voice-Receipt-Trigger.md)/[Rooms](../Reference/Other/Rooms.md)) are client side. Dissonance has a limited server side API which allows some control/monitoring from the server.
 
 ### Access
 
