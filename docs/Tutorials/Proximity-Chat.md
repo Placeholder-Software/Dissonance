@@ -1,11 +1,6 @@
-Dissonance includes two ways to set up proximity chat: `Grid Proximity` and `Collider Proximity`.
-
-!!! important ""
-    **Collider Proximity** is an older proximity chat system which is still supported but is **deprecated**, new projects should use the new **Grid Proximity** system.
-
 # Grid Proximity
 
-Grid proximity creates an infinite grid of cells, each cell is a unique chat room. Players are automatically placed into all cells which are within range of their position. This means that only nearby players can be heard.
+Grid proximity creates an infinite grid of cells, each cell can be though of as unique chat room. Players are automatically placed into all cells which are within range of their position. This means that only nearby players can be heard.
 
 ## Setup
 
@@ -30,6 +25,10 @@ Grid proximity creates an infinite grid of cells, each cell is a unique chat roo
 
 7. Set the `Chat Room` to the same value as the broadcast trigger.
 8. Set the range to **exactly the same value** as the broadcast trigger.
+
+## Extra Setup: Fading With Distance
+
+At the moment voices will cut off the moment they go out of range, with no fading in volume. A [Custom Playback Prefab](Playback-Prefab.html) gives you control over the `AudioSource` Dissonance uses for audio playback - including the Distance/Attenuation curve. Set the curve to fade to near zero volume at the same range as the proximity broadcast trigger.
 
 ## Debugging Common Errors
 
