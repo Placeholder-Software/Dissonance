@@ -26,9 +26,9 @@ Grid proximity creates an infinite grid of cells, each cell can be though of as 
 7. Set the `Chat Room` to the same value as the broadcast trigger.
 8. Set the range to **exactly the same value** as the broadcast trigger.
 
-## Extra Setup: Fading With Distance
+## Distance Attenuation
 
-At the moment voices will cut off the moment they go out of range, with no fading in volume. A [Custom Playback Prefab](Playback-Prefab.html) gives you control over the `AudioSource` Dissonance uses for audio playback - including the Distance/Attenuation curve. Set the curve to fade to near zero volume at the same range as the proximity broadcast trigger.
+At the moment voices will cut off the moment they go out of range, with no fading in volume. A [Custom Playback Prefab](Playback-Prefab.html) gives you control over the [`AudioSource`](https://docs.unity3d.com/6000.1/Documentation/Manual/AudioSource-reference.html) Dissonance uses for audio playback, including the Distance/Attenuation curve. Set the curve to fade to near zero volume at the same range as the proximity broadcast trigger.
 
 ## Debugging Common Errors
 
@@ -36,7 +36,7 @@ If proximity chat is not working, check through these quick debugging steps:
 
 - First, check that a normal (non-proximity) voice chat channel works to ensure that this is a problem with proximity chat!
 - Proximity chat relies on [position tracking](Position-Tracking.md) being correctly set up. While the game is running with at least 2 players connected:
-  - Check the tracking script, attached to your player is initialised
-  - In the `DissonanceComms` inspector expand the player list. **Every** player should have `(Positional)` next to their name.
+    - Check the tracking script, attached to your player is initialised
+    - In the `DissonanceComms` inspector expand the player list. **Every** player should have `(Positional)` next to their name.
 - In the `DissonanceComms` inspector expand the player list, and expand the channels list for the local player. When transmitting locally, you should see some channels appear here (with the name you set for your proximity broadcast trigger).
 - Select the `Proximity Broadcast Trigger`, you should see a grid of rooms (drawn as gizmos, ensure gizmos are not hidden) with the rooms near the player highlighted as you move around.
