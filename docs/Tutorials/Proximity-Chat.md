@@ -33,6 +33,7 @@ At the moment voices will cut off the moment they go out of range, with no fadin
 ## Debugging Common Errors
 
 If proximity chat is not working, check through these quick debugging steps:
+
 - First, check that a normal (non-proximity) voice chat channel works to ensure that this is a problem with proximity chat!
 - Proximity chat relies on [position tracking](Position-Tracking.md) being correctly set up. While the game is running with at least 2 players connected:
   - Check the tracking script, attached to your player is initialised
