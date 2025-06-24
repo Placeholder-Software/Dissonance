@@ -108,7 +108,7 @@ nav:
         - "BaseMicrophoneSubscriber": "Reference/Audio/BaseMicrophoneSubscriber.md"
     - Networking:
         - "Network Protocol": "Reference/Networking/Network-Protocol.md"
-        - "IServerClientState": "Reference/networking/IServerClientState.md"
+        - "IServerClientState": "Reference/Networking/IServerClientState.md"
     - Other:
         - "Voice Settings": "Reference/Other/VoiceSettings.md"
         - "Rooms": "Reference/Other/Rooms.md"
