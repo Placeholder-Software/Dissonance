@@ -45,7 +45,7 @@ If you do not have any network system already set up in your application then yo
 
 ### Fish Networking
 
-[Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF) is a free open source, easy to use, feature rich networking library for Unity. Dissonance has support for Fish networking through a community developed integration package, [available here](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
+[Fish Networking](https://assetstore.unity.com/packages/tools/network/fish-net-networking-evolved-207815?aid=1100lJDF) is a free open source, easy to use, feature rich networking library for Unity. Dissonance has support for Fish networking through a **community developed** integration package, [available here](https://github.com/LambdaTheDev/DissonanceVoiceForFishNet).
 
  - [Discord](https://discord.gg/fishnetworking)
  - [Documentation](https://fish-networking.gitbook.io/docs/)
@@ -54,7 +54,7 @@ If you do not have any network system already set up in your application then yo
 
 ### PurrNet
 
-[PurrNet](https://assetstore.unity.com/packages/tools/network/purrnet-297320?aid=1100lJDF) is a free open source networking package designed for ease of use, scalability and performance. Dissonance has support for PurrNet through a community developed integration package, [available here](https://github.com/BobsiUnity/PurrNet-VoiceChat).
+[PurrNet](https://assetstore.unity.com/packages/tools/network/purrnet-297320?aid=1100lJDF) is a free open source networking package designed for ease of use, scalability and performance. Dissonance has support for PurrNet through a **community developed** integration package, [available here](https://github.com/BobsiUnity/PurrNet-VoiceChat).
 
  - [Discord](https://discord.gg/NP9tP9Qx9R)
  - [Documentation](https://purrnet.gitbook.io/)
@@ -68,6 +68,14 @@ If you do not have any network system already set up in your application then yo
  - [Documentation](https://docs-multiplayer.unity3d.com/)
  - Client/Server
  - No CCU limit
+
+### Coherence
+
+[Coherence](https://assetstore.unity.com/packages/tools/network/coherence-multiplayer-networking-301977?aid=1100lJDF) is a free to use network engine with scalable hosting. Coherence have developed their own integration package for Dissonance.
+
+ - [Documentation](https://docs.coherence.io/manual/networking-voice)
+ - Client/Server with Replication Server
+ - Complete networking platform (scaling, matchmaking, persistence etc)
 
 ### Forge Remastered
 
