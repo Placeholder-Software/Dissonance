@@ -99,13 +99,23 @@ Since there are two faders this means the trigger will have two different volume
 
 #### Channel Volume
 
-This controls the maximum volume of the fader. This should be used with care; raising the amplification above one will cause clipping, which severely reduces audio quality.
+This controls the maximum volume of the fader (in decibels).
 
 #### Fade In Time
 
-This controls how long it takes this fader to increase volume from 0 to the `Channel Volume` slider level.
+This controls how long it takes this fader to increase volume from silence to the `Channel Volume` slider level at the start of speech.
+
+!!! warning
+
+    Use with caution. This will cut off the start of speech and should rarely be used!
 
 #### Fade Out Time
 
-This controls how long it takes this fader to decrease volume from `Channel Volume` slider level to 0. Note that this means voice will continue to be transmitted for this long even after the user has stopped pressing the push to talk key.
+This controls how long it takes this fader to decrease volume from `Channel Volume` slider level to silence at the end of speech.
+
+!!! warning
+
+    Use with caution. Voice will continue to be transmitted even after the user has stopped pressing the push to talk key, which could be a privacy violation. In general you should use very small values (e.g. 0.2s).
+
+
 
