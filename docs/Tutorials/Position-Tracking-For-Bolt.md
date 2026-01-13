@@ -48,5 +48,5 @@ Voice broadcaster triggers and voice receipt triggers can be configured to only 
 
 ### Direct Transmit To Player
 
-When position tracking is enable transmitting to a specific player is simplified. If a `Voice Broadcast Trigger` is attached to a player entity it can be configured to transmit to the player represented by the game object. See [this](Direct-Player-Transmit.md) tutorial for details.
+When position tracking is enabled transmitting to a specific player is simplified. If a `Voice Broadcast Trigger` is attached to a player entity it can be configured to transmit to the player represented by the game object. See [this](Direct-Player-Transmit.md) tutorial for details.
 
