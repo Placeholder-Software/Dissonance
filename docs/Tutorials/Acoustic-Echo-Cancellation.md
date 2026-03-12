@@ -69,6 +69,12 @@ Once you have set all of this up you may want to test that AEC is working as int
 
 When the filter first starts all of the stats will be labelled as "initialising...", this indicates that the filter has not yet converged and will not yet be removing any echo. Once the AEC is running and has converged remote speakers in the session should not be able to hear the music you are playing. In our own tests we have had music playing loudly enough to drown out voices but even that was still cancelled!
 
+!!! important ""
+    If you are testing AEC you must use two separate devices they must be physically separated by **at least** 2 closed doors. AEC will **never** work if the microphone of one device can record the audio output from the other device!
+
+!!! note ""
+    The statistics in the filter inspector show the status of the local AEC filter, this is the filter that prevents the _other_ people in the session from hearing echoes. That means it's probably not the end you are listening to while testing.
+
 ### 6. Other Improvements
 
 AEC is **not** a perfect system and there will usually be some echo which is not cancelled out. Certain conditions such a high background noise or a very large delay (e.g. Bluetooth headphones/microphones) can make this much worse or even not work at all. Therefore it's important to have other mitigations to reduce the impact of bad echo.
