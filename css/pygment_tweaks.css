@@ -1,0 +1,9 @@
+.codehilite {
+  outline: 1px solid rgba(0,0,0,0.35);
+  margin: 5px;
+  padding: 0.5em;
+}
+
+.codehilite pre {
+  margin: 0;
+}
