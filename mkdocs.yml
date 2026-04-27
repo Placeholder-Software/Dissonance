@@ -85,6 +85,7 @@ nav:
     - "Channel Volume": "Tutorials/Channel-Volume.md"
     - "Custom AudioSource Settings": "Tutorials/Playback-Prefab.md"
     - "Script Controlled Speech": "Tutorials/Script-Controlled-Speech.md"
+    - "Audio Cloning": "Tutorials/Audio-Cloning.md"
     - "Spatialization Plugins": "Tutorials/Spatializer-Plugin.md"
 - "Advanced Tutorials":
     - "Writing A Custom Network Integration": "Tutorials/Custom-Networking.md"
