@@ -6,13 +6,11 @@ Dissonance has support for 10 network systems. All of these packages can be down
 
 * [Mirror Networking](https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF)
 * [Unity Netcode For GameObjects](https://assetstore.unity.com/packages/slug/206514?aid=1100lJDF)
-* [UNet HLAPI](https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF)
+* [Photon Fusion](https://assetstore.unity.com/packages/slug/260898?aid=1100lJDF)
 * [Dark Rift 2](https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF)
 * [Forge Remastered](https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF)
 * [Photon Unity networking (2)](https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF)
-* [Photon Bolt](https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF)
 * [TNet3](https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF)
-* [Steamworks.NET (P2P)](https://assetstore.unity.com/packages/slug/143292?aid=1100lJD)
 * [WebRTC Network (P2P)](https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF)
 
 There are also community developed and maintained packages.
@@ -123,7 +121,3 @@ If you do not have any network system already set up in your application then yo
 
  - Full P2P
  - No CCU limit
-
-### UNet HLAPI
-
-UNet is the **deprecated** Unity networking system. It is **not** recommended to use this for new applications.
